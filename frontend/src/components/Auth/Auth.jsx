@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Input from '../@common/Input';
 import Button from '../@common/Button';
@@ -22,6 +23,7 @@ class Auth extends PureComponent {
         event.preventDefault();
 
         if (this.handleValidateSubmit()) {
+            this.props.login(this.state.data);
         }
     };
 
@@ -57,6 +59,12 @@ class Auth extends PureComponent {
     };
 
     render() {
+        const { user, loading, error} = this.props;
+
+        if (user) {
+            return <Redirect to="/" />;
+        }
+
         return (
             <div className="row justify-content-center">
                 <div className="col-lg-6">
