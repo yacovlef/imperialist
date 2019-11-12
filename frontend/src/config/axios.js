@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import store from '../store';
 
-import env from './.env.js';
+import env from './env.json';
 
 const { protocol, hostname } = window.location;
 
