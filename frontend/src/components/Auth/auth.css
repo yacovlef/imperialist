@@ -1,0 +1,8 @@
+.auth__layout {
+    display: grid;
+    justify-items: center;
+}
+
+.auth__form {
+    width: 20rem;
+}

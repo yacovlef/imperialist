@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './input.css';
+
 const Input = (props) => {
     const {
         label,
@@ -13,14 +15,14 @@ const Input = (props) => {
 
     let error = errorList.find(error => error.field === name);
 
-    const inputClassList = ['form-control'];
+    const inputClassList = ['input'];
 
     if (error) {
-        inputClassList.push('is-invalid');
+        inputClassList.push('input__error');
     }
 
     return (
-        <div className="form-group">
+        <>
             <label htmlFor={name}>{label}</label>
             
             <input
@@ -34,11 +36,11 @@ const Input = (props) => {
             />
 
             {error &&
-                <div className="invalid-feedback">
+                <div className="input__error_message">
                     {error.message}
                 </div>
             }
-        </div>
+        </>
     );
 }
 

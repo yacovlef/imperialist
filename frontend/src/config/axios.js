@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import store from '../store';
+import store from './redux';
 
 import env from './env.json';
 

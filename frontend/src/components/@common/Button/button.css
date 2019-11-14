@@ -1,0 +1,22 @@
+.button {
+    border: 1px solid #555555;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background-color: #f5f5f5;
+}
+
+.button__block {
+    width: 100%;
+}
+
+.button__small {
+    padding: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 0.5;
+    border-radius: 0.25rem;
+}

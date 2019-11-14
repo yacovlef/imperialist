@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom';
 import Input from '../@common/Input';
 import Button from '../@common/Button';
 
+import './auth.css';
+
 class Auth extends PureComponent {
     state = {
         data: {
@@ -17,14 +19,6 @@ class Auth extends PureComponent {
         const { name, value } = event.target
 
         this.setState(({ data }) => ({data: {...data, [name]: value}}));
-    };
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-
-        if (this.handleValidateSubmit()) {
-            this.props.login(this.state.data);
-        }
     };
 
     handleValidateSubmit = () => {
@@ -58,46 +52,54 @@ class Auth extends PureComponent {
         return result;
     };
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+
+        if (this.handleValidateSubmit()) {
+            this.props.login(this.state.data);
+        }
+    };
+
     render() {
-        const { user, loading, error} = this.props;
+        const { user } = this.props;
 
         if (user) {
             return <Redirect to="/" />;
         }
 
         return (
-            <div className="row justify-content-center">
-                <div className="col-lg-6">
-                    <div className="card">
-                        <div className="card-header">Вход</div>
-                        <div className="card-body">
-                            <form onSubmit={this.handleSubmit}>
-                                <Input
-                                    label="Адрес эл. почты"
-                                    name="email"
-                                    type="text"
-                                    value={this.state.data.email}
-                                    handleChange={this.handleChange}
-                                    errorList={this.state.errorList}
-                                />
-                                
-                                <Input
-                                    label="Пароль"
-                                    name="password"
-                                    type="password"
-                                    value={this.state.data.password}
-                                    handleChange={this.handleChange}
-                                    errorList={this.state.errorList}
-                                />
-
-                                <Button
-                                    label="Вход"
-                                    type="submit"
-                                />
-                            </form>
-                        </div>
+            <div className="auth__layout">
+                <form className="auth__form" onSubmit={this.handleSubmit}>
+                    <div className="form-row">
+                        <Input
+                            label="Адрес эл. почты"
+                            name="email"
+                            type="text"
+                            value={this.state.data.email}
+                            handleChange={this.handleChange}
+                            errorList={this.state.errorList}
+                        />
                     </div>
-                </div>
+                    
+                    <div className="form-row">
+                        <Input
+                            label="Пароль"
+                            name="password"
+                            type="password"
+                            value={this.state.data.password}
+                            handleChange={this.handleChange}
+                            errorList={this.state.errorList}
+                        />
+                    </div>
+
+                    <div className="form-row">
+                        <Button
+                            label="Вход"
+                            type="submit"
+                            size="block"
+                        />
+                    </div>
+                </form>
             </div>
         );
     }

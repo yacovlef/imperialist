@@ -1,0 +1,18 @@
+.input {
+    border: 1px solid #555555;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.input__error {
+    border-color: #ff0000;
+}
+
+.input__error_message {
+    font-size: 0.9rem;
+    color: #ff0000;
+}

@@ -1,12 +1,30 @@
 import React from 'react';
 
+import './button.css';
+
 const Button = (props) => {
     const {
         label,
-        type
+        type,
+        size,
+        onClick
     } = props;
 
-    return <button type={type} className="btn btn-block btn-outline-primary">{label}</button>
+    const buttonClassList = ['button']
+
+    switch(size) {
+        case 'block':
+            buttonClassList.push('button__block');
+
+            break;
+        case 'small':
+            buttonClassList.push('button__small');
+            
+            break;
+        default:
+    }
+
+    return <button onClick={onClick} type={type} className={buttonClassList.join(' ')}>{label}</button>
 };
 
 export default Button;

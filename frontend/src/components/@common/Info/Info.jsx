@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './info.css';
+
 const getTypeInfo = (type) => {
     let result;
 
@@ -24,7 +26,7 @@ const getTypeInfo = (type) => {
 };
 
 const Info = ({ type, value }) => {
-    return <h3 className="text-center">{value || getTypeInfo(type)}</h3>;
+    return <h3 className="info__message">{value || getTypeInfo(type)}</h3>;
 };
 
 export default Info;

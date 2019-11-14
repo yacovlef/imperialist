@@ -1,7 +1,15 @@
 import React from 'react';
 
+import Container from '../Container';
+
+import './footer.css';
+
 const Footer = () => {
-    return <footer className="text-center">&copy; IMPERIALIST</footer>;
+    return (
+        <Container>
+            <footer className="footer">&copy; IMPERIALIST</footer>
+        </Container>
+    );
 }
 
 export default Footer;

@@ -1,10 +1,14 @@
 import React from 'react';
 
+import Container from '../Container';
+
 const Main = ({ children }) => {
     return (
-        <main className="py-4">
-            {children}
-        </main>
+        <Container>
+            <main className="py-4">
+                {children}
+            </main>
+        </Container>
     );
 }
 
