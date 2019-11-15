@@ -6,7 +6,8 @@ import {
 
 const initialState = {
     loading: false,
-    error: null
+    loaded: false,
+    error: null,
 };
 
 const userFormReducer = (state = initialState, action) => {
@@ -15,17 +16,19 @@ const userFormReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: true,
+                loaded: false,
                 error: null
             };
         case SUBMIT_USER_FORM_SUCCESS:
             return {
                 ...state,
-                loading: false
+                loading: false,
+                loaded: true
             };
         case SUBMIT_USER_FORM_FAILURE:
             return {
                 ...state,
-                loadind: false,
+                loading: false,
                 error: action.payload
             };
         default:

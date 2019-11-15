@@ -7,7 +7,7 @@ module.exports = {
                 firstName: 'Иван',
                 lastName: 'Иванов',
                 email: 'ivanov@email.com',
-                password: 'password',
+                password: '$2b$10$OiWgExvmgEVvHudgMtmBJOcvyX/NzO2EP3g7Co4ZG.mKkb7BlQs32',
                 role: 'admin',
                 createdAt: new Date(),
                 updatedAt: new Date()
@@ -16,7 +16,7 @@ module.exports = {
                 firstName: 'Пётр',
                 lastName: 'Петров',
                 email: 'petrov@email.com',
-                password: 'password',
+                password: '$2b$10$OiWgExvmgEVvHudgMtmBJOcvyX/NzO2EP3g7Co4ZG.mKkb7BlQs32',
                 role: 'admin',
                 createdAt: new Date(),
                 updatedAt: new Date()
@@ -25,7 +25,7 @@ module.exports = {
                 firstName: 'Михаил',
                 lastName: 'Михайлов',
                 email: 'mihailov@email.com',
-                password: 'password',
+                password: '$2b$10$OiWgExvmgEVvHudgMtmBJOcvyX/NzO2EP3g7Co4ZG.mKkb7BlQs32',
                 role: 'admin',
                 createdAt: new Date(),
                 updatedAt: new Date()

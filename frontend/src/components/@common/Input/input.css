@@ -16,3 +16,7 @@
     font-size: 0.9rem;
     color: #ff0000;
 }
+
+.input__label_error {
+    color: #ff0000;
+}

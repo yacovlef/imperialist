@@ -21,6 +21,14 @@ class UserForm extends Component {
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.loaded !== prevProps.loaded) {
+            if (this.props.loaded) {
+                this.props.onClose();
+            }
+        }
+    }
+
     handleChange = (event) => {
         const { name, value } = event.target
 
@@ -86,12 +94,19 @@ class UserForm extends Component {
         event.preventDefault();
 
         if (this.handleValidateSubmit()) {
-            this.props.onSubmit(this.state.data)
-            this.props.onClose()
+            const data = Object.assign({}, this.state.data);
+
+            if (!this.state.data.password) {
+                delete data.password;
+            }
+
+            this.props.onSubmit(data);
         }
     };
 
     render() {
+        const { loading, error } = this.props;
+        
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="form-row">
@@ -143,6 +158,8 @@ class UserForm extends Component {
                         label="Сохранить"
                         type="submit"
                         size="block"
+                        loading={loading}
+                        error={error}
                     />
                 </div>
             </form>

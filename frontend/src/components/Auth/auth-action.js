@@ -33,7 +33,7 @@ const authLogout = () => {
     };
 };
 
-const login = (history) => (user) => (dispatch) => {
+const login = (user) => (dispatch) => {
     dispatch(authRequested());
 
     getLogin(user)
@@ -46,8 +46,6 @@ const login = (history) => (user) => (dispatch) => {
             };
             
             dispatch(authLoaded(payload));
-
-            history.push('/');
         })
         .catch((error) => dispatch(authError(error)));
 };

@@ -2,31 +2,26 @@ import React from 'react';
 
 import './info.css';
 
-const getTypeInfo = (type) => {
-    let result;
+const Info = ({ type, message }) => {
+    let typeMessage = '';
 
     switch (type) {
         case 'loading':
-            result = 'Загрузка...';
+            typeMessage = 'Загрузка...';
 
             break;
         case 'error':
-            result = 'Ошибка';
+            typeMessage = 'Ошибка';
 
             break;
         case 'not-found':
-            result = 'Страница не найдена!';
+            typeMessage = 'Страница не найдена!';
 
             break;
         default:
     }
 
-    return result;
-
-};
-
-const Info = ({ type, value }) => {
-    return <h3 className="info__message">{value || getTypeInfo(type)}</h3>;
+    return <h3 className="info__message">{message || typeMessage}</h3>;
 };
 
 export default Info;

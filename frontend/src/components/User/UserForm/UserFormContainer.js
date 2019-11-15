@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 
 import UserForm from './UserForm';
 
-const mapStateToProps = ({ userForm: { loading, error } }) => {
+const mapStateToProps = ({ userForm: { loading, loaded, error } }) => {
     return {
         loading,
+        loaded,
         error
     };
 };

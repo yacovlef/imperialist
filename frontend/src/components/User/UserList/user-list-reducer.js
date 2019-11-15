@@ -26,7 +26,7 @@ const userListReducer = (state = initialState, action) => {
         case FETCH_USER_LIST_FAILURE:
             return {
                 ...state,
-                loadind: false,
+                loading: false,
                 error: action.payload
             };
         default:

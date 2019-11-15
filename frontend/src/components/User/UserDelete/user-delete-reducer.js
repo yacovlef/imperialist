@@ -6,6 +6,7 @@ import {
 
 const initialState = {
     loading: false,
+    loaded: false,
     error: null
 };
 
@@ -15,17 +16,19 @@ const userListReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: true,
+                loaded: false,
                 error: null
             };
         case SUBMIT_USER_DELETE_SUCCESS:
             return {
                 ...state,
-                loading: false
+                loading: false,
+                loaded: true
             };
         case SUBMIT_USER_DELETE_FAILURE:
             return {
                 ...state,
-                loadind: false,
+                loading: false,
                 error: action.payload
             };
         default:

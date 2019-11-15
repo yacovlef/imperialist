@@ -10,6 +10,14 @@ class UserDelete extends Component {
         modal: false
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.loaded !== prevProps.loaded) {
+            if (this.props.loaded) {
+                this.handleButtonClose();
+            }
+        }
+    }
+
     handleButtonOpen = () => {
         this.setState({modal: true});
     }
@@ -21,12 +29,11 @@ class UserDelete extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        this.props.onSubmit(this.props.user.id)
-        this.handleButtonClose()
+        this.props.onSubmit(this.props.user.id);
     };
 
     render() {
-        const { lastName, firstName } = this.props.user;
+        const { user: { lastName, firstName }, loading, error } = this.props;
 
         return (
             <>
@@ -49,6 +56,8 @@ class UserDelete extends Component {
                                         label="Удалить"
                                         type="submit"
                                         size="block"
+                                        loading={loading}
+                                        error={error}
                                     />
                                 </form>
                             </div>

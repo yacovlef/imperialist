@@ -4,9 +4,10 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './@common/Header';
 import Main from './@common/Main';
 import Footer from './@common/Footer';
-import Info from './@common/Info';
 import Auth from './Auth';
 import User from './User';
+import PrivateRoute from '../components/@common/PrivateRoute'
+import Info from './@common/Info';
 
 import './app.css';
 
@@ -19,10 +20,33 @@ function App() {
                     <Route
                         path="/login"
                         component={Auth}
+                        exact
                     />
-                    <Route
+                    <PrivateRoute
                         path="/users"
                         component={User}
+                        exact
+                    />
+                    <PrivateRoute
+                        path="/orders"
+                        render={() => <Info
+                            message='Заказы'
+                        />}
+                        exact
+                    />
+                    <PrivateRoute
+                        path="/products"
+                        render={() => <Info
+                            message='Изделия'
+                        />}
+                        exact
+                    />
+                    <PrivateRoute
+                        path="/nomenclature"
+                        render={() => <Info
+                            message='Номенклатура'
+                        />}
+                        exact
                     />
                     <Route
                         render={() => <Info

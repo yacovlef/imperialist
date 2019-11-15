@@ -16,14 +16,16 @@ const Input = (props) => {
     let error = errorList.find(error => error.field === name);
 
     const inputClassList = ['input'];
+    const labelClassList = [];
 
     if (error) {
         inputClassList.push('input__error');
+        labelClassList.push('input__label_error');
     }
 
     return (
         <>
-            <label htmlFor={name}>{label}</label>
+            <label className={labelClassList.join(' ')} htmlFor={name}>{label}</label>
             
             <input
                 id={name}

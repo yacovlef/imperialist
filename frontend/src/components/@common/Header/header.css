@@ -21,3 +21,27 @@
     text-decoration: none;
     color: #555555;
 }
+
+.header__responsive_button {
+    display: none;
+}
+
+.header__responsive_nav {
+    display: none;
+
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .header__nav {
+        display: none;
+    }
+
+    .header__responsive_button {
+        display: block;
+    }
+
+    .header__responsive_nav {
+        display: block;
+    }
+}

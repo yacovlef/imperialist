@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Redirect } from 'react-router-dom';
 
+import Info from '../@common/Info';
 import Input from '../@common/Input';
 import Button from '../@common/Button';
 
@@ -61,14 +62,21 @@ class Auth extends PureComponent {
     };
 
     render() {
-        const { user } = this.props;
+        const { user, loading, error } = this.props;
 
         if (user) {
-            return <Redirect to="/" />;
+            return <Redirect to="/orders" />;
         }
 
         return (
             <div className="auth__layout">
+                {
+                    error && error.request.status === 401 &&
+                        <Info
+                            message={error.response.data.message}
+                        />
+                }
+
                 <form className="auth__form" onSubmit={this.handleSubmit}>
                     <div className="form-row">
                         <Input
@@ -97,6 +105,8 @@ class Auth extends PureComponent {
                             label="Вход"
                             type="submit"
                             size="block"
+                            loading={loading}
+                            error={error}
                         />
                     </div>
                 </form>

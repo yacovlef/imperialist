@@ -5,9 +5,10 @@ import UserDelete from './UserDelete';
 
 import { submitUserDelete } from './user-delete-action';
 
-const mapStateToProps = ({ userDelete: { loading, error } }) => {
+const mapStateToProps = ({ userDelete: { loading, loaded, error } }) => {
     return {
         loading,
+        loaded,
         error
     };
 };

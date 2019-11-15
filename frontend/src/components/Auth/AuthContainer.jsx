@@ -13,9 +13,9 @@ const mapStateToProps = ({ auth: { user, loading, error } }) => {
     };
 };
 
-const mapDispatchToProps = (dispatch, { history }) => {
+const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        login: login(history)
+        login
     }, dispatch);
 };
 

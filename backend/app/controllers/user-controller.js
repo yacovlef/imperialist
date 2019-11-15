@@ -9,11 +9,11 @@ const getList = (req, res) => {
 };
 
 const create = (req, res) => {
-    bcrypt.hash(req.body.password, 10, (error, password) => {
-        User.create({ ...req.body, password })
-            .then(user => res.json(user))
-            .catch(error => res.status(500).json(error));
-    });
+    const password = bCrypt.hashSync(req.body.password, 10);
+    
+    User.create({ ...req.body, password })
+        .then(user => res.json(user))
+        .catch(error => res.status(500).json(error));
 };
 
 const update = (req, res) => {
