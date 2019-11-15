@@ -11,9 +11,11 @@ const instanceAxios = axios.create({
 });
 
 instanceAxios.interceptors.request.use((config) => {
-    const token = store.getState().auth.token;
+    const user = store.getState().auth.user;
 
-    config.headers.Authorization =  token;
+    if (user) {
+        config.headers.Authorization = store.getState().auth.user.token;
+    }
 
     return config;
 });

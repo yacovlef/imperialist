@@ -28,7 +28,7 @@ function App() {
                         exact
                     />
                     <PrivateRoute
-                        path="/orders"
+                        path="/"
                         render={() => <Info
                             message='Заказы'
                         />}

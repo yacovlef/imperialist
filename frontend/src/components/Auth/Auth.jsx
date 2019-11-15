@@ -65,7 +65,7 @@ class Auth extends PureComponent {
         const { user, loading, error } = this.props;
 
         if (user) {
-            return <Redirect to="/orders" />;
+            return <Redirect to="/" />;
         }
 
         return (

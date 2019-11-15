@@ -34,7 +34,7 @@ class Header extends Component {
                 <Container>
                     <div className="header__layout">
                         <div className="header__logo">
-                            <Link className="header__link" to="/orders">IMPERIALIST</Link>
+                            <Link className="header__link" to="/">IMPERIALIST</Link>
                         </div>
 
                         <div className="header__responsive_button">
@@ -48,7 +48,7 @@ class Header extends Component {
                                 (user)
                                     ?
                                         <>
-                                            <Link className="header__link" to="/orders">Заказы</Link>
+                                            <Link className="header__link" to="/">Заказы</Link>
                                             <Link className="header__link" to="/products">Изделия</Link>
                                             <Link className="header__link" to="/nomenclature">Номенклатура</Link>
                                             <Link className="header__link" to="/users">Пользователи</Link>
@@ -66,7 +66,7 @@ class Header extends Component {
                                         (user)
                                             ?
                                                 <>
-                                                    <Link className="header__link" to="/orders">Заказы</Link><br/>
+                                                    <Link className="header__link" to="/">Заказы</Link><br/>
                                                     <Link className="header__link" to="/products">Изделия</Link><br/>
                                                     <Link className="header__link" to="/nomenclature">Номенклатура</Link><br/>
                                                     <Link className="header__link" to="/users">Пользователи</Link><br/>
