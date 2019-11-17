@@ -9,7 +9,7 @@ const getList = (req, res) => {
 };
 
 const create = (req, res) => {
-    const password = bCrypt.hashSync(req.body.password, 10);
+    const password = bcrypt.hashSync(req.body.password, 10);
     
     User.create({ ...req.body, password })
         .then(user => res.json(user))
