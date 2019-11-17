@@ -6,6 +6,7 @@ import Container from '../Container';
 import './header.css';
 
 import menu from './menu.svg';
+import close from './close.svg';
 
 class Header extends Component {
     state = {
@@ -27,6 +28,7 @@ class Header extends Component {
     }
 
     render() {
+        const { responsiveMenu } = this.state;
         const { user, logout } = this.props;
 
         const renderNav = (
@@ -61,12 +63,12 @@ class Header extends Component {
 
                         <div className="header__responsive_button">
                             <Link to="#">
-                                <img id="header__responsive_button" src={menu} alt="close" />
+                                <img id="header__responsive_button" src={responsiveMenu ? close : menu} alt="close" />
                             </Link>
                         </div>
 
                         <nav className="header__responsive_nav">
-                            { this.state.responsiveMenu && renderNav }
+                            {responsiveMenu && renderNav}
                         </nav>
                     </div>
                 </Container>
