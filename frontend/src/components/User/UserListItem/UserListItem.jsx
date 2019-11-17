@@ -3,6 +3,8 @@ import React from 'react';
 import UserEdit from '../UserEdit';
 import UserDelete from '../UserDelete';
 
+import { roleList } from '../../../config/data.json'
+
 import './user_list_item.css';
 
 const UserListItem = ({ userItem }) => {
@@ -13,6 +15,8 @@ const UserListItem = ({ userItem }) => {
         role
     } = userItem;
 
+    const renderRole = roleList.find(({ value }) => value === role);
+
     return (
         <div className="user_list_item card">
             <div>
@@ -21,7 +25,7 @@ const UserListItem = ({ userItem }) => {
             </div>
             <div>
                 <div>Адрес эл. почты: {email}</div>
-                <div>Роль: {role}</div>
+                <div>Роль: {renderRole.label}</div>
             </div>
             <div>
                 <div>

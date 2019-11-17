@@ -29,6 +29,24 @@ class Header extends Component {
     render() {
         const { user, logout } = this.props;
 
+        const renderNav = (
+            <ul>
+                {
+                    (user)
+                        ?
+                            <>
+                                <li><Link className="header__link" to="/">Заказы</Link></li>
+                                <li><Link className="header__link" to="/products">Изделия</Link></li>
+                                <li><Link className="header__link" to="/nomenclature">Номенклатура</Link></li>
+                                <li><Link className="header__link" to="/users">Пользователи</Link></li>
+                                <li><Link onClick={logout} className="header__link" to="#">{`${user.lastName} ${user.firstName}`} (Выход)</Link></li>
+                            </>
+                        :
+                            <li><Link className="header__link" to="/login">Вход</Link></li>
+                }
+            </ul>
+        );
+
         return (
             <header className="header">
                 <Container>
@@ -37,45 +55,18 @@ class Header extends Component {
                             <Link className="header__link" to="/">IMPERIALIST</Link>
                         </div>
 
+                        <nav className="header__nav">
+                            {renderNav}
+                        </nav>
+
                         <div className="header__responsive_button">
                             <Link to="#">
                                 <img id="header__responsive_button" src={menu} alt="close" />
                             </Link>
                         </div>
 
-                        <nav className="header__nav">
-                            {
-                                (user)
-                                    ?
-                                        <>
-                                            <Link className="header__link" to="/">Заказы</Link>
-                                            <Link className="header__link" to="/products">Изделия</Link>
-                                            <Link className="header__link" to="/nomenclature">Номенклатура</Link>
-                                            <Link className="header__link" to="/users">Пользователи</Link>
-                                            <Link onClick={logout} className="header__link" to="#">{`${user.lastName} ${user.firstName}`} (Выход)</Link>
-                                        </>
-                                    :
-                                        <Link className="header__link" to="/login">Вход</Link>
-                            }
-                        </nav>
-
                         <nav className="header__responsive_nav">
-                            {
-                                this.state.responsiveMenu &&
-                                    (
-                                        (user)
-                                            ?
-                                                <>
-                                                    <Link className="header__link" to="/">Заказы</Link><br/>
-                                                    <Link className="header__link" to="/products">Изделия</Link><br/>
-                                                    <Link className="header__link" to="/nomenclature">Номенклатура</Link><br/>
-                                                    <Link className="header__link" to="/users">Пользователи</Link><br/>
-                                                    <Link onClick={logout} className="header__link" to="#">{`${user.lastName} ${user.firstName}`} (Выход)</Link>
-                                                </>
-                                            :
-                                                <Link className="header__link" to="/login">Вход</Link>
-                                    )
-                            }
+                            { this.state.responsiveMenu && renderNav }
                         </nav>
                     </div>
                 </Container>

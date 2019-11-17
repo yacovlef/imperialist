@@ -1,0 +1,20 @@
+{
+    "roleList": [
+        {
+            "label": "Администратор",
+            "value": "admin"
+        },
+        {
+            "label": "Сметчик",
+            "value": "estimator"
+        },
+        {
+            "label": "Столяр",
+            "value": "carpenter     "
+        },
+        {
+            "label": "Моляр",
+            "value": "molar"
+        }
+    ]
+}

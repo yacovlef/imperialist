@@ -1,0 +1,21 @@
+.select {
+    border: 1px solid #555555;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.select__error {
+    border-color: #ff0000;
+}
+
+.select__error_message {
+    font-size: 0.9rem;
+    color: #ff0000;
+}
+
+.select__label_error {
+    color: #ff0000;
+}

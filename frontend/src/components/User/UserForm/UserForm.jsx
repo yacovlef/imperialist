@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 
 import Input from '../../@common/Input';
+import Select from '../../@common/Select';
 import Button from '../../@common/Button';
+
+import { roleList } from '../../../config/data.json';
 
 class UserForm extends Component {
     state = {
@@ -10,7 +13,7 @@ class UserForm extends Component {
             lastName: '',
             email: '',
             password: '',
-            role: 'admin'
+            role: ''
         },
         errorList: []
     };
@@ -148,6 +151,17 @@ class UserForm extends Component {
                         name="password"
                         type="password"
                         value={this.state.data.password}
+                        handleChange={this.handleChange}
+                        errorList={this.state.errorList}
+                    />
+                </div>
+
+                <div className="form-row">
+                    <Select
+                        label="Роль"
+                        name="role"
+                        value={this.state.data.role}
+                        optionList={roleList}
                         handleChange={this.handleChange}
                         errorList={this.state.errorList}
                     />

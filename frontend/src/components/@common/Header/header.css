@@ -13,7 +13,11 @@
     font-size: 1.5rem;
 }
 
-.header__nav .header__link:not(:last-child) {
+.header__nav ul li {
+    display: inline;
+}
+
+.header__nav ul li:not(:last-child) {
     margin-right: 0.5rem;
 }
 
@@ -28,8 +32,14 @@
 
 .header__responsive_nav {
     display: none;
+    list-style-type: none;
+    font-size: 1.2rem;
+}
 
-    font-size: 1.1rem;
+.header__responsive_nav ul {
+    list-style-type: none;
+    font-size: 1.3rem;
+    padding: 0;
 }
 
 @media (max-width: 768px) {
