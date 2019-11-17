@@ -1,11 +1,11 @@
 const env = require('./env.json');
 const express = require('./express');
-const production = require('./production');
 const routes = require('./routes');
+const production = require('./production');
 
 module.exports = {
     env,
     express,
-    production,
-    routes
+    routes,
+    production
 }

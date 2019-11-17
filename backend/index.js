@@ -5,8 +5,8 @@ const config = require('./config');
 const app = express();
 
 config.express(app);
-config.production(app, express);
 config.routes(app);
+config.production(app, express);
 
 const { port } = config.env;
 
