@@ -6,6 +6,7 @@ import Main from './@common/Main';
 import Footer from './@common/Footer';
 import Auth from './Auth';
 import User from './User';
+import Order from './Order';
 import PrivateRoute from '../components/@common/PrivateRoute'
 import Info from './@common/Info';
 
@@ -29,15 +30,13 @@ function App() {
                     />
                     <PrivateRoute
                         path="/"
-                        render={() => <Info
-                            message='Заказы'
-                        />}
+                        component={Order}
                         exact
                     />
                     <PrivateRoute
-                        path="/products"
+                        path="/projects"
                         render={() => <Info
-                            message='Изделия'
+                            message='Проекты'
                         />}
                         exact
                     />

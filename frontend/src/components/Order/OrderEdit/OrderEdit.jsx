@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 import Modal from '../../@common/Modal';
 import Button from '../../@common/Button';
 
-import UserForm from '../UserForm';
+import OrderForm from '../OrderForm';
 
-import { submitUserFormUpdate } from '../UserForm/user-form-action';
+import { submitOrderFormUpdate } from '../OrderForm/order-form-action';
 
-class UserEdit extends Component {
+class OrderEdit extends Component {
     state = {
         modal: false
     }
@@ -32,11 +32,11 @@ class UserEdit extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Редактирование пользователя" onClose={this.handleButtonClose}>
-                            <UserForm
-                                onSubmit={submitUserFormUpdate}
+                        <Modal title="Редактирование заказа" onClose={this.handleButtonClose}>
+                            <OrderForm
+                                onSubmit={submitOrderFormUpdate}
                                 onClose={this.handleButtonClose}
-                                user={this.props.user}
+                                order={this.props.order}
                             />
                         </Modal>
                 }
@@ -45,4 +45,4 @@ class UserEdit extends Component {
     }
 }
 
-export default UserEdit;
+export default OrderEdit;

@@ -38,7 +38,7 @@ class Header extends Component {
                         ?
                             <>
                                 <li><Link className="header__link" to="/">Заказы</Link></li>
-                                <li><Link className="header__link" to="/products">Изделия</Link></li>
+                                <li><Link className="header__link" to="/projects">Проекты</Link></li>
                                 <li><Link className="header__link" to="/nomenclature">Номенклатура</Link></li>
                                 <li><Link className="header__link" to="/users">Пользователи</Link></li>
                                 <li><Link onClick={logout} className="header__link" to="#">{`${user.lastName} ${user.firstName}`} (Выход)</Link></li>

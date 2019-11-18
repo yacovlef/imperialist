@@ -1,6 +1,7 @@
 const {
     userController,
-    authController
+    authController,
+    orderController
 } = require('../app/controllers');
 
 const { authMiddleware } = require('../app/middlewares');
@@ -14,4 +15,10 @@ module.exports = (app) => {
 
     //auth
     app.post('/api/login', authController.login);
+
+    // orderList
+    app.get('/api/orders', authMiddleware, orderController.getList);
+    app.post('/api/orders', authMiddleware, orderController.create);
+    app.put('/api/orders/:id', authMiddleware, orderController.update);
+    app.delete('/api/orders/:id', authMiddleware, orderController.remove);
 }

@@ -16,5 +16,19 @@
             "label": "Моляр",
             "value": "molar"
         }
+    ],
+    "orderStatusList": [
+        {
+            "label": "В работе",
+            "value": "inWork"
+        },
+        {
+            "label": "Завершён",
+            "value": "finished"
+        },
+        {
+            "label": "Отказ",
+            "value": "refused"
+        }
     ]
 }
