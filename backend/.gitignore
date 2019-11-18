@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+# log
+/log
+
 # misc
 env.json
 db.json
