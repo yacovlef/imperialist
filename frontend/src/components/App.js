@@ -4,11 +4,13 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './@common/Header';
 import Main from './@common/Main';
 import Footer from './@common/Footer';
+import PrivateRoute from './@common/PrivateRoute'
+import Info from './@common/Info';
+
 import Auth from './Auth';
 import User from './User';
 import Order from './Order';
-import PrivateRoute from '../components/@common/PrivateRoute'
-import Info from './@common/Info';
+import Nomenclature from './Nomenclature';
 
 import './app.css';
 
@@ -42,9 +44,7 @@ function App() {
                     />
                     <PrivateRoute
                         path="/nomenclature"
-                        render={() => <Info
-                            message='Номенклатура'
-                        />}
+                        component={Nomenclature}
                         exact
                     />
                     <Route

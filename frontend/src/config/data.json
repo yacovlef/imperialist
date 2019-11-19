@@ -30,5 +30,19 @@
             "label": "Отказ",
             "value": "refused"
         }
+    ],
+    "nomenclatureUnitList": [
+        {
+            "label": "лист",
+            "value": "list"
+        },
+        {
+            "label": "шт.",
+            "value": "sht"
+        },
+        {
+            "label": "м.кв.",
+            "value": "mkv"
+        }
     ]
 }

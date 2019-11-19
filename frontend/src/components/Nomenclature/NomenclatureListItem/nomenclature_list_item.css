@@ -1,0 +1,10 @@
+.nomenclature_list_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+}
+
+@media (max-width: 768px) {
+    .nomenclature_list_item {
+        grid-template-columns: auto;
+    }
+}

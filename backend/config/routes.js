@@ -1,7 +1,8 @@
 const {
     userController,
     authController,
-    orderController
+    orderController,
+    nomenclatureController
 } = require('../app/controllers');
 
 const { authMiddleware } = require('../app/middlewares');
@@ -21,4 +22,10 @@ module.exports = (app) => {
     app.post('/api/orders', authMiddleware, orderController.create);
     app.put('/api/orders/:id', authMiddleware, orderController.update);
     app.delete('/api/orders/:id', authMiddleware, orderController.remove);
+
+    // nomenclatureList
+    app.get('/api/nomenclature', authMiddleware, nomenclatureController.getList);
+    app.post('/api/nomenclature', authMiddleware, nomenclatureController.create);
+    app.put('/api/nomenclature/:id', authMiddleware, nomenclatureController.update);
+    app.delete('/api/nomenclature/:id', authMiddleware, nomenclatureController.remove);
 }
