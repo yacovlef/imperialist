@@ -1,7 +1,16 @@
 const { Order } = require('../models');
 
 const getList = (req, res) => {
-    Order.findAll({ order: ['id'] })
+    const find = {};
+
+    if (req.query.status) {
+        find.status = req.query.status
+    }
+
+    Order.findAll({
+        where: find,
+        order: ['id']
+    })
         .then(order => res.json(order))
         .catch(error => res.status(500).json(error));
 };

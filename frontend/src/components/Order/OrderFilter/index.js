@@ -1,3 +1,3 @@
-import OrderFilter from './OrderFilter';
+import OrderFilter from './OrderFilterContainer';
 
 export default OrderFilter;

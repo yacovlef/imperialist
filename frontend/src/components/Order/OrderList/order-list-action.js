@@ -1,3 +1,5 @@
+import store from '../../../config/redux';
+
 import { fetchOrderListApi } from './order-list-api';
 
 const FETCH_ORDER_LIST_REQUEST = 'FETCH_ORDER_LIST_REQUEST';
@@ -27,7 +29,9 @@ const orderListError = (error) => {
 const fetchOrderList = () => (dispatch) => {
     dispatch(orderListRequested());
 
-    fetchOrderListApi()
+    const { orderFilter } = store.getState();
+
+    fetchOrderListApi(orderFilter)
         .then(({ data }) => dispatch(orderListLoaded(data)))
         .catch((error) => dispatch(orderListError(error)));
 };

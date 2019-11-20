@@ -1,7 +1,7 @@
 import axios from '../../../config/axios';
 
-const fetchOrderListApi = async () => {
-    return await axios.get('/orders');
+const fetchOrderListApi = async (orderFilter) => {
+    return await axios.get('/orders', {params: orderFilter});
 };
 
 export {
