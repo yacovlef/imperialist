@@ -7,6 +7,8 @@ import UserForm from '../UserForm';
 
 import { submitUserFormCreate } from '../UserForm/user-form-action';
 
+import './user-add.css';
+
 class UserAdd extends Component {
     state = {
         modal: false
@@ -23,10 +25,11 @@ class UserAdd extends Component {
     render() {
         return (
             <>
-                <div className="card card__control">
+                <div className="user_add__button">
                     <Button
                         label="Добавить пользователя"
                         type="button"
+                        size="block"
                         onClick={this.handleButtonOpen}
                     />
                 </div>

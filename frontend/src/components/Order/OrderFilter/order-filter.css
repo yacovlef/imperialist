@@ -1,0 +1,9 @@
+.order_filter {
+    justify-self: end;
+}
+
+@media (max-width: 768px) {
+    .order_filter {
+        justify-self: stretch;
+    }  
+}

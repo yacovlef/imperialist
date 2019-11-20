@@ -1,0 +1,11 @@
+.order__control {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: end;
+}
+
+@media (max-width: 768px) {
+    .order__control {
+        grid-template-columns: auto;
+    } 
+}

@@ -7,6 +7,8 @@ import NomenclatureForm from '../NomenclatureForm';
 
 import { submitNomenclatureFormCreate } from '../NomenclatureForm/nomenclature-form-action';
 
+import './nomenclature-add.css';
+
 class NomenclatureAdd extends Component {
     state = {
         modal: false
@@ -23,10 +25,11 @@ class NomenclatureAdd extends Component {
     render() {
         return (
             <>
-                <div className="card card__control">
+                <div className="nomenclature_add__button">
                     <Button
                         label="Добавить номенклатуру"
                         type="button"
+                        size="block"
                         onClick={this.handleButtonOpen}
                     />
                 </div>

@@ -12,7 +12,7 @@ const Select = (props) => {
         errorList
     } = props;
 
-    let error = errorList.find(error => error.field === name);
+    let error = (errorList || []).find(error => error.field === name);
 
     const selectClassList = ['select'];
     const labelClassList = [];

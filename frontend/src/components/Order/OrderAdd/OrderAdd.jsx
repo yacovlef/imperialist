@@ -7,6 +7,8 @@ import OrderForm from '../OrderForm';
 
 import { submitOrderFormCreate } from '../OrderForm/order-form-action';
 
+import './order-add.css';
+
 class OrderAdd extends Component {
     state = {
         modal: false
@@ -23,14 +25,15 @@ class OrderAdd extends Component {
     render() {
         return (
             <>
-                <div className="card card__control">
+                <div className="order_add__button">
                     <Button
                         label="Добавить заказ"
                         type="button"
+                        size="block"
                         onClick={this.handleButtonOpen}
                     />
                 </div>
-
+                
                 {
                     this.state.modal &&
                         <Modal title="Добавление заказа" onClose={this.handleButtonClose}>
