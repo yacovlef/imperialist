@@ -31,6 +31,28 @@
             "value": "refused"
         }
     ],
+    "projectStatusList": [
+        {
+            "label": "Разработка п. док.",
+            "value": "devDoc"
+        },
+        {
+            "label": "Изготовление",
+            "value": "manufacturing"
+        },
+        {
+            "label": "Покраска",
+            "value": "painting"
+        },
+        {
+            "label": "Готов к отгрузке",
+            "value": "ready"
+        },
+        {
+            "label": "Отгружен",
+            "value": "loaded"
+        }
+    ],
     "nomenclatureUnitList": [
         {
             "label": "лист",

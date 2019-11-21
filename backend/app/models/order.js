@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     status: DataTypes.STRING
   }, {});
-  Order.associate = function(models) {
-    // associations can be defined here
+  Order.associate = function({ Project }) {
+    Order.hasMany(Project);
   };
   return Order;
 };

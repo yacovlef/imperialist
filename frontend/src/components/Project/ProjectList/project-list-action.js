@@ -1,0 +1,40 @@
+import { fetchProjectListApi } from './project-list-api';
+
+const FETCH_PROJECT_LIST_REQUEST = 'FETCH_PROJECT_LIST_REQUEST';
+const FETCH_PROJECT_LIST_SUCCESS = 'FETCH_PROJECT_LIST_SUCCESS';
+const FETCH_PROJECT_LIST_FAILURE = 'FETCH_PROJECT_LIST_FAILURE';
+
+const projectListRequested = () => {
+    return {
+        type: FETCH_PROJECT_LIST_REQUEST
+    };
+};
+
+const projectListLoaded = (projectList) => {
+    return {
+        type: FETCH_PROJECT_LIST_SUCCESS,
+        payload: projectList
+    };
+};
+
+const projectListError = (error) => {
+    return {
+        type: FETCH_PROJECT_LIST_FAILURE,
+        payload: error
+    };
+};
+
+const fetchProjectList = (orderId) => (dispatch) => {
+    dispatch(projectListRequested());
+
+    fetchProjectListApi(orderId)
+        .then(({ data }) => dispatch(projectListLoaded(data)))
+        .catch((error) => dispatch(projectListError(error)));
+};
+
+export {
+    FETCH_PROJECT_LIST_REQUEST,
+    FETCH_PROJECT_LIST_SUCCESS,
+    FETCH_PROJECT_LIST_FAILURE,
+    fetchProjectList
+};

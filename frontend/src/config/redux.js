@@ -12,6 +12,7 @@ import orderFilter from '../components/Order/OrderFilter/order-filter-reducer';
 import nomenclatureList from '../components/Nomenclature/NomenclatureList/nomenclature-list-reducer';
 import nomenclatureForm from '../components/Nomenclature/NomenclatureForm/nomenclature-form-reducer';
 import nomenclatureDelete from '../components/Nomenclature/NomenclatureDelete/nomenclature-delete-reducer';
+import projectList from '../components/Project/ProjectList/project-list-reducer';
 
 const reducer = combineReducers({
     auth,
@@ -24,7 +25,8 @@ const reducer = combineReducers({
     orderFilter,
     nomenclatureList,
     nomenclatureForm,
-    nomenclatureDelete
+    nomenclatureDelete,
+    projectList
 });
 
 export default createStore(reducer, applyMiddleware(thunkMiddleware));

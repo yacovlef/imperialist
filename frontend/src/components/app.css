@@ -4,6 +4,10 @@ body {
     color: #151515;
 }
 
+a {
+    color: #151515;
+}
+
 .form-row:not(:last-child) {
     margin-bottom: 0.5rem;
 }

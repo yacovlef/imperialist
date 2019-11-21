@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import OrderEdit from '../OrderEdit';
@@ -22,7 +23,7 @@ const OrderListItem = ({ orderItem }) => {
         <div className="order_list_item card">
             <div>
                 <div>#: {id}</div>
-                <div>Название: {title}</div>
+                <div>Название: <Link to={`/projects/${id}`}>{title}</Link></div>
             </div>
             <div>
                 <div>Статус: {renderStatus.label}</div>
