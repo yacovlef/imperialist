@@ -5,7 +5,7 @@ import ProjectListItem from '../ProjectListItem';
 
 class ProjectList extends Component {
     componentDidMount() {
-        this.props.fetchProjectList(1);
+        this.props.fetchProjectList();
     }
 
     render() {
@@ -16,12 +16,12 @@ class ProjectList extends Component {
                 type='error'
             />;
         }
-
+        
         return projectList.map(
             (projectItem) => {
                 return <ProjectListItem
                     key={projectItem.id}
-                    orderItem={projectItem}
+                    projectItem={projectItem}
                 />
             }
         )

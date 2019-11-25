@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Select from '../../@common/Select';
 
-import { orderStatusList } from '../../../config/data.json';
+import { projectStatusList } from '../../../config/data.json';
 
-import './order-filter.css';
+import './project-filter.css';
 
-class OrderFilter extends Component {
+class ProjectFilter extends Component {
     state = {
+        OrderId: null,
         status: ''
+    }
+
+    componentDidMount() {
+        const { OrderId } = this.props.match.params
+
+        if (OrderId) {
+            this.setState({OrderId});
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState !== this.state) {
-            this.props.setOrderFilter(this.state);
+            this.props.setProjectFilter(this.state);
         }
     }
 
@@ -25,12 +35,12 @@ class OrderFilter extends Component {
 
     render() {
         return (
-            <div className="order_filter control__column">
+            <div className="project_filter control__column">
                 <Select
                     label="Статус"
                     name="status"
                     value={this.state.status}
-                    optionList={orderStatusList}
+                    optionList={projectStatusList}
                     handleChange={this.handleChange}
                 />
             </div>
@@ -39,4 +49,4 @@ class OrderFilter extends Component {
     }
 }
 
-export default OrderFilter;
+export default withRouter(ProjectFilter);

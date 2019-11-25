@@ -1,9 +1,9 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import OrderForm from './OrderForm';
+import ProjectForm from './ProjectForm';
 
-const mapStateToProps = ({ orderForm: { loading, loaded, error } }) => {
+const mapStateToProps = ({ projectForm: { loading, loaded, error } }) => {
     return {
         loading,
         loaded,
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch, { onSubmit }) => {
     }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm);

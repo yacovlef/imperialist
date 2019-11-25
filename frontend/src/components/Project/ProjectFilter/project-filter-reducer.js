@@ -1,14 +1,15 @@
 import {
-    SET_ORDER_FILTER_DATA
-} from './order-filter-action';
+    SET_PROJECT_FILTER_DATA
+} from './project-filter-action';
 
 const initialState = {
+    OrderId: null,
     status: ''
 };
 
-const orderFilterReducer = (state = initialState, action) => {
+const projectFilterReducer = (state = initialState, action) => {
     switch(action.type) {
-        case SET_ORDER_FILTER_DATA:
+        case SET_PROJECT_FILTER_DATA:
             return {
                 ...state,
                 ...action.payload
@@ -18,4 +19,4 @@ const orderFilterReducer = (state = initialState, action) => {
     }
 };
 
-export default orderFilterReducer;
+export default projectFilterReducer;

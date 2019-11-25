@@ -1,31 +1,31 @@
 import {
-    SUBMIT_ORDER_DELETE_REQUEST,
-    SUBMIT_ORDER_DELETE_SUCCESS,
-    SUBMIT_ORDER_DELETE_FAILURE,
-} from './order-delete-action';
+    SUBMIT_PROJECT_FORM_REQUEST,
+    SUBMIT_PROJECT_FORM_SUCCESS,
+    SUBMIT_PROJECT_FORM_FAILURE,
+} from './project-form-action';
 
 const initialState = {
     loading: false,
     loaded: false,
-    error: null
+    error: null,
 };
 
-const orderListReducer = (state = initialState, action) => {
+const projectFormReducer = (state = initialState, action) => {
     switch(action.type) {
-        case SUBMIT_ORDER_DELETE_REQUEST:
+        case SUBMIT_PROJECT_FORM_REQUEST:
             return {
                 ...state,
                 loading: true,
                 loaded: false,
                 error: null
             };
-        case SUBMIT_ORDER_DELETE_SUCCESS:
+        case SUBMIT_PROJECT_FORM_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 loaded: true
             };
-        case SUBMIT_ORDER_DELETE_FAILURE:
+        case SUBMIT_PROJECT_FORM_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -36,4 +36,4 @@ const orderListReducer = (state = initialState, action) => {
     }
 };
 
-export default orderListReducer;
+export default projectFormReducer;

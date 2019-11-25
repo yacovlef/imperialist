@@ -13,6 +13,9 @@ import nomenclatureList from '../components/Nomenclature/NomenclatureList/nomenc
 import nomenclatureForm from '../components/Nomenclature/NomenclatureForm/nomenclature-form-reducer';
 import nomenclatureDelete from '../components/Nomenclature/NomenclatureDelete/nomenclature-delete-reducer';
 import projectList from '../components/Project/ProjectList/project-list-reducer';
+import projectForm from '../components/Project/ProjectForm/project-form-reducer';
+import projectDelete from '../components/Project/ProjectDelete/project-delete-reducer';
+import projectFilter from '../components/Project/ProjectFilter/project-filter-reducer';
 
 const reducer = combineReducers({
     auth,
@@ -26,7 +29,10 @@ const reducer = combineReducers({
     nomenclatureList,
     nomenclatureForm,
     nomenclatureDelete,
-    projectList
+    projectList,
+    projectForm,
+    projectDelete,
+    projectFilter
 });
 
 export default createStore(reducer, applyMiddleware(thunkMiddleware));

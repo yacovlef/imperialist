@@ -31,7 +31,7 @@ module.exports = (app) => {
     app.delete('/api/nomenclature/:id', authMiddleware, nomenclatureController.remove);
 
     // projectList
-    app.get('/api/projects/:orderId', projectController.getList);
+    app.get('/api/projects', authMiddleware, projectController.getList);
     app.post('/api/projects', authMiddleware, projectController.create);
     app.put('/api/projects/:id', authMiddleware, projectController.update);
     app.delete('/api/projects/:id', authMiddleware, projectController.remove);

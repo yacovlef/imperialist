@@ -1,9 +1,9 @@
-.order_add__button {
+.project_add__button {
     justify-self: start;
 }
 
 @media (max-width: 768px) {
-    .order_add__button {
+    .project_add__button {
         justify-self: stretch;
     }
 }

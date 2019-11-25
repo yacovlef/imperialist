@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 import Modal from '../../@common/Modal';
 import Button from '../../@common/Button';
 
-import OrderForm from '../OrderForm';
+import ProjectForm from '../ProjectForm';
 
-import { submitOrderFormUpdate } from '../OrderForm/order-form-action';
+import { submitProjectFormUpdate } from '../ProjectForm/project-form-action';
 
-class OrderEdit extends Component {
+class ProjectEdit extends Component {
     state = {
         modal: false
     }
@@ -32,11 +32,11 @@ class OrderEdit extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Редактирование заказа" onClose={this.handleButtonClose}>
-                            <OrderForm
-                                onSubmit={submitOrderFormUpdate}
+                        <Modal title="Редактирование проекта" onClose={this.handleButtonClose}>
+                            <ProjectForm
+                                onSubmit={submitProjectFormUpdate}
                                 onClose={this.handleButtonClose}
-                                order={this.props.order}
+                                project={this.props.project}
                             />
                         </Modal>
                 }
@@ -45,4 +45,4 @@ class OrderEdit extends Component {
     }
 }
 
-export default OrderEdit;
+export default ProjectEdit;

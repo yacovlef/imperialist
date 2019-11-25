@@ -1,7 +1,7 @@
 import axios from '../../../config/axios';
 
-const fetchProjectListApi = async (orderId) => {
-    return await axios.get(`/projects/${orderId}`,);
+const fetchProjectListApi = async (projectFilter) => {
+    return await axios.get('/projects', {params: projectFilter});
 };
 
 export {

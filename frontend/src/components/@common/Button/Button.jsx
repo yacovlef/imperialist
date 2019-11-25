@@ -9,7 +9,8 @@ const Button = (props) => {
         size,
         onClick,
         loading,
-        error
+        error,
+        disabled
     } = props;
 
     const buttonClassList = ['button']
@@ -28,7 +29,7 @@ const Button = (props) => {
     
     const renderLabel = (loading) ? 'Загрузка...' : (error && error.request.status !== 401) ? 'Ошибка!' : label;
 
-    return <button onClick={onClick} type={type} className={buttonClassList.join(' ')}>{renderLabel}</button>
+    return <button disabled={disabled} onClick={onClick} type={type} className={buttonClassList.join(' ')}>{renderLabel}</button>
 };
 
 export default Button;

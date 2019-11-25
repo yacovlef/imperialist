@@ -1,3 +1,5 @@
+import store from '../../../config/redux';
+
 import { fetchProjectListApi } from './project-list-api';
 
 const FETCH_PROJECT_LIST_REQUEST = 'FETCH_PROJECT_LIST_REQUEST';
@@ -24,10 +26,12 @@ const projectListError = (error) => {
     };
 };
 
-const fetchProjectList = (orderId) => (dispatch) => {
+const fetchProjectList = () => (dispatch) => {
     dispatch(projectListRequested());
 
-    fetchProjectListApi(orderId)
+    const { projectFilter } = store.getState();
+
+    fetchProjectListApi(projectFilter)
         .then(({ data }) => dispatch(projectListLoaded(data)))
         .catch((error) => dispatch(projectListError(error)));
 };

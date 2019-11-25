@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Modal from '../../@common/Modal';
 import Button from '../../@common/Button';
 
-import OrderForm from '../OrderForm';
+import ProjectForm from '../ProjectForm';
 
-import { submitOrderFormCreate } from '../OrderForm/order-form-action';
+import { submitProjectFormCreate } from '../ProjectForm/project-form-action';
 
-import './order-add.css';
+import './project-add.css';
 
-class OrderAdd extends Component {
+class ProjectAdd extends Component {
     state = {
         modal: false
     }
@@ -23,23 +24,27 @@ class OrderAdd extends Component {
     }
 
     render() {
+        const { OrderId } = this.props.match.params;
+
         return (
             <>
-                <div className="order_add__button">
+                <div className="project_add__button">
                     <Button
-                        label="Добавить заказ"
+                        label="Добавить проект"
                         type="button"
                         size="block"
                         onClick={this.handleButtonOpen}
+                        disabled={!OrderId}
                     />
                 </div>
                 
                 {
                     this.state.modal &&
-                        <Modal title="Добавление заказа" onClose={this.handleButtonClose}>
-                            <OrderForm
-                                onSubmit={submitOrderFormCreate}
+                        <Modal title="Добавление проекта" onClose={this.handleButtonClose}>
+                            <ProjectForm
+                                onSubmit={submitProjectFormCreate}
                                 onClose={this.handleButtonClose}
+                                OrderId={OrderId}
                             />
                         </Modal>
                 }
@@ -48,4 +53,4 @@ class OrderAdd extends Component {
     }
 }
 
-export default OrderAdd;
+export default withRouter(ProjectAdd);

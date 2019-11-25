@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 import Modal from '../../@common/Modal';
 import Button from '../../@common/Button';
 
-import './order-delete.css';
+import './project-delete.css';
 
-class OrderDelete extends Component {
+class ProjectDelete extends Component {
     state = {
         modal: false
     }
@@ -29,11 +29,11 @@ class OrderDelete extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        this.props.onSubmit(this.props.order.id);
+        this.props.onSubmit(this.props.project.id);
     };
 
     render() {
-        const { order: { id, title }, loading, error } = this.props;
+        const { project: { id, name }, loading, error } = this.props;
 
         return (
             <>
@@ -46,9 +46,9 @@ class OrderDelete extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Удаление заказа" onClose={this.handleButtonClose}>
-                            <div className="order_delete__label form-row">
-                                <b>{`${title} (#${id})`}</b>
+                        <Modal title="Удаление проекта" onClose={this.handleButtonClose}>
+                            <div className="project_delete__label form-row">
+                                <b>{`${name} (#${id})`}</b>
                             </div>
                             <div className="form-row">
                                 <form onSubmit={this.handleSubmit}>
@@ -68,4 +68,4 @@ class OrderDelete extends Component {
     }
 }
 
-export default OrderDelete;
+export default ProjectDelete;

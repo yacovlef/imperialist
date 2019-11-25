@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 
-// import ProjectEdit from '../ProjectEdit';
-// import ProjectDelete from '../ProjectDelete';
+import ProjectEdit from '../ProjectEdit';
+import ProjectDelete from '../ProjectDelete';
 
 import { projectStatusList } from '../../../config/data.json'
 
@@ -15,7 +15,7 @@ const ProjectListItem = ({ projectItem }) => {
         status,
         createdAt
     } = projectItem;
-
+    
     const renderStatus = projectStatusList.find(({ value }) => value === status);
 
     return (
@@ -30,14 +30,14 @@ const ProjectListItem = ({ projectItem }) => {
             </div>
             <div>
                 <div>
-                    {/* <ProjectEdit
+                    <ProjectEdit
                         project={projectItem}
-                    /> */}
+                    />
                 </div>
                 <div>
-                    {/* <ProjectDelete
+                    <ProjectDelete
                         project={projectItem}
-                    /> */}
+                    />
                 </div>
             </div>
         </div>

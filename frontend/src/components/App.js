@@ -37,7 +37,7 @@ function App() {
                         exact
                     />
                     <PrivateRoute
-                        path="/projects/:orderId"
+                        path="/projects/:OrderId?"
                         component={Project}
                         exact
                     />

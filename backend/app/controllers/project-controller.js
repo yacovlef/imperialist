@@ -1,12 +1,21 @@
-const { Order, Project } = require('../models');
+const { Project } = require('../models');
 
 const getList = (req, res) => {
-    const { orderId } = req.params;
+    const find = {};
 
-    Order.findByPk(orderId, {
-        include: [Project]
+    if (req.query.OrderId) {
+        find.OrderId = req.query.OrderId
+    }
+
+    if (req.query.status) {
+        find.status = req.query.status
+    }
+
+    Project.findAll({
+        where: find,
+        order: ['id']
     })
-        .then(order => res.json(order.Projects))
+        .then(projectList => res.json(projectList))
         .catch(error => res.status(500).json(error));
 };
 

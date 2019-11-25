@@ -1,20 +1,30 @@
 import React, {Component} from 'react';
 
 import Input from '../../@common/Input';
+import Select from '../../@common/Select';
 import Button from '../../@common/Button';
 
-class OrderForm extends Component {
+import { projectStatusList } from '../../../config/data.json';
+
+class ProjectForm extends Component {
     state = {
         data: {
-            title: '',
-            status: 'inWork'
+            name: '',
+            status: 'devDoc',
+            OrderId: null
         },
         errorList: []
     };
 
     componentDidMount() {
-        if (this.props.order) {
-            this.setState({ data: this.props.order });
+        const {OrderId, project} = this.props;
+
+        if (OrderId) {
+            this.setState(({ data }) => ({data: {...data, OrderId}}));
+        }
+
+        if (project) {
+            this.setState({ data: project });
         }
     }
 
@@ -34,16 +44,16 @@ class OrderForm extends Component {
 
     handleValidateSubmit = () => {
         const {
-            title
+            name
         } = this.state.data;
 
         const messageRequired = 'Обязательно';
 
         let errorList = [];
 
-        if (!title) {
+        if (!name) {
             errorList.push({
-                field: 'title',
+                field: 'name',
                 message: messageRequired
             });
         }
@@ -70,10 +80,21 @@ class OrderForm extends Component {
             <form onSubmit={this.handleSubmit}>
                 <div className="form-row">
                     <Input
-                        label="Название"
-                        name="title"
+                        label="Наименование"
+                        name="name"
                         type="text"
-                        value={this.state.data.title}
+                        value={this.state.data.name}
+                        handleChange={this.handleChange}
+                        errorList={this.state.errorList}
+                    />
+                </div>
+
+                <div className="form-row">
+                    <Select
+                        label="Статус"
+                        name="status"
+                        value={this.state.data.status}
+                        optionList={projectStatusList}
                         handleChange={this.handleChange}
                         errorList={this.state.errorList}
                     />
@@ -93,4 +114,4 @@ class OrderForm extends Component {
     }
 }
 
-export default OrderForm;
+export default ProjectForm;
