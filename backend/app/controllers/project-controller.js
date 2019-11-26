@@ -1,4 +1,4 @@
-const { Project } = require('../models');
+const { Order, Project } = require('../models');
 
 const getList = (req, res) => {
     const find = {};
@@ -20,7 +20,9 @@ const getList = (req, res) => {
 };
 
 const create = (req, res) => {
-    Project.create(req.body)
+    Project.create(req.body, {
+        include: [ Order ]
+    })
         .then(project => res.json(project))
         .catch(error => res.status(500).json(error));
 };
