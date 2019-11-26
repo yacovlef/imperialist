@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     tableName: 'Nomenclature'
   });
-  Nomenclature.associate = function(models) {
-    // associations can be defined here
+  Nomenclature.associate = function({ Material }) {
+    Nomenclature.hasMany(Material);
   };
   return Nomenclature;
 };

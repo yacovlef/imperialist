@@ -5,8 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     status: DataTypes.STRING
   }, {});
-  Project.associate = function({ Order }) {
+  Project.associate = function({ Order, Material }) {
     Project.belongsTo(Order);
+
+    Project.hasMany(Material);
   };
   return Project;
 };

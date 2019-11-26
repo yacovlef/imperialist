@@ -1,4 +1,4 @@
-const { Order, Project } = require('../models');
+const { Order, Project, Material, Nomenclature } = require('../models');
 
 const getList = (req, res) => {
     const find = {};
@@ -13,7 +13,11 @@ const getList = (req, res) => {
 
     Project.findAll({
         where: find,
-        order: ['id']
+        order: ['id'],
+        include: [{
+            model: Material,
+            include: [Nomenclature]
+        }]
     })
         .then(projectList => res.json(projectList))
         .catch(error => res.status(500).json(error));
