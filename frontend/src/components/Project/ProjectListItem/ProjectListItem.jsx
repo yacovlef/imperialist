@@ -10,7 +10,6 @@ import './project_list_item.css';
 
 const ProjectListItem = ({ projectItem }) => {
     const {
-        id,
         name,
         status,
         createdAt
@@ -19,22 +18,20 @@ const ProjectListItem = ({ projectItem }) => {
     const renderStatus = projectStatusList.find(({ value }) => value === status);
 
     return (
-        <div className="project_list_item card">
-            <div>
-                <div>#: {id}</div>
+        <div className="card">
+            <div className="project_list_item__info">
                 <div>Наименование: {name}</div>
-            </div>
-            <div>
                 <div>Статус: {renderStatus.label}</div>
                 <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
             </div>
-            <div>
-                <div>
+
+            <div className="project_list_item__action">
+                <div className="control__column">
                     <ProjectEdit
                         project={projectItem}
                     />
                 </div>
-                <div>
+                <div className="control__column">
                     <ProjectDelete
                         project={projectItem}
                     />

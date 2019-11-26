@@ -1,10 +1,20 @@
-.project_list_item {
+.project_list_item__info {
     display: grid;
-    grid-template-columns: 1fr 1fr auto;
+    grid-template-columns: repeat(2, 1fr) auto;
+}
+
+.project_list_item__action {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
 }
 
 @media (max-width: 768px) {
-    .project_list_item {
+    .project_list_item__info {
+        grid-template-columns: auto;
+    }
+
+    .project_list_item__action {
         grid-template-columns: auto;
     }
 }
