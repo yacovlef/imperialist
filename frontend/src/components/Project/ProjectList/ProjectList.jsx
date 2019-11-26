@@ -4,13 +4,9 @@ import Info from '../../@common/Info';
 import ProjectListItem from '../ProjectListItem';
 
 class ProjectList extends Component {
-    componentDidMount() {
-        this.props.fetchProjectList();
-    }
-
     render() {
         const { projectList, error } = this.props;
-
+        
         if (error) {
             return <Info
                 type='error'

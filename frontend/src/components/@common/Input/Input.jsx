@@ -13,7 +13,7 @@ const Input = (props) => {
     } = props;
 
 
-    let error = errorList.find(error => error.field === name);
+    let error = (errorList || []).find(error => error.field === name);
 
     const inputClassList = ['input'];
     const labelClassList = [];

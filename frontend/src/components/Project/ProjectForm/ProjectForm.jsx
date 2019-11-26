@@ -10,8 +10,8 @@ class ProjectForm extends Component {
     state = {
         data: {
             name: '',
-            status: 'devDoc',
-            OrderId: null
+            status: '',
+            OrderId: ''
         },
         errorList: []
     };
@@ -44,7 +44,8 @@ class ProjectForm extends Component {
 
     handleValidateSubmit = () => {
         const {
-            name
+            name,
+            status
         } = this.state.data;
 
         const messageRequired = 'Обязательно';
@@ -54,6 +55,13 @@ class ProjectForm extends Component {
         if (!name) {
             errorList.push({
                 field: 'name',
+                message: messageRequired
+            });
+        }
+
+        if (!status) {
+            errorList.push({
+                field: 'status',
                 message: messageRequired
             });
         }

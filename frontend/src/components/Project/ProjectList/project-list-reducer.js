@@ -1,7 +1,8 @@
 import {
     FETCH_PROJECT_LIST_REQUEST,
     FETCH_PROJECT_LIST_SUCCESS,
-    FETCH_PROJECT_LIST_FAILURE
+    FETCH_PROJECT_LIST_FAILURE,
+    FETCH_PROJECT_LIST_RESET
 } from './project-list-action';
 
 const initialState = {
@@ -29,6 +30,8 @@ const projectListReducer = (state = initialState, action) => {
                 loading: false,
                 error: action.payload
             };
+        case FETCH_PROJECT_LIST_RESET:
+            return initialState;
         default:
             return state;
     }

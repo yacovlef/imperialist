@@ -5,6 +5,7 @@ import { fetchProjectListApi } from './project-list-api';
 const FETCH_PROJECT_LIST_REQUEST = 'FETCH_PROJECT_LIST_REQUEST';
 const FETCH_PROJECT_LIST_SUCCESS = 'FETCH_PROJECT_LIST_SUCCESS';
 const FETCH_PROJECT_LIST_FAILURE = 'FETCH_PROJECT_LIST_FAILURE';
+const FETCH_PROJECT_LIST_RESET = 'FETCH_PROJECT_LIST_RESET';
 
 const projectListRequested = () => {
     return {
@@ -26,6 +27,12 @@ const projectListError = (error) => {
     };
 };
 
+const projectListReset = () => {
+    return {
+        type: FETCH_PROJECT_LIST_RESET
+    };
+};
+
 const fetchProjectList = () => (dispatch) => {
     dispatch(projectListRequested());
 
@@ -40,5 +47,7 @@ export {
     FETCH_PROJECT_LIST_REQUEST,
     FETCH_PROJECT_LIST_SUCCESS,
     FETCH_PROJECT_LIST_FAILURE,
+    FETCH_PROJECT_LIST_RESET,
+    projectListReset,
     fetchProjectList
 };

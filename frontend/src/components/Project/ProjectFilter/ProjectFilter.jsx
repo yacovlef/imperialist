@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
+import Input from '../../@common/Input';
 import Select from '../../@common/Select';
 
 import { projectStatusList } from '../../../config/data.json';
@@ -9,7 +10,7 @@ import './project-filter.css';
 
 class ProjectFilter extends Component {
     state = {
-        OrderId: null,
+        OrderId: '',
         status: ''
     }
 
@@ -18,6 +19,8 @@ class ProjectFilter extends Component {
 
         if (OrderId) {
             this.setState({OrderId});
+        } else {
+            this.props.fetchProjectList();
         }
     }
 
@@ -25,6 +28,11 @@ class ProjectFilter extends Component {
         if (prevState !== this.state) {
             this.props.setProjectFilter(this.state);
         }
+    }
+
+    componentWillUnmount() {
+        this.props.projectListReset();
+        this.props.projectFilterReset();
     }
 
     handleChange = (event) => {
@@ -35,14 +43,26 @@ class ProjectFilter extends Component {
 
     render() {
         return (
-            <div className="project_filter control__column">
-                <Select
-                    label="Статус"
-                    name="status"
-                    value={this.state.status}
-                    optionList={projectStatusList}
-                    handleChange={this.handleChange}
-                />
+            <div className="project_filter">
+                <div className="control__column">
+                    <Input
+                        label="# Заказа"
+                        name="OrderId"
+                        type="text"
+                        value={this.state.OrderId}
+                        handleChange={this.handleChange}
+                    />
+                </div>
+
+                <div className="control__column">
+                    <Select
+                        label="Статус"
+                        name="status"
+                        value={this.state.status}
+                        optionList={projectStatusList}
+                        handleChange={this.handleChange}
+                    />
+                </div>
             </div>
         );
 

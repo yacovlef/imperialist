@@ -1,5 +1,6 @@
 import {
-    SET_PROJECT_FILTER_DATA
+    SET_PROJECT_FILTER_DATA,
+    SET_PROJECT_FILTER_RESET
 } from './project-filter-action';
 
 const initialState = {
@@ -14,6 +15,8 @@ const projectFilterReducer = (state = initialState, action) => {
                 ...state,
                 ...action.payload
             };
+        case SET_PROJECT_FILTER_RESET:
+            return initialState;
         default:
             return state;
     }

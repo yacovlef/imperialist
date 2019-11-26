@@ -1,3 +1,3 @@
-import ProjectAdd from './ProjectAdd';
+import ProjectAdd from './ProjectAddContainer';
 
 export default ProjectAdd;

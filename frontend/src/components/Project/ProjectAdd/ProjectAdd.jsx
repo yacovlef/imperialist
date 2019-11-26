@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
 
 import Modal from '../../@common/Modal';
 import Button from '../../@common/Button';
@@ -24,7 +23,7 @@ class ProjectAdd extends Component {
     }
 
     render() {
-        const { OrderId } = this.props.match.params;
+        const { OrderId } = this.props;
 
         return (
             <>
@@ -53,4 +52,4 @@ class ProjectAdd extends Component {
     }
 }
 
-export default withRouter(ProjectAdd);
+export default ProjectAdd;
