@@ -17,6 +17,12 @@ class UserList extends Component {
             />;
         }
 
+        if (!orderList.length) {
+            return <Info
+                message='Заказов не найдено!'
+            />;
+        }
+
         return orderList.map(
             (orderItem) => {
                 return <OrderListItem

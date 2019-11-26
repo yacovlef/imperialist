@@ -12,6 +12,12 @@ class ProjectList extends Component {
                 type='error'
             />;
         }
+
+        if (!projectList.length) {
+            return <Info
+                message='Проектов не найдено!'
+            />;
+        }
         
         return projectList.map(
             (projectItem) => {
