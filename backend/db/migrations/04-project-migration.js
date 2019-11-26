@@ -21,6 +21,7 @@ module.exports = {
           model: 'Orders',
           key: 'id'
         },
+        onDelete: 'cascade',
         allowNull: false
       },
       createdAt: {
