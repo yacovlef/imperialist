@@ -6,7 +6,7 @@ import ProjectListItem from '../ProjectListItem';
 class ProjectList extends Component {
     render() {
         const { projectList, error } = this.props;
-        console.log(projectList);
+        
         if (error) {
             return <Info
                 type='error'
