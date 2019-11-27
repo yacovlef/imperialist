@@ -13,6 +13,7 @@ import './project_list_item.css';
 
 const ProjectListItem = ({ projectItem }) => {
     const {
+        id,
         name,
         status,
         createdAt,
@@ -29,7 +30,7 @@ const ProjectListItem = ({ projectItem }) => {
                 <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
             </div>
 
-            <ProjectMaterialAdd />
+            <ProjectMaterialAdd ProjectId={id} />
 
             {(!!Materials.length) &&
                 <div>

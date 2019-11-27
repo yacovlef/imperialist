@@ -29,7 +29,7 @@ class ProjectMaterialDelete extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        this.props.onSubmit(this.props.project.id);
+        this.props.onSubmit(this.props.material.id);
     };
 
     render() {

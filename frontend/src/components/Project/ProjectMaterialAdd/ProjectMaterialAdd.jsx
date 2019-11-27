@@ -7,18 +7,41 @@ import Button from '../../@common/Button';
 import './project-material-add.css';
 
 class ProjectMaterialAdd extends Component {
+    initialData = {
+        NomenclatureId: '',
+        quantity: '',
+        price: ''
+    };
+
     state = {
         data: {
             ProjectId: '',
-            NomenclatureId: '',
-            quantity: '',
-            price: ''
+            ...this.initialData
         },
         errorList: []
     };
 
+    componentDidMount() {
+        const {fetchNomenclatureList, ProjectId} = this.props;
+        
+        fetchNomenclatureList();
+
+        if (ProjectId) {
+            this.setState(({ data }) => ({data: {...data, ProjectId}}));
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.data.NomenclatureId !== this.state.data.NomenclatureId && this.state.data.NomenclatureId) {
+            const { price } = this.props.nomenclatureList.find((nomenclature) => nomenclature.id === +this.state.data.NomenclatureId);
+
+            this.setState(({ data }) => ({data: {...data, price}}));
+        }
+
+    }
+
     handleChange = (event) => {
-        const { name, value } = event.target
+        const { name, value } = event.target;
 
         this.setState(({ data }) => ({data: {...data, [name]: value}}));
     };
@@ -58,13 +81,15 @@ class ProjectMaterialAdd extends Component {
         event.preventDefault();
 
         if (this.handleValidateSubmit()) {
-            this.props.onSubmit(this.state.data);
+            this.props.submitProjectMaterialAddCreate(this.state.data);
+
+            this.setState(({ data }) => ({data: {...data, ...this.initialData}}));
         }
     };
 
     render() {
-        const { loading, error } = this.props;
-        
+        const { nomenclatureList, loading, error } = this.props;
+
         return (
             <form onSubmit={this.handleSubmit} className="project-material-add">
                 <div className="project-material-add__nomenclature">
@@ -72,22 +97,7 @@ class ProjectMaterialAdd extends Component {
                         name="NomenclatureId"
                         theme="light"
                         value={this.state.data.NomenclatureId}
-                        optionList={
-                            [
-                                {
-                                    label: 'МДФ',
-                                    value: 1
-                                },
-                                {
-                                    label: 'Направляющие',
-                                    value: 2
-                                },
-                                {
-                                    label: 'Шпонировка',
-                                    value: 3
-                                }
-                              ]
-                        }
+                        optionList={nomenclatureList.map(({id, name}) => ({label: name, value: id}))}
                         handleChange={this.handleChange}
                         errorList={this.state.errorList}
                     />
