@@ -78,7 +78,7 @@ class Auth extends PureComponent {
                 }
 
                 <form className="auth__form" onSubmit={this.handleSubmit}>
-                    <div className="form-row">
+                    <div>
                         <Input
                             label="Адрес эл. почты"
                             name="email"
@@ -89,7 +89,7 @@ class Auth extends PureComponent {
                         />
                     </div>
                     
-                    <div className="form-row">
+                    <div>
                         <Input
                             label="Пароль"
                             name="password"
@@ -100,7 +100,7 @@ class Auth extends PureComponent {
                         />
                     </div>
 
-                    <div className="form-row">
+                    <div>
                         <Button
                             label="Вход"
                             type="submit"

@@ -4,5 +4,8 @@
 }
 
 .auth__form {
+    display: grid;
+    grid-gap: 0.5rem;
+    
     width: 20rem;
 }
