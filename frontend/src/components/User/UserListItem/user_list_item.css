@@ -1,6 +1,7 @@
 .user_list_item {
     display: grid;
     grid-template-columns: 1fr 1fr auto;
+    grid-gap: 0.5rem;
 }
 
 @media (max-width: 768px) {

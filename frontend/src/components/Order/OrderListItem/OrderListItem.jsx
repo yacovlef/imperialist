@@ -21,26 +21,13 @@ const OrderListItem = ({ orderItem }) => {
 
     return (
         <div className="order_list_item card">
-            <div>
-                <div>#: {id}</div>
-                <div>Название: <Link to={`/projects/${id}`}>{title}</Link></div>
-            </div>
-            <div>
-                <div>Статус: {renderStatus.label}</div>
-                <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
-            </div>
-            <div>
-                <div>
-                    <OrderEdit
-                        order={orderItem}
-                    />
-                </div>
-                <div>
-                    <OrderDelete
-                        order={orderItem}
-                    />
-                </div>
-            </div>
+            <div>#: {id}</div>
+            <div>Статус: {renderStatus.label}</div>
+            <div><OrderEdit order={orderItem} /></div>
+            
+            <div>Название: <Link to={`/projects/${id}`}>{title}</Link></div>
+            <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
+            <div><OrderDelete order={orderItem}/></div>
         </div>
     );
 }

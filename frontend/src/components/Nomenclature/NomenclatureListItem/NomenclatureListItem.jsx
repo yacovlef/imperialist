@@ -19,26 +19,12 @@ const NomenclatureListItem = ({ nomenclatureItem }) => {
 
     return (
         <div className="nomenclature_list_item card">
-            <div>
-                <div>#: {id}</div>
-                <div>Наименование: {name}</div>
-            </div>
-            <div>
-                <div>Ед.изм.: {renderUnit.label}</div>
-                <div>Цена: {price}</div>
-            </div>
-            <div>
-                <div>
-                    <NomenclatureEdit
-                        nomenclature={nomenclatureItem}
-                    />
-                </div>
-                <div>
-                    <NomenclatureDelete
-                        nomenclature={nomenclatureItem}
-                    />
-                </div>
-            </div>
+            <div>#: {id}</div>
+            <div>Ед.изм.: {renderUnit.label}</div>
+            <div><NomenclatureEdit nomenclature={nomenclatureItem} /></div>
+            <div>Наименование: {name}</div>
+            <div>Цена: {price}</div>
+            <div><NomenclatureDelete nomenclature={nomenclatureItem} /></div>
         </div>
     );
 }

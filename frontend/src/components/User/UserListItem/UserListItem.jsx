@@ -19,26 +19,12 @@ const UserListItem = ({ userItem }) => {
 
     return (
         <div className="user_list_item card">
-            <div>
-                <div>Имя: {firstName}</div>
-                <div>Фамилия: {lastName}</div>
-            </div>
-            <div>
-                <div>Адрес эл. почты: {email}</div>
-                <div>Роль: {renderRole.label}</div>
-            </div>
-            <div>
-                <div>
-                    <UserEdit
-                        user={userItem}
-                    />
-                </div>
-                <div>
-                    <UserDelete
-                        user={userItem}
-                    />
-                </div>
-            </div>
+            <div>Имя: {firstName}</div>
+            <div>Адрес эл. почты: {email}</div>
+            <div><UserEdit user={userItem} /></div>
+            <div>Фамилия: {lastName}</div>
+            <div>Роль: {renderRole.label}</div>
+            <div><UserDelete user={userItem} /></div>
         </div>
     );
 }
