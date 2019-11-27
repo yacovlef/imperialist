@@ -4,6 +4,7 @@ import moment from 'moment';
 import ProjectEdit from '../ProjectEdit';
 import ProjectDelete from '../ProjectDelete';
 
+import ProjectMaterialAdd from '../ProjectMaterialAdd';
 import ProjectMaterialItem from '../ProjectMaterialItem'
 
 import { projectStatusList } from '../../../config/data.json'
@@ -27,6 +28,8 @@ const ProjectListItem = ({ projectItem }) => {
                 <div>Статус: {renderStatus.label}</div>
                 <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
             </div>
+
+            <ProjectMaterialAdd />
 
             {(!!Materials.length) &&
                 <div>

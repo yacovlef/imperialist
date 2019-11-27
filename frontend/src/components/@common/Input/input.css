@@ -1,11 +1,17 @@
 .input {
     border: 1px solid #555555;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     box-sizing: border-box;
     background-color: #ffffff;
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
     font-size: 1rem;
     width: 100%;
+}
+
+.input__light {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #aaaaaa;
 }
 
 .input__error {

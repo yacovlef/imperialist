@@ -41,6 +41,7 @@ class ProjectMaterialDelete extends Component {
                     label="Удалить"
                     type="button"
                     size="small"
+                    theme="light"
                     onClick={this.handleButtonOpen}
                 />
                 

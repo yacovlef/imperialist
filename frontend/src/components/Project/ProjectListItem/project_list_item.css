@@ -6,7 +6,6 @@
 .project_list_item__material_header, .project_list_item__material_item {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    justify-items: center;
 }
 
 .project_list_item__action {
@@ -34,7 +33,6 @@
 
     .project_list_item__material_item {
         grid-template-columns: auto;
-        justify-items: start;
     }
 
     .project_list_item__action {

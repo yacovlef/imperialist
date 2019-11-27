@@ -7,6 +7,7 @@ const Button = (props) => {
         label,
         type,
         size,
+        theme,
         onClick,
         loading,
         error,
@@ -23,6 +24,14 @@ const Button = (props) => {
         case 'small':
             buttonClassList.push('button__small');
             
+            break;
+        default:
+    }
+
+    switch(theme) {
+        case 'light':
+            buttonClassList.push('button__light');
+
             break;
         default:
     }

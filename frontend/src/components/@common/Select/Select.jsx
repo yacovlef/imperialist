@@ -6,6 +6,7 @@ const Select = (props) => {
     const {
         label,
         name,
+        theme,
         value,
         optionList,
         handleChange,
@@ -17,6 +18,14 @@ const Select = (props) => {
     const selectClassList = ['select'];
     const labelClassList = [];
 
+    switch(theme) {
+        case 'light':
+            selectClassList.push('select__light');
+
+            break;
+        default:
+    }
+
     if (error) {
         selectClassList.push('select__error');
         labelClassList.push('select__label_error');
@@ -24,7 +33,10 @@ const Select = (props) => {
 
     return (
         <>
-            <label className={labelClassList.join(' ')} htmlFor={name}>{label}</label>
+            {label &&
+                <>
+                    <label className={labelClassList.join(' ')} htmlFor={name}>{label}</label><br/>
+                </>}
 
             <select
                 id={name}
@@ -40,8 +52,7 @@ const Select = (props) => {
             {error &&
                 <div className="select__error_message">
                     {error.message}
-                </div>
-            }
+                </div>}
         </>
     );
 };

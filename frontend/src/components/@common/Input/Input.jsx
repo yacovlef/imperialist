@@ -5,8 +5,10 @@ import './input.css';
 const Input = (props) => {
     const {
         label,
+        placeholder,
         name,
         type,
+        theme,
         value,
         handleChange,
         errorList
@@ -18,6 +20,14 @@ const Input = (props) => {
     const inputClassList = ['input'];
     const labelClassList = [];
 
+    switch(theme) {
+        case 'light':
+            inputClassList.push('input__light');
+
+            break;
+        default:
+    }
+
     if (error) {
         inputClassList.push('input__error');
         labelClassList.push('input__label_error');
@@ -25,12 +35,17 @@ const Input = (props) => {
 
     return (
         <>
-            <label className={labelClassList.join(' ')} htmlFor={name}>{label}</label>
-            
+            {label &&
+                <>
+                    <label className={labelClassList.join(' ')} htmlFor={name}>{label}</label><br/>
+                </>
+            }
+
             <input
                 id={name}
                 name={name}
                 type={type}
+                placeholder={placeholder}
                 value={value}
                 onChange={handleChange}
                 className={inputClassList.join(' ')}
