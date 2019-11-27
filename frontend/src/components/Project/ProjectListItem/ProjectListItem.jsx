@@ -24,44 +24,28 @@ const ProjectListItem = ({ projectItem }) => {
 
     return (
         <div className="project_list_item card">
-            <div className="project_list_item__info">
-                <div>Наименование: {name}</div>
-                <div>Статус: {renderStatus.label}</div>
-                <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
-            </div>
+            <div className="project_list_item__name">Наименование: {name}</div>
+            <div className="project_list_item__status">Статус: {renderStatus.label}</div>
+            <div className="project_list_item__created">Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
 
             <ProjectMaterialAdd ProjectId={id} />
 
             {(!!Materials.length) &&
-                <div>
-                    <div className="project_list_item__material_header">
-                        <div>#</div>
-                        <div>Наименование</div>
-                        <div>Кол-во</div>
-                        <div>Ед. изм.</div>
-                        <div>Цена за ед.</div>
-                        <div>Цена итог.</div>
-                        <div></div>
-                    </div>
+                <>
+                    <div className="show">#</div>
+                    <div className="show">Наименование</div>
+                    <div className="show">Кол-во</div>
+                    <div className="show">Ед. изм.</div>
+                    <div className="show">Цена за ед.</div>
+                    <div className="show">Цена итог.</div>
+                    <div className="show"></div>
 
-                    <div className="project_list_item__material_item">
-                        { Materials.map((material, index) => <ProjectMaterialItem material={material} index={index} key={index} />) }
-                    </div>
-                </div>
+                    { Materials.map((material, index) => <ProjectMaterialItem material={material} index={index} key={index} />) }
+                </>
             }
 
-            <div className="project_list_item__action">
-                <div>
-                    <ProjectEdit
-                        project={projectItem}
-                    />
-                </div>
-                <div>
-                    <ProjectDelete
-                        project={projectItem}
-                    />
-                </div>
-            </div>
+            <div><ProjectEdit project={projectItem} /></div>
+            <div><ProjectDelete project={projectItem} /></div>
         </div>
     );
 }

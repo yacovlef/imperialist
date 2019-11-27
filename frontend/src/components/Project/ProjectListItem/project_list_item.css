@@ -1,49 +1,27 @@
-.project_list_item__info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) auto;
-}
-
-.project_list_item__material_header, .project_list_item__material_item {
+.project_list_item {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.5rem;
 }
 
-.project_list_item__action {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: start;
-}
+@media (min-width: 768px) {
+    .project_list_item__name {
+        grid-column: 1 / 3;
+    }
 
-.project_list_item__action div:not(:last-child) {
-    margin-right: 0.25rem;
-}
+    .project_list_item__status {
+        grid-column: 3 / 6;
+        justify-self: center;
+    }
 
-.project_list_item__material_item_label {
-    display: none;
+    .project_list_item__created {
+        grid-column: 6 / 8;
+        justify-self: end;
+    }
 }
 
 @media (max-width: 768px) {
-    .project_list_item__info {
+    .project_list_item {
         grid-template-columns: auto;
-    }
-
-    .project_list_item__material_header {
-        display: none;
-    }
-
-    .project_list_item__material_item {
-        grid-template-columns: auto;
-    }
-
-    .project_list_item__action {
-        grid-template-columns: auto;
-    }
-
-    .project_list_item__action div:not(:last-child) {
-        margin-right: 0rem;
-    }
-
-    .project_list_item__material_item_label {
-        display: inline;
     }
 }

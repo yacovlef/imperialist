@@ -91,7 +91,7 @@ class ProjectMaterialAdd extends Component {
         const { nomenclatureList, loading, error } = this.props;
 
         return (
-            <form onSubmit={this.handleSubmit} className="project-material-add">
+            <>
                 <div className="project-material-add__nomenclature">
                     <Select
                         name="NomenclatureId"
@@ -113,7 +113,7 @@ class ProjectMaterialAdd extends Component {
                         errorList={this.state.errorList}
                     />
                 </div>
-                <div>
+                <div className="project-material-add__button">
                     <Button
                         label="Добавить"
                         type="submit"
@@ -121,9 +121,10 @@ class ProjectMaterialAdd extends Component {
                         theme="light"
                         loading={loading}
                         error={error}
+                        onSubmit={this.handleSubmit}
                     />
                 </div>
-            </form>
+            </>
         );
     }
 }

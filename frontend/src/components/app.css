@@ -32,12 +32,26 @@ a {
     margin-bottom: 0.5rem;
 }
 
-/* .card div {
-    margin: 0.25rem;
-} */
-
 .card__control {
     border: 0;
     border-radius: 0;
     padding: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .hide {
+        display: inline;
+    }
+
+    .show {
+        display: none;
+    }
 }

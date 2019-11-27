@@ -18,17 +18,13 @@ const ProjectMaterialItem = ({ material, index }) => {
 
     return (
         <>
-            <div><span className="project_list_item__material_item_label">#: </span>{index}</div>
-            <div><span className="project_list_item__material_item_label">Наименование: </span>{name}</div>
-            <div><span className="project_list_item__material_item_label">Кол-во: </span>{quantity}</div>
-            <div><span className="project_list_item__material_item_label">Ед. изм.: </span>{renderUnit.label}</div>
-            <div><span className="project_list_item__material_item_label">Цена за ед.: </span>{price}</div>
-            <div><span className="project_list_item__material_item_label">Цена итог.: </span>{price * quantity}</div>
-            <div>
-                <ProjectMaterialDelete
-                    material={material}
-                />
-            </div>
+            <div><span className="hide">#: </span>{index}</div>
+            <div><span className="hide">Наименование: </span>{name}</div>
+            <div><span className="hide">Кол-во: </span>{quantity}</div>
+            <div><span className="hide">Ед. изм.: </span>{renderUnit.label}</div>
+            <div><span className="hide">Цена за ед.: </span>{price}</div>
+            <div><span className="hide">Цена итог.: </span>{price * quantity}</div>
+            <div><ProjectMaterialDelete material={material} /></div>
         </>
     );
 };

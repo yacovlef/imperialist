@@ -1,16 +1,15 @@
-.project-material-add {
-    display: grid;
-    grid-template-columns: 4fr 2fr 1fr;
-}
-
 @media (min-width: 768px) {
-    .project-material-add__nomenclature, .project-material-add__quantity {
+    .project-material-add__nomenclature {
+        grid-column: 1 / 5;
         align-self: end;
     }
-}
 
-@media (max-width: 768px) {
-    .project-material-add {
-        grid-template-columns: auto;
+    .project-material-add__quantity {
+        grid-column: 5 / 7;
+        align-self: end;
+    }
+
+    .project-material-add__button {
+        grid-column: 7 / 8;
     }
 }
