@@ -29,7 +29,16 @@ module.exports = {
                 role: 'admin',
                 createdAt: new Date(),
                 updatedAt: new Date()
-            }
+            },
+            {
+                firstName: 'Pro',
+                lastName: 'Imperialist',
+                email: 'info@imperialist.pro',
+                password: '$2b$10$OiWgExvmgEVvHudgMtmBJOcvyX/NzO2EP3g7Co4ZG.mKkb7BlQs32',
+                role: 'admin',
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
         ], {});
     },
 
