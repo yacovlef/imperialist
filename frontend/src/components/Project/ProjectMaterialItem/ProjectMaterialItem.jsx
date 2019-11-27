@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Button from '../../@common/Button';
+import ProjectMaterialDelete from '../ProjectMaterialDelete';
 
 import { nomenclatureUnitList } from '../../../config/data.json';
 
-const ProjectListItemMaterial = ({ material, index }) => {
+const ProjectMaterialItem = ({ material, index }) => {
     const {
         quantity,
         price,
@@ -25,15 +25,12 @@ const ProjectListItemMaterial = ({ material, index }) => {
             <div><span className="project_list_item__material_item_label">Цена за ед.: </span>{price}</div>
             <div><span className="project_list_item__material_item_label">Цена итог.: </span>{price * quantity}</div>
             <div>
-                <Button
-                    label="Удалить"
-                    type="button"
-                    size="small"
-                    onClick={() => {}}
+                <ProjectMaterialDelete
+                    material={material}
                 />
             </div>
         </>
     );
 };
 
-export default ProjectListItemMaterial;
+export default ProjectMaterialItem;

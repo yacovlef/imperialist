@@ -4,7 +4,7 @@ import moment from 'moment';
 import ProjectEdit from '../ProjectEdit';
 import ProjectDelete from '../ProjectDelete';
 
-import ProjectListItemMaterial from '../ProjectListItemMaterial'
+import ProjectMaterialItem from '../ProjectMaterialItem'
 
 import { projectStatusList } from '../../../config/data.json'
 
@@ -41,7 +41,7 @@ const ProjectListItem = ({ projectItem }) => {
                     </div>
 
                     <div className="project_list_item__material_item">
-                        { Materials.map((material, index) => <ProjectListItemMaterial material={material} index={index} key={index} />) }
+                        { Materials.map((material, index) => <ProjectMaterialItem material={material} index={index} key={index} />) }
                     </div>
                 </div>
             }

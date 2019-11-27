@@ -16,6 +16,7 @@ import projectList from '../components/Project/ProjectList/project-list-reducer'
 import projectForm from '../components/Project/ProjectForm/project-form-reducer';
 import projectDelete from '../components/Project/ProjectDelete/project-delete-reducer';
 import projectFilter from '../components/Project/ProjectFilter/project-filter-reducer';
+import projectMaterialDelete from '../components/Project/ProjectMaterialDelete/project-material-delete-reducer';
 
 const reducer = combineReducers({
     auth,
@@ -32,7 +33,8 @@ const reducer = combineReducers({
     projectList,
     projectForm,
     projectDelete,
-    projectFilter
+    projectFilter,
+    projectMaterialDelete
 });
 
 export default createStore(reducer, applyMiddleware(thunkMiddleware));
