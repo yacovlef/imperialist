@@ -6,6 +6,8 @@ import Button from '../../@common/Button';
 
 import { projectStatusList } from '../../../config/data.json';
 
+import './project-form.css';
+
 class ProjectForm extends Component {
     state = {
         data: {
@@ -85,8 +87,8 @@ class ProjectForm extends Component {
         const { loading, error } = this.props;
         
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className="form-row">
+            <form className="project-form" onSubmit={this.handleSubmit}>
+                <div>
                     <Input
                         label="Наименование"
                         name="name"
@@ -97,7 +99,7 @@ class ProjectForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Select
                         label="Статус"
                         name="status"
@@ -108,7 +110,7 @@ class ProjectForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Button
                         label="Сохранить"
                         type="submit"

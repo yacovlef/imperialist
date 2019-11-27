@@ -121,7 +121,7 @@ class ProjectMaterialAdd extends Component {
                         theme="light"
                         loading={loading}
                         error={error}
-                        onSubmit={this.handleSubmit}
+                        onClick={this.handleSubmit}
                     />
                 </div>
             </>

@@ -6,6 +6,8 @@ import Button from '../../@common/Button';
 
 import { roleList } from '../../../config/data.json';
 
+import './user-form.css';
+
 class UserForm extends Component {
     state = {
         data: {
@@ -111,8 +113,8 @@ class UserForm extends Component {
         const { loading, error } = this.props;
         
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className="form-row">
+            <form className="user-form" onSubmit={this.handleSubmit}>
+                <div>
                     <Input
                         label="Имя"
                         name="firstName"
@@ -123,7 +125,7 @@ class UserForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Input
                         label="Фамилия"
                         name="lastName"
@@ -134,7 +136,7 @@ class UserForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Input
                         label="Адрес эл. почты"
                         name="email"
@@ -145,7 +147,7 @@ class UserForm extends Component {
                     />
                 </div>
                 
-                <div className="form-row">
+                <div>
                     <Input
                         label="Пароль"
                         name="password"
@@ -156,7 +158,7 @@ class UserForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Select
                         label="Роль"
                         name="role"
@@ -167,7 +169,7 @@ class UserForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Button
                         label="Сохранить"
                         type="submit"

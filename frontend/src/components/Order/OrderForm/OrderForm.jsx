@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import Input from '../../@common/Input';
 import Button from '../../@common/Button';
 
+import './order-form.css';
+
 class OrderForm extends Component {
     state = {
         data: {
@@ -67,8 +69,8 @@ class OrderForm extends Component {
         const { loading, error } = this.props;
         
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className="form-row">
+            <form className="order_form" onSubmit={this.handleSubmit}>
+                <div>
                     <Input
                         label="Название"
                         name="title"
@@ -79,7 +81,7 @@ class OrderForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Button
                         label="Сохранить"
                         type="submit"

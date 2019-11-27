@@ -6,6 +6,8 @@ import Select from '../../@common/Select';
 
 import { nomenclatureUnitList } from '../../../config/data.json';
 
+import './nomenclature-form.css';
+
 class NomenclatureForm extends Component {
     state = {
         data: {
@@ -87,8 +89,8 @@ class NomenclatureForm extends Component {
         const { loading, error } = this.props;
         
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className="form-row">
+            <form className="nomenclature-form" onSubmit={this.handleSubmit}>
+                <div>
                     <Input
                         label="Наименование"
                         name="name"
@@ -99,7 +101,7 @@ class NomenclatureForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Select
                         label="Ед.изм."
                         name="unit"
@@ -110,7 +112,7 @@ class NomenclatureForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Input
                         label="Цена"
                         name="price"
@@ -121,7 +123,7 @@ class NomenclatureForm extends Component {
                     />
                 </div>
 
-                <div className="form-row">
+                <div>
                     <Button
                         label="Сохранить"
                         type="submit"
