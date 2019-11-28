@@ -1,9 +1,0 @@
-.nomenclature_add__button {
-    justify-self: start;
-}
-
-@media (max-width: 768px) {
-    .nomenclature_add__button {
-        justify-self: stretch;
-    }
-}

@@ -1,9 +1,11 @@
-.order_filter {
-    justify-self: end;
+.order-filter {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 0.5rem;
 }
 
 @media (max-width: 768px) {
-    .order_filter {
-        justify-self: stretch;
-    }  
+    .order-filter {
+        grid-template-columns: auto;
+    } 
 }

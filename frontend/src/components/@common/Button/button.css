@@ -15,7 +15,7 @@
 }
 
 .button__light {
-    border: 0;
+    border: 1px solid white;
     color: #777777;
 }
 

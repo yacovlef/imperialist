@@ -43,8 +43,8 @@ class ProjectFilter extends Component {
 
     render() {
         return (
-            <div className="project_filter">
-                <div className="control__column">
+            <div className="project-filter">
+                <div>
                     <Input
                         label="# Заказа"
                         name="OrderId"
@@ -54,7 +54,7 @@ class ProjectFilter extends Component {
                     />
                 </div>
 
-                <div className="control__column">
+                <div>
                     <Select
                         label="Статус"
                         name="status"

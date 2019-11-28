@@ -1,3 +1,4 @@
 .user__control {
     display: grid;
+    justify-content: start;
 }

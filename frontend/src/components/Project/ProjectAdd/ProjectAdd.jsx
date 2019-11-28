@@ -7,8 +7,6 @@ import ProjectForm from '../ProjectForm';
 
 import { submitProjectFormCreate } from '../ProjectForm/project-form-action';
 
-import './project-add.css';
-
 class ProjectAdd extends Component {
     state = {
         modal: false
@@ -27,7 +25,7 @@ class ProjectAdd extends Component {
 
         return (
             <>
-                <div className="project_add__button">
+                <div>
                     <Button
                         label="Добавить проект"
                         type="button"

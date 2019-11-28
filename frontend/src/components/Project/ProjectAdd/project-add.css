@@ -1,9 +1,0 @@
-.project_add__button {
-    justify-self: start;
-}
-
-@media (max-width: 768px) {
-    .project_add__button {
-        justify-self: stretch;
-    }
-}

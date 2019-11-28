@@ -29,14 +29,16 @@ class OrderFilter extends Component {
 
     render() {
         return (
-            <div className="order_filter control__column">
-                <Select
-                    label="Статус"
-                    name="status"
-                    value={this.state.status}
-                    optionList={orderStatusList}
-                    handleChange={this.handleChange}
-                />
+            <div className="order-filter">
+                <div>
+                    <Select
+                        label="Статус"
+                        name="status"
+                        value={this.state.status}
+                        optionList={orderStatusList}
+                        handleChange={this.handleChange}
+                    />
+                </div>
             </div>
         );
 

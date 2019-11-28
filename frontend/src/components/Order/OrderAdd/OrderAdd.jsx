@@ -7,8 +7,6 @@ import OrderForm from '../OrderForm';
 
 import { submitOrderFormCreate } from '../OrderForm/order-form-action';
 
-import './order-add.css';
-
 class OrderAdd extends Component {
     state = {
         modal: false
@@ -25,7 +23,7 @@ class OrderAdd extends Component {
     render() {
         return (
             <>
-                <div className="order_add__button">
+                <div>
                     <Button
                         label="Добавить заказ"
                         type="button"

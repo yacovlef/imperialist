@@ -1,14 +1,11 @@
-.project_filter {
-    justify-self: end;
-
+.project-filter {
     display: grid;
     grid-template-columns: repeat(2, auto);
+    grid-gap: 0.5rem;
 }
 
 @media (max-width: 768px) {
-    .project_filter {
-        justify-self: stretch;
-
+    .project-filter {
         grid-template-columns: auto;
-    }  
+    } 
 }

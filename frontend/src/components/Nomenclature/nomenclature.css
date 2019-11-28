@@ -1,3 +1,4 @@
 .nomenclature__control {
     display: grid;
+    justify-content: start;
 }
