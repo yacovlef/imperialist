@@ -46,7 +46,7 @@ class UserDelete extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Удаление пользователя" onClose={this.handleButtonClose}>
+                        <Modal title="Удаление пользователя" size="small" onClose={this.handleButtonClose}>
                             <div className="user_delete__label form-row">
                                 <b>{`${lastName} ${firstName}`}</b>
                             </div>

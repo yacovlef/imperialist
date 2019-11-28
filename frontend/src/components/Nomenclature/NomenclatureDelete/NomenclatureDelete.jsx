@@ -46,7 +46,7 @@ class NomenclatureDelete extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Удаление номенклатуры" onClose={this.handleButtonClose}>
+                        <Modal title="Удаление номенклатуры" size="small" onClose={this.handleButtonClose}>
                             <div className="nomenclature_delete__label form-row">
                                 <b>{name}</b>
                             </div>

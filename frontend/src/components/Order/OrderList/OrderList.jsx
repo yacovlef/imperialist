@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Info from '../../@common/Info';
 import OrderListItem from '../OrderListItem';
 
-class UserList extends Component {
+class OrderList extends Component {
     componentDidMount() {
         this.props.fetchOrderList();
     }
@@ -34,4 +34,4 @@ class UserList extends Component {
     }
 }
 
-export default UserList;
+export default OrderList;

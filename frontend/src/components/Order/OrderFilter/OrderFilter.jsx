@@ -11,6 +11,10 @@ class OrderFilter extends Component {
         status: ''
     }
 
+    componentDidMount() {
+        this.setState({ ...this.props.orderFilter });
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevState !== this.state) {
             this.props.setOrderFilter(this.state);

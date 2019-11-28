@@ -46,7 +46,7 @@ class ProjectDelete extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Удаление проекта" onClose={this.handleButtonClose}>
+                        <Modal title="Удаление проекта" size="small" onClose={this.handleButtonClose}>
                             <div className="project_delete__label form-row">
                                 <b>{`${name} (#${id})`}</b>
                             </div>

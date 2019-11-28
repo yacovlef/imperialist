@@ -5,10 +5,27 @@ import './modal.css';
 
 import close from './close.svg';
 
-const Modal = ({ children, title, onClose }) => {
+const Modal = (props) => {
+    const {
+        children,
+        title,
+        size,
+        onClose
+    } = props;
+
+    const modalClassList = ['modal'];
+
+    switch(size) {
+        case 'small':
+            modalClassList.push('modal__small');
+            
+            break;
+        default:
+    }
+
     return (
         <div className="modal__overlay">
-            <div className="modal">
+            <div className={modalClassList.join(' ')}>
                 <div className="modal__header">
                     {title}
                     <Link onClick={onClose} to="#">

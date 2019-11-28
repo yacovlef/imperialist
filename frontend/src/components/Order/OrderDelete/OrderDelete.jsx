@@ -46,7 +46,7 @@ class OrderDelete extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Удаление заказа" onClose={this.handleButtonClose}>
+                        <Modal title="Удаление заказа" size="small" onClose={this.handleButtonClose}>
                             <div className="order_delete__label form-row">
                                 <b>{`${title} (#${id})`}</b>
                             </div>
