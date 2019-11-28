@@ -8,4 +8,8 @@
     .order_list_item {
         grid-template-columns: auto;
     }
+
+    .order_list_item__edit, .order_list_item__delete {
+        order: 1;
+    }
 }

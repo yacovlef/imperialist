@@ -21,10 +21,10 @@ const UserListItem = ({ userItem }) => {
         <div className="user_list_item card">
             <div>Имя: {firstName}</div>
             <div>Адрес эл. почты: {email}</div>
-            <div><UserEdit user={userItem} /></div>
+            <div className="user_list_item__edit"><UserEdit user={userItem} /></div>
             <div>Фамилия: {lastName}</div>
             <div>Роль: {renderRole.label}</div>
-            <div><UserDelete user={userItem} /></div>
+            <div className="user_list_item__delete"><UserDelete user={userItem} /></div>
         </div>
     );
 }

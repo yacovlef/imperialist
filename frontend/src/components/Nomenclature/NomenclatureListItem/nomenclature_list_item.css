@@ -8,4 +8,8 @@
     .nomenclature_list_item {
         grid-template-columns: auto;
     }
+
+    .nomenclature_list_item__edit, .nomenclature_list_item__delete {
+        order: 1;
+    }
 }
