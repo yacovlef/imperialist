@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     unit: DataTypes.STRING,
     price: DataTypes.INTEGER
   }, {
-    tableName: 'Nomenclature'
+    tableName: 'Nomenclature',
+    paranoid: true
   });
   Nomenclature.associate = function({ Material }) {
     Nomenclature.hasMany(Material);

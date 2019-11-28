@@ -16,7 +16,10 @@ const getList = (req, res) => {
         order: ['id'],
         include: [{
             model: Material,
-            include: [Nomenclature]
+            include: [{
+                model: Nomenclature,
+                paranoid: false
+            }]
         }]
     })
         .then(projectList => res.json(projectList))

@@ -12,13 +12,9 @@ a {
     margin-bottom: 0.5rem;
 }
 
-.control__column:not(:last-child) {
-    margin-right: 0.5rem;
-}
-
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .control__column:not(:last-child) {
-        margin-right: 0;
+        margin-right: 0.5rem;
     }
 }
 
