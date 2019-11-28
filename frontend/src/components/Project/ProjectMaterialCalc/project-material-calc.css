@@ -1,0 +1,37 @@
+@media (min-width: 768px) {
+    .project-material-calc__material {
+        grid-column: 1 / 2;
+    }
+
+    .project-material-calc__cost {
+        grid-column: 2 / 3;
+    }
+
+    .project-material-calc__with_nds {
+        grid-column: 3 / 4;
+    }
+
+    .project-material-calc__nds {
+        grid-column: 4 / 5;
+    }
+
+    .project-material-calc__work_cost {
+        grid-column: 5 / 8;
+    }
+
+    .project-material-calc__carpenter {
+        grid-column: 1 / 2;
+    }
+
+    .project-material-calc__painter {
+        grid-column: 2 / 3;
+    }
+
+    .project-material-calc__project {
+        grid-column: 3 / 4;
+    }
+
+    .project-material-calc__margin {
+        grid-column: 4 / 8;
+    }
+}

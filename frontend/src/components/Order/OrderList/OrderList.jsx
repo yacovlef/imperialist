@@ -19,7 +19,7 @@ class OrderList extends Component {
 
         if (!orderList.length) {
             return <Info
-                message='Заказов не найдено!'
+                message='Заказов не найдено.'
             />;
         }
 

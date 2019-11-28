@@ -6,6 +6,7 @@ import ProjectDelete from '../ProjectDelete';
 
 import ProjectMaterialAdd from '../ProjectMaterialAdd';
 import ProjectMaterialItem from '../ProjectMaterialItem'
+import ProjectMaterialCalc from '../ProjectMaterialCalc'
 
 import { projectStatusList } from '../../../config/data.json'
 
@@ -30,8 +31,8 @@ const ProjectListItem = ({ projectItem }) => {
 
             <ProjectMaterialAdd ProjectId={id} />
 
-            {(!!Materials.length) &&
-                <>
+            {(!!Materials.length)
+                ?<>
                     <div className="show">#</div>
                     <div className="show">Наименование</div>
                     <div className="show">Кол-во</div>
@@ -41,7 +42,11 @@ const ProjectListItem = ({ projectItem }) => {
                     <div className="show"></div>
 
                     { Materials.map((material, index) => <ProjectMaterialItem material={material} index={index} key={index} />) }
+
+                    <ProjectMaterialCalc materialList={Materials} />
                 </>
+                : <div className="project_list_item__not-nomenclature">Нет номенклатуры.</div>
+
             }
 
             <div><ProjectEdit project={projectItem} /></div>

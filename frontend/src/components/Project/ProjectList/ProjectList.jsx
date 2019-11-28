@@ -15,7 +15,7 @@ class ProjectList extends Component {
 
         if (!projectList.length) {
             return <Info
-                message='Проектов не найдено!'
+                message='Проектов не найдено.'
             />;
         }
         

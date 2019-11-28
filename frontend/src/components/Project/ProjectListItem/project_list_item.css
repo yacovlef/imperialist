@@ -18,6 +18,11 @@
         grid-column: 6 / 8;
         justify-self: end;
     }
+
+    .project_list_item__not-nomenclature {
+        grid-column: 1 / 8;
+        place-self: center;
+    }
 }
 
 @media (max-width: 768px) {
