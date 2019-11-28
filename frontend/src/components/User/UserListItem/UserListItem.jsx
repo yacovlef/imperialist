@@ -5,7 +5,7 @@ import UserDelete from '../UserDelete';
 
 import { roleList } from '../../../config/data.json'
 
-import './user_list_item.css';
+import './user-list-item.css';
 
 const UserListItem = ({ userItem }) => {
     const {
@@ -18,13 +18,19 @@ const UserListItem = ({ userItem }) => {
     const renderRole = roleList.find(({ value }) => value === role);
 
     return (
-        <div className="user_list_item card">
-            <div>Имя: {firstName}</div>
-            <div>Адрес эл. почты: {email}</div>
-            <div className="user_list_item__edit"><UserEdit user={userItem} /></div>
-            <div>Фамилия: {lastName}</div>
-            <div>Роль: {renderRole.label}</div>
-            <div className="user_list_item__delete"><UserDelete user={userItem} /></div>
+        <div className="user-list-item card">
+            <div className="user-list-item__col">
+                <div>Имя: {firstName}</div>
+                <div>Фамилия: {lastName}</div>
+            </div>
+            <div className="user-list-item__col">
+                <div>Адрес эл. почты: {email}</div>
+                <div>Роль: {renderRole.label}</div>
+            </div>
+            <div className="user-list-item__col">
+                <div><UserEdit user={userItem} /></div>
+                <div><UserDelete user={userItem} /></div>
+            </div>
         </div>
     );
 }

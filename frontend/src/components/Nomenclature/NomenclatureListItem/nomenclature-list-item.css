@@ -1,0 +1,16 @@
+.nomenclature-list-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) auto;
+    grid-gap: 0.5rem;
+}
+
+.nomenclature-list-item__col {
+    display: grid;
+    grid-gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .nomenclature-list-item {
+        grid-template-columns: auto;
+    }
+}

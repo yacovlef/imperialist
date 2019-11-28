@@ -91,7 +91,7 @@ class ProjectMaterialAdd extends Component {
         const { nomenclatureList, loading, error } = this.props;
 
         return (
-            <>
+            <div className="project-material-add">
                 <div className="project-material-add__nomenclature">
                     <Select
                         name="NomenclatureId"
@@ -124,7 +124,7 @@ class ProjectMaterialAdd extends Component {
                         onClick={this.handleSubmit}
                     />
                 </div>
-            </>
+            </div>
         );
     }
 }

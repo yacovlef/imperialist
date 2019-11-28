@@ -24,15 +24,19 @@ const ProjectMaterialCalc = ({ materialList }) => {
 
     return (
         <>
-            <div className="project-material-calc__material">Товар: {material}</div>
-            <div className="project-material-calc__cost">x 3: {cost}</div>
-            <div className="project-material-calc__with_nds">C НДС: {withNds}</div>
-            <div className="project-material-calc__nds">НДС: {nds}</div>
-            <div className="project-material-calc__work_cost">Минус товар и НДС: {workCost}</div>
-            <div className="project-material-calc__carpenter">Столяр: {carpenter}</div>
-            <div className="project-material-calc__painter">Моляр: {painter}</div>
-            <div className="project-material-calc__project">Проект: {project}</div>
-            <div className="project-material-calc__margin">Моржа: {margin}</div>
+            <div className="project-material-calc__common">
+                <div>Товар: {material}</div>
+                <div>x 3: {cost}</div>
+                <div>C НДС: {withNds}</div>
+                <div>НДС: {nds}</div>
+                <div>Минус товар и НДС: {workCost}</div>
+            </div>
+            <div className="project-material-calc__work">
+                <div>Столяр: {carpenter}</div>
+                <div>Моляр: {painter}</div>
+                <div>Проект: {project}</div>
+                <div>Моржа: {margin}</div>
+            </div>
         </>
     );
 };

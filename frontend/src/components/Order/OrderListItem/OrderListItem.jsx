@@ -7,7 +7,7 @@ import OrderDelete from '../OrderDelete';
 
 import { orderStatusList } from '../../../config/data.json'
 
-import './order_list_item.css';
+import './order-list-item.css';
 
 const OrderListItem = ({ orderItem }) => {
     const {
@@ -20,14 +20,21 @@ const OrderListItem = ({ orderItem }) => {
     const renderStatus = orderStatusList.find(({ value }) => value === status);
 
     return (
-        <div className="order_list_item card">
-            <div>#: {id}</div>
-            <div>Статус: {renderStatus.label}</div>
-            <div className="order_list_item__edit"><OrderEdit order={orderItem} /></div>
-            
-            <div>Название: <Link to={`/projects/${id}`}>{title}</Link></div>
-            <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
-            <div className="order_list_item__delete"><OrderDelete order={orderItem}/></div>
+        <div className="order-list-item card">
+            <div className="order-list-item__col">
+                <div>#: {id}</div>
+                <div>Статус: {renderStatus.label}</div>
+            </div>
+
+            <div className="order-list-item__col">
+                <div>Название: <Link to={`/projects/${id}`}>{title}</Link></div>
+                <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
+            </div>
+
+            <div className="order-list-item__col">
+                <div><OrderEdit order={orderItem} /></div>
+                <div><OrderDelete order={orderItem}/></div>
+            </div>
         </div>
     );
 }

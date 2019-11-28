@@ -5,7 +5,7 @@ import NomenclatureDelete from '../NomenclatureDelete';
 
 import { nomenclatureUnitList } from '../../../config/data.json'
 
-import './nomenclature_list_item.css';
+import './nomenclature-list-item.css';
 
 const NomenclatureListItem = ({ nomenclatureItem }) => {
     const {
@@ -18,13 +18,19 @@ const NomenclatureListItem = ({ nomenclatureItem }) => {
     const renderUnit = nomenclatureUnitList.find(({ value }) => value === unit);
 
     return (
-        <div className="nomenclature_list_item card">
-            <div>#: {id}</div>
-            <div>Ед.изм.: {renderUnit.label}</div>
-            <div className="nomenclature_list_item__edit"><NomenclatureEdit nomenclature={nomenclatureItem} /></div>
-            <div>Наименование: {name}</div>
-            <div>Цена: {price}</div>
-            <div className="nomenclature_list_item__delete"><NomenclatureDelete nomenclature={nomenclatureItem} /></div>
+        <div className="nomenclature-list-item card">
+            <div className="nomenclature-list-item__col">
+                <div>#: {id}</div>
+                <div>Наименование: {name}</div>
+            </div>
+            <div className="nomenclature-list-item__col">
+                <div>Ед.изм.: {renderUnit.label}</div>
+                <div>Цена: {price}</div>
+            </div>
+            <div className="nomenclature-list-item__col">
+                <div><NomenclatureEdit nomenclature={nomenclatureItem} /></div>
+                <div><NomenclatureDelete nomenclature={nomenclatureItem} /></div>
+            </div>
         </div>
     );
 }
