@@ -32,22 +32,22 @@ const ProjectListItem = ({ projectItem }) => {
             <ProjectMaterialAdd ProjectId={id} />
 
             {(!!Materials.length)
-                ?<>
-                    <div className="show">#</div>
-                    <div className="show">Наименование</div>
-                    <div className="show">Кол-во</div>
-                    <div className="show">Ед. изм.</div>
-                    <div className="show">Цена за ед.</div>
-                    <div className="show">Цена итог.</div>
-                    <div className="show"></div>
+                ?
+                    <>
+                        <div className="show">#</div>
+                        <div className="show">Наименование</div>
+                        <div className="show">Кол-во</div>
+                        <div className="show">Ед. изм.</div>
+                        <div className="show">Цена за ед.</div>
+                        <div className="show">Цена итог.</div>
+                        <div className="show"></div>
 
-                    { Materials.map((material, index) => <ProjectMaterialItem material={material} index={index} key={index} />) }
+                        { Materials.map((material, index) => <ProjectMaterialItem material={material} index={index} key={index} />) }
 
-                    <ProjectMaterialCalc materialList={Materials} />
-                </>
-                : <div className="project_list_item__not-nomenclature">Нет номенклатуры.</div>
-
-            }
+                        <ProjectMaterialCalc materialList={Materials} />
+                    </>
+                :
+                    <div className="project_list_item__not-nomenclature">Нет номенклатуры.</div>}
 
             <div><ProjectEdit project={projectItem} /></div>
             <div><ProjectDelete project={projectItem} /></div>
