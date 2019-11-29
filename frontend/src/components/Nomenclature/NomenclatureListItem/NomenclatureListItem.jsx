@@ -5,6 +5,8 @@ import NomenclatureDelete from '../NomenclatureDelete';
 
 import { nomenclatureUnitList } from '../../../config/data.json'
 
+import { formatPrice } from '../../../utils/lib';
+
 import './nomenclature-list-item.css';
 
 const NomenclatureListItem = ({ nomenclatureItem }) => {
@@ -25,7 +27,7 @@ const NomenclatureListItem = ({ nomenclatureItem }) => {
             </div>
             <div className="nomenclature-list-item__col">
                 <div>Ед.изм.: {renderUnit.label}</div>
-                <div>Цена: {price}</div>
+                <div>Цена: {formatPrice(price)}</div>
             </div>
             <div className="nomenclature-list-item__col">
                 <div><NomenclatureEdit nomenclature={nomenclatureItem} /></div>

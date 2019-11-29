@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { formatPrice } from '../../../utils/lib';
+
 import './project-material-calc.css';
 
 const ProjectMaterialCalc = ({ materialList }) => {
@@ -25,17 +27,17 @@ const ProjectMaterialCalc = ({ materialList }) => {
     return (
         <>
             <div className="project-material-calc__common">
-                <div>Товар: {material}</div>
-                <div>x 3: {cost}</div>
-                <div>C НДС: {withNds}</div>
-                <div>НДС: {nds}</div>
-                <div>Минус товар и НДС: {workCost}</div>
+                <div>Товар: {formatPrice(material)}</div>
+                <div>x 3: {formatPrice(cost)}</div>
+                <div>C НДС: {formatPrice(withNds)}</div>
+                <div>НДС: {formatPrice(nds)}</div>
+                <div>Минус товар и НДС: {formatPrice(workCost)}</div>
             </div>
             <div className="project-material-calc__work">
-                <div>Столяр: {carpenter}</div>
-                <div>Моляр: {painter}</div>
-                <div>Проект: {project}</div>
-                <div>Моржа: {margin}</div>
+                <div>Столяр: {formatPrice(carpenter)}</div>
+                <div>Моляр: {formatPrice(painter)}</div>
+                <div>Проект: {formatPrice(project)}</div>
+                <div>Моржа: {formatPrice(margin)}</div>
             </div>
         </>
     );
