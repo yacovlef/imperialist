@@ -7,6 +7,18 @@
     width: 100%;
 }
 
+.select__placeholder {
+    display: none;
+}
+
+.select__color-black {
+    color: black;
+}
+
+.select__color-gray {
+    color: gray;
+}
+
 .select__light {
     border: 0;
     border-radius: 0;
@@ -17,11 +29,11 @@
     border-color: #ff0000;
 }
 
-.select__error_message {
+.select__error-message {
     font-size: 0.9rem;
     color: #ff0000;
 }
 
-.select__label_error {
+.select__label-error {
     color: #ff0000;
 }

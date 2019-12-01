@@ -94,6 +94,7 @@ class ProjectMaterialAdd extends Component {
             <div className="project-material-add">
                 <div className="project-material-add__nomenclature">
                     <Select
+                        placeholder="Номенклатура"
                         name="NomenclatureId"
                         theme="light"
                         value={this.state.data.NomenclatureId}
