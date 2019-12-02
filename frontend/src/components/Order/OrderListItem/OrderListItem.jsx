@@ -23,11 +23,11 @@ const OrderListItem = ({ orderItem }) => {
         <div className="order-list-item card">
             <div className="order-list-item__col">
                 <div>#: {id}</div>
-                <div>Статус: {renderStatus.label}</div>
+                <div>Название: <Link to={`/projects/${id}`}>{title}</Link></div>
             </div>
 
             <div className="order-list-item__col">
-                <div>Название: <Link to={`/projects/${id}`}>{title}</Link></div>
+                <div>Статус: {renderStatus.label}</div>
                 <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
             </div>
 

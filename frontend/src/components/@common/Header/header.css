@@ -26,6 +26,10 @@
     color: #555555;
 }
 
+.header__link-active {
+    color: #000000;
+}
+
 .header__responsive_button {
     display: none;
 }

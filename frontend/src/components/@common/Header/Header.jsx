@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import Container from '../Container';
 
@@ -7,6 +7,8 @@ import './header.css';
 
 import menu from './menu.svg';
 import close from './close.svg';
+
+import { navList } from '../../../config/data.json';
 
 class Header extends Component {
     state = {
@@ -33,19 +35,15 @@ class Header extends Component {
 
         const renderNav = (
             <ul>
-                {
-                    (user)
+                {(user)
                         ?
                             <>
-                                <li><Link className="header__link" to="/">Заказы</Link></li>
-                                <li><Link className="header__link" to="/projects">Проекты</Link></li>
-                                <li><Link className="header__link" to="/nomenclature">Номенклатура</Link></li>
-                                <li><Link className="header__link" to="/users">Пользователи</Link></li>
+                                {navList.map(({ label, to, exact }, index) => <li key={index}><NavLink exact={exact} activeClassName="header__link-active" className="header__link" to={to}>{label}</NavLink></li>)}
+
                                 <li><Link onClick={logout} className="header__link" to="#">{`${user.lastName} ${user.firstName}`} (Выход)</Link></li>
                             </>
                         :
-                            <li><Link className="header__link" to="/login">Вход</Link></li>
-                }
+                            <li><Link className="header__link" to="/login">Вход</Link></li>}
             </ul>
         );
 

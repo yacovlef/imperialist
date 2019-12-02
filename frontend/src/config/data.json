@@ -1,4 +1,26 @@
 {
+    "navList": [
+        {
+            "label": "Заказы",
+            "to": "/",
+            "exact": true
+        },
+        {
+            "label": "Проекты",
+            "to": "/projects",
+            "exact": false
+        },
+        {
+            "label": "Номенклатура",
+            "to": "/nomenclature",
+            "exact": true
+        },
+        {
+            "label": "Пользователи",
+            "to": "/users",
+            "exact": true
+        }
+    ],
     "roleList": [
         {
             "label": "Администратор",
