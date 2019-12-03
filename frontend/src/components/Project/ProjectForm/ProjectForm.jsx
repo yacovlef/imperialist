@@ -1,32 +1,22 @@
 import React, {Component} from 'react';
 
 import Input from '../../@common/Input';
-import Select from '../../@common/Select';
 import Button from '../../@common/Button';
 
-import { productStatusList } from '../../../config/data.json';
+import './project-form.css';
 
-import './product-form.css';
-
-class ProductForm extends Component {
+class ProjectForm extends Component {
     state = {
         data: {
-            name: '',
-            status: '',
-            ProjectId: ''
+            title: '',
+            status: 'inWork'
         },
         errorList: []
     };
 
     componentDidMount() {
-        const {ProjectId, product} = this.props;
-
-        if (ProjectId) {
-            this.setState(({ data }) => ({data: {...data, ProjectId}}));
-        }
-
-        if (product) {
-            this.setState({ data: product });
+        if (this.props.project) {
+            this.setState({ data: this.props.project });
         }
     }
 
@@ -46,24 +36,16 @@ class ProductForm extends Component {
 
     handleValidateSubmit = () => {
         const {
-            name,
-            status
+            title
         } = this.state.data;
 
         const messageRequired = 'Обязательно';
 
         let errorList = [];
 
-        if (!name) {
+        if (!title) {
             errorList.push({
-                field: 'name',
-                message: messageRequired
-            });
-        }
-
-        if (!status) {
-            errorList.push({
-                field: 'status',
+                field: 'title',
                 message: messageRequired
             });
         }
@@ -87,24 +69,13 @@ class ProductForm extends Component {
         const { loading, error } = this.props;
         
         return (
-            <form className="product-form" onSubmit={this.handleSubmit}>
+            <form className="project-form" onSubmit={this.handleSubmit}>
                 <div>
                     <Input
-                        label="Наименование"
-                        name="name"
+                        label="Название"
+                        name="title"
                         type="text"
-                        value={this.state.data.name}
-                        handleChange={this.handleChange}
-                        errorList={this.state.errorList}
-                    />
-                </div>
-
-                <div>
-                    <Select
-                        label="Статус"
-                        name="status"
-                        value={this.state.data.status}
-                        optionList={productStatusList}
+                        value={this.state.data.title}
                         handleChange={this.handleChange}
                         errorList={this.state.errorList}
                     />
@@ -124,4 +95,4 @@ class ProductForm extends Component {
     }
 }
 
-export default ProductForm;
+export default ProjectForm;

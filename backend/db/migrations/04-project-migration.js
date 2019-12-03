@@ -15,10 +15,10 @@ module.exports = {
       status: {
         type: Sequelize.STRING
       },
-      OrderId: {
+      ProjectId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Orders',
+          model: 'Projects',
           key: 'id'
         },
         onDelete: 'cascade',

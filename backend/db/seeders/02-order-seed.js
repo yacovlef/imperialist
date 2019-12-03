@@ -2,7 +2,7 @@
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.bulkInsert('Orders', [
+        return queryInterface.bulkInsert('Projects', [
             {
                 title: 'Вихрь',
                 status: 'inWork',

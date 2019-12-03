@@ -1,10 +1,10 @@
-const { Order, Product, Material, Nomenclature } = require('../models');
+const { Project, Product, Material, Nomenclature } = require('../models');
 
 const getList = (req, res) => {
     const find = {};
 
-    if (req.query.OrderId) {
-        find.OrderId = req.query.OrderId
+    if (req.query.ProjectId) {
+        find.ProjectId = req.query.ProjectId
     }
 
     if (req.query.status) {
@@ -13,7 +13,7 @@ const getList = (req, res) => {
 
     Product.findAll({
         where: find,
-        order: ['id'],
+        project: ['id'],
         include: [{
             model: Material,
             include: [{
@@ -28,7 +28,7 @@ const getList = (req, res) => {
 
 const create = (req, res) => {
     Product.create(req.body, {
-        include: [ Order ]
+        include: [ Project ]
     })
         .then(product => res.json(product))
         .catch(error => res.status(500).json(error));
@@ -36,7 +36,7 @@ const create = (req, res) => {
 
 const update = (req, res) => {
     Product.update(req.body, { where: { id: req.params.id } })
-        .then(order => res.json(order))
+        .then(project => res.json(project))
         .catch(error => res.status(500).json(error));
 };
 

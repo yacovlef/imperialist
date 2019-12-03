@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 
 import ProductAdd from './ProductAdd';
 
-const mapStateToProps = ({ productFilter: { OrderId } }) => {
+const mapStateToProps = ({ productFilter: { ProjectId } }) => {
     return {
-        OrderId
+        ProjectId
     };
 };
 

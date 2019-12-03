@@ -9,7 +9,7 @@ import Info from './@common/Info';
 
 import Auth from './Auth';
 import User from './User';
-import Order from './Order';
+import Project from './Project';
 import Nomenclature from './Nomenclature';
 import Product from './Product';
 
@@ -33,11 +33,11 @@ function App() {
                     />
                     <PrivateRoute
                         path="/"
-                        component={Order}
+                        component={Project}
                         exact
                     />
                     <PrivateRoute
-                        path="/products/:OrderId?"
+                        path="/products/:ProjectId?"
                         component={Product}
                         exact
                     />

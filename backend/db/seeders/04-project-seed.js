@@ -6,21 +6,21 @@ module.exports = {
       {
           name: 'Стол',
           status: 'devDoc',
-          OrderId: 1,
+          ProjectId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
       },
       {
           name: 'Стул',
           status: 'manufacturing',
-          OrderId: 1,
+          ProjectId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
       },
       {
           name: 'Шкаф',
           status: 'painting',
-          OrderId: 2,
+          ProjectId: 2,
           createdAt: new Date(),
           updatedAt: new Date()
       }

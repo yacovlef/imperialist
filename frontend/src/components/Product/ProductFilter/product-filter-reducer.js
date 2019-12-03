@@ -4,7 +4,7 @@ import {
 } from './product-filter-action';
 
 const initialState = {
-    OrderId: null,
+    ProjectId: null,
     status: ''
 };
 

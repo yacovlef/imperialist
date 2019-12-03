@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const { User } = require('../models');
 
 const getList = (req, res) => {
-    User.findAll({ order: ['id'] })
+    User.findAll({ project: ['id'] })
         .then(users => res.json(users))
         .catch(error => res.status(500).json(error));
 };

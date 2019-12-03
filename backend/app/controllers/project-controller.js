@@ -1,25 +1,34 @@
-const { Nomenclature } = require('../models');
+const { Project } = require('../models');
 
 const getList = (req, res) => {
-    Nomenclature.findAll({ project: ['id'] })
+    const find = {};
+
+    if (req.query.status) {
+        find.status = req.query.status
+    }
+
+    Project.findAll({
+        where: find,
+        project: ['id']
+    })
         .then(project => res.json(project))
         .catch(error => res.status(500).json(error));
 };
 
 const create = (req, res) => {
-    Nomenclature.create(req.body)
+    Project.create(req.body)
         .then(project => res.json(project))
         .catch(error => res.status(500).json(error));
 };
 
 const update = (req, res) => {
-    Nomenclature.update(req.body, { where: { id: req.params.id } })
+    Project.update(req.body, { where: { id: req.params.id } })
         .then(project => res.json(project))
         .catch(error => res.status(500).json(error));
 };
 
 const remove = (req, res) => {
-    Nomenclature.destroy({ where: { id: req.params.id } })
+    Project.destroy({ where: { id: req.params.id } })
         .then(() => res.json({ success: true }))
         .catch(error => res.status(500).json(error));
 };

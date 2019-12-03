@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     status: DataTypes.STRING
   }, {});
-  Product.associate = function({ Order, Material }) {
-    Product.belongsTo(Order);
+  Product.associate = function({ Project, Material }) {
+    Product.belongsTo(Project);
 
     Product.hasMany(Material);
   };

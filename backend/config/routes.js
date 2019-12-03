@@ -1,7 +1,7 @@
 const {
     userController,
     authController,
-    orderController,
+    projectController,
     nomenclatureController,
     productController,
     materialController
@@ -19,11 +19,11 @@ module.exports = (app) => {
     //auth
     app.post('/api/login', authController.login);
 
-    // orderList
-    app.get('/api/orders', authMiddleware, orderController.getList);
-    app.post('/api/orders', authMiddleware, orderController.create);
-    app.put('/api/orders/:id', authMiddleware, orderController.update);
-    app.delete('/api/orders/:id', authMiddleware, orderController.remove);
+    // projectList
+    app.get('/api/projects', authMiddleware, projectController.getList);
+    app.post('/api/projects', authMiddleware, projectController.create);
+    app.put('/api/projects/:id', authMiddleware, projectController.update);
+    app.delete('/api/projects/:id', authMiddleware, projectController.remove);
 
     // nomenclatureList
     app.get('/api/nomenclature', authMiddleware, nomenclatureController.getList);

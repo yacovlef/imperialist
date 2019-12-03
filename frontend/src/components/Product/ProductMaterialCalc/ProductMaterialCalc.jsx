@@ -36,7 +36,7 @@ const ProductMaterialCalc = ({ materialList }) => {
             <div className="product-material-calc__work">
                 <div>Столяр: {formatPrice(carpenter)}</div>
                 <div>Моляр: {formatPrice(painter)}</div>
-                <div>Расчёт\Чертёж: {formatPrice(product)}</div>
+                <div>Расчёт: {formatPrice(product)}</div>
                 <div>Моржа: {formatPrice(margin)}</div>
             </div>
         </>

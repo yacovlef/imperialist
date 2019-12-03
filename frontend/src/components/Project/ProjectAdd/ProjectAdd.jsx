@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 import Modal from '../../@common/Modal';
 import Button from '../../@common/Button';
 
-import ProductForm from '../ProductForm';
+import ProjectForm from '../ProjectForm';
 
-import { submitProductFormCreate } from '../ProductForm/product-form-action';
+import { submitProjectFormCreate } from '../ProjectForm/project-form-action';
 
-class ProductAdd extends Component {
+class ProjectAdd extends Component {
     state = {
         modal: false
     }
@@ -21,8 +21,6 @@ class ProductAdd extends Component {
     }
 
     render() {
-        const { ProjectId } = this.props;
-
         return (
             <>
                 <div>
@@ -31,17 +29,15 @@ class ProductAdd extends Component {
                         type="button"
                         size="block"
                         onClick={this.handleButtonOpen}
-                        disabled={!ProjectId}
                     />
                 </div>
                 
                 {
                     this.state.modal &&
                         <Modal title="Добавление проекта" onClose={this.handleButtonClose}>
-                            <ProductForm
-                                onSubmit={submitProductFormCreate}
+                            <ProjectForm
+                                onSubmit={submitProjectFormCreate}
                                 onClose={this.handleButtonClose}
-                                ProjectId={ProjectId}
                             />
                         </Modal>
                 }
@@ -50,4 +46,4 @@ class ProductAdd extends Component {
     }
 }
 
-export default ProductAdd;
+export default ProjectAdd;

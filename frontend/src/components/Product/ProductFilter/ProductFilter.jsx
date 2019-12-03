@@ -10,15 +10,15 @@ import './product-filter.css';
 
 class ProductFilter extends Component {
     state = {
-        OrderId: '',
+        ProjectId: '',
         status: ''
     }
 
     componentDidMount() {
-        const { OrderId } = this.props.match.params
+        const { ProjectId } = this.props.match.params
 
-        if (OrderId) {
-            this.setState({OrderId});
+        if (ProjectId) {
+            this.setState({ProjectId});
         } else {
             this.props.fetchProductList();
         }
@@ -46,10 +46,10 @@ class ProductFilter extends Component {
             <div className="product-filter">
                 <div>
                     <Input
-                        label="# Заказа"
-                        name="OrderId"
+                        label="# Проекта"
+                        name="ProjectId"
                         type="text"
-                        value={this.state.OrderId}
+                        value={this.state.ProjectId}
                         handleChange={this.handleChange}
                     />
                 </div>

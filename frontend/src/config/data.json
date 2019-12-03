@@ -1,7 +1,7 @@
 {
     "navList": [
         {
-            "label": "Заказы",
+            "label": "Проекты",
             "to": "/",
             "exact": true
         },
@@ -39,7 +39,7 @@
             "value": "molar"
         }
     ],
-    "orderStatusList": [
+    "projectStatusList": [
         {
             "label": "В работе",
             "value": "inWork"
