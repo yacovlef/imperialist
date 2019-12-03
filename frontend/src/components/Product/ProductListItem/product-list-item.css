@@ -3,6 +3,21 @@
     grid-gap: 0.5rem;
 }
 
+.product-list-item__tab {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: start;
+    grid-gap: 0.5rem;
+}
+
+.product-list-item__tab a {
+    text-decoration: none;
+}
+
+.product-list-item__tab-active {
+    border-bottom: 5px solid #d5d5d5;
+}
+
 .product-list-item__info {
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -32,5 +47,9 @@
 @media (max-width: 768px) {
     .product-list-item__info, .product-list-item__action, .product-material-item {
         grid-template-columns: auto;
+    }
+
+    .product-list-item__tab {
+        justify-content: center;
     }
 }

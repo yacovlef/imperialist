@@ -75,6 +75,16 @@
             "value": "loaded"
         }
     ],
+    "productTabList": [
+        {
+            "label": "Номенклатура",
+            "value": "material"
+        },
+        {
+            "label": "Исполнители",
+            "value": "performer"
+        }
+    ],
     "nomenclatureUnitList": [
         {
             "label": "лист",
