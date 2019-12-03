@@ -6,7 +6,7 @@ import './project-material-calc.css';
 
 const ProjectMaterialCalc = ({ materialList }) => {
 
-    const material = materialList.reduce((value, item) => value + item.price, 0);
+    const material = materialList.reduce((value, item) => value + item.price * item.quantity, 0);
 
     const cost = material * 3;
 
