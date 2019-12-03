@@ -1,0 +1,27 @@
+.product-material-add {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .product-material-add__nomenclature {
+        grid-column: 1 / 5;
+        align-self: end;
+    }
+
+    .product-material-add__quantity {
+        grid-column: 5 / 7;
+        align-self: end;
+    }
+
+    .product-material-add__button {
+        grid-column: 7 / 8;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-material-add {
+        grid-template-columns: auto;
+    }
+}

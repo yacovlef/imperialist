@@ -11,7 +11,7 @@ import Auth from './Auth';
 import User from './User';
 import Order from './Order';
 import Nomenclature from './Nomenclature';
-import Project from './Project';
+import Product from './Product';
 
 import './app.css';
 
@@ -37,8 +37,8 @@ function App() {
                         exact
                     />
                     <PrivateRoute
-                        path="/projects/:OrderId?"
-                        component={Project}
+                        path="/products/:OrderId?"
+                        component={Product}
                         exact
                     />
                     <PrivateRoute

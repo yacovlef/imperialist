@@ -1,8 +1,8 @@
-const { Material, Project } = require('../models');
+const { Material, Product } = require('../models');
 
 const create = (req, res) => {
     Material.create(req.body, {
-        include: [ Project ]
+        include: [ Product ]
     })
         .then(material => res.json(material))
         .catch(error => res.status(500).json(error));

@@ -12,12 +12,12 @@ import orderFilter from '../components/Order/OrderFilter/order-filter-reducer';
 import nomenclatureList from '../components/Nomenclature/NomenclatureList/nomenclature-list-reducer';
 import nomenclatureForm from '../components/Nomenclature/NomenclatureForm/nomenclature-form-reducer';
 import nomenclatureDelete from '../components/Nomenclature/NomenclatureDelete/nomenclature-delete-reducer';
-import projectList from '../components/Project/ProjectList/project-list-reducer';
-import projectForm from '../components/Project/ProjectForm/project-form-reducer';
-import projectDelete from '../components/Project/ProjectDelete/project-delete-reducer';
-import projectFilter from '../components/Project/ProjectFilter/project-filter-reducer';
-import projectMaterialDelete from '../components/Project/ProjectMaterialDelete/project-material-delete-reducer';
-import projectMaterialAdd from '../components/Project/ProjectMaterialAdd/project-material-add-reducer';
+import productList from '../components/Product/ProductList/product-list-reducer';
+import productForm from '../components/Product/ProductForm/product-form-reducer';
+import productDelete from '../components/Product/ProductDelete/product-delete-reducer';
+import productFilter from '../components/Product/ProductFilter/product-filter-reducer';
+import productMaterialDelete from '../components/Product/ProductMaterialDelete/product-material-delete-reducer';
+import productMaterialAdd from '../components/Product/ProductMaterialAdd/product-material-add-reducer';
 
 const reducer = combineReducers({
     auth,
@@ -31,12 +31,12 @@ const reducer = combineReducers({
     nomenclatureList,
     nomenclatureForm,
     nomenclatureDelete,
-    projectList,
-    projectForm,
-    projectDelete,
-    projectFilter,
-    projectMaterialDelete,
-    projectMaterialAdd
+    productList,
+    productForm,
+    productDelete,
+    productFilter,
+    productMaterialDelete,
+    productMaterialAdd
 });
 
 export default createStore(reducer, applyMiddleware(thunkMiddleware));

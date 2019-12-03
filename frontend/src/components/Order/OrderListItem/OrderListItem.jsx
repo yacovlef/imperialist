@@ -23,7 +23,7 @@ const OrderListItem = ({ orderItem }) => {
         <div className="order-list-item card">
             <div className="order-list-item__col">
                 <div>#: {id}</div>
-                <div>Название: <Link to={`/projects/${id}`}>{title}</Link></div>
+                <div>Название: <Link to={`/products/${id}`}>{title}</Link></div>
             </div>
 
             <div className="order-list-item__col">

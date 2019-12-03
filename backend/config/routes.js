@@ -3,7 +3,7 @@ const {
     authController,
     orderController,
     nomenclatureController,
-    projectController,
+    productController,
     materialController
 } = require('../app/controllers');
 
@@ -31,11 +31,11 @@ module.exports = (app) => {
     app.put('/api/nomenclature/:id', authMiddleware, nomenclatureController.update);
     app.delete('/api/nomenclature/:id', authMiddleware, nomenclatureController.remove);
 
-    // projectList
-    app.get('/api/projects', authMiddleware, projectController.getList);
-    app.post('/api/projects', authMiddleware, projectController.create);
-    app.put('/api/projects/:id', authMiddleware, projectController.update);
-    app.delete('/api/projects/:id', authMiddleware, projectController.remove);
+    // productList
+    app.get('/api/products', authMiddleware, productController.getList);
+    app.post('/api/products', authMiddleware, productController.create);
+    app.put('/api/products/:id', authMiddleware, productController.update);
+    app.delete('/api/products/:id', authMiddleware, productController.remove);
 
     // materialList
     app.post('/api/materials', authMiddleware, materialController.create);

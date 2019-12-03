@@ -1,0 +1,54 @@
+const { Order, Product, Material, Nomenclature } = require('../models');
+
+const getList = (req, res) => {
+    const find = {};
+
+    if (req.query.OrderId) {
+        find.OrderId = req.query.OrderId
+    }
+
+    if (req.query.status) {
+        find.status = req.query.status
+    }
+
+    Product.findAll({
+        where: find,
+        order: ['id'],
+        include: [{
+            model: Material,
+            include: [{
+                model: Nomenclature,
+                paranoid: false
+            }]
+        }]
+    })
+        .then(productList => res.json(productList))
+        .catch(error => res.status(500).json(error));
+};
+
+const create = (req, res) => {
+    Product.create(req.body, {
+        include: [ Order ]
+    })
+        .then(product => res.json(product))
+        .catch(error => res.status(500).json(error));
+};
+
+const update = (req, res) => {
+    Product.update(req.body, { where: { id: req.params.id } })
+        .then(order => res.json(order))
+        .catch(error => res.status(500).json(error));
+};
+
+const remove = (req, res) => {
+    Product.destroy({ where: { id: req.params.id } })
+        .then(() => res.json({ success: true }))
+        .catch(error => res.status(500).json(error));
+};
+
+module.exports = {
+    getList,
+    create,
+    update,
+    remove
+};

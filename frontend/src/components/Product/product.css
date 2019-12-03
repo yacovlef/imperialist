@@ -1,0 +1,14 @@
+.product__control {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: end;
+    grid-gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .product__control {
+        grid-template-columns: auto;
+        justify-content: stretch;
+    } 
+}

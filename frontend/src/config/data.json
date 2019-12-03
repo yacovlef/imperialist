@@ -6,8 +6,8 @@
             "exact": true
         },
         {
-            "label": "Проекты",
-            "to": "/projects",
+            "label": "Изделия",
+            "to": "/products",
             "exact": false
         },
         {
@@ -53,7 +53,7 @@
             "value": "refused"
         }
     ],
-    "projectStatusList": [
+    "productStatusList": [
         {
             "label": "Разработка п. док.",
             "value": "devDoc"

@@ -15,10 +15,10 @@ module.exports = {
       price: {
         type: Sequelize.INTEGER
       },
-      ProjectId: {
+      ProductId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Projects',
+          model: 'Products',
           key: 'id'
         },
         onDelete: 'cascade',

@@ -6,7 +6,7 @@ module.exports = {
       {
           quantity: 1,
           price: 100,
-          ProjectId: 1,
+          ProductId: 1,
           NomenclatureId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -14,7 +14,7 @@ module.exports = {
       {
         quantity: 2,
         price: 10,
-        ProjectId: 1,
+        ProductId: 1,
         NomenclatureId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -22,7 +22,7 @@ module.exports = {
       {
         quantity: 3,
         price: 1000,
-        ProjectId: 1,
+        ProductId: 1,
         NomenclatureId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -31,6 +31,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Projects', null, {});
+    return queryInterface.bulkDelete('Products', null, {});
   }
 };

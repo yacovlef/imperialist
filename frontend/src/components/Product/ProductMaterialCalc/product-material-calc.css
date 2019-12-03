@@ -1,0 +1,17 @@
+.product-material-calc__common {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 2fr;
+    grid-gap: 0.5rem;
+}
+
+.product-material-calc__work {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 2fr;
+    grid-gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .product-material-calc__common, .product-material-calc__work {
+        grid-template-columns: auto;
+    }
+}

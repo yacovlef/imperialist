@@ -6,10 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     quantity: DataTypes.INTEGER,
     price: DataTypes.INTEGER
   }, {});
-  Material.associate = function({ Nomenclature, Project }) {
+  Material.associate = function({ Nomenclature, Product }) {
     Material.belongsTo(Nomenclature);
 
-    Material.belongsTo(Project);
+    Material.belongsTo(Product);
   };
   return Material;
 };
