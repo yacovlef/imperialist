@@ -27,7 +27,7 @@ class ProductAdd extends Component {
             <>
                 <div>
                     <Button
-                        label="Добавить проект"
+                        label="Добавить изделие"
                         type="button"
                         size="block"
                         onClick={this.handleButtonOpen}
@@ -37,7 +37,7 @@ class ProductAdd extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Добавление проекта" onClose={this.handleButtonClose}>
+                        <Modal title="Добавление изделия" onClose={this.handleButtonClose}>
                             <ProductForm
                                 onSubmit={submitProductFormCreate}
                                 onClose={this.handleButtonClose}

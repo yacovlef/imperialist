@@ -32,7 +32,7 @@ class ProductEdit extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Редактирование проекта" onClose={this.handleButtonClose}>
+                        <Modal title="Редактирование изделия" onClose={this.handleButtonClose}>
                             <ProductForm
                                 onSubmit={submitProductFormUpdate}
                                 onClose={this.handleButtonClose}
