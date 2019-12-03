@@ -15,7 +15,7 @@ class ProductList extends Component {
 
         if (!productList.length) {
             return <Info
-                message='Проектов не найдено.'
+                message='Изделий не найдено.'
             />;
         }
         
