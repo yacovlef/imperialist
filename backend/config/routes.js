@@ -4,7 +4,8 @@ const {
     projectController,
     nomenclatureController,
     productController,
-    materialController
+    materialController,
+    performerController
 } = require('../app/controllers');
 
 const { authMiddleware } = require('../app/middlewares');
@@ -41,4 +42,9 @@ module.exports = (app) => {
     app.post('/api/materials', authMiddleware, materialController.create);
     app.put('/api/materials/:id', authMiddleware, materialController.update);
     app.delete('/api/materials/:id', authMiddleware, materialController.remove);
+
+    // performerList
+    app.post('/api/performers', authMiddleware, performerController.create);
+    app.put('/api/performers/:id', authMiddleware, performerController.update);
+    app.delete('/api/performers/:id', authMiddleware, performerController.remove);
 }

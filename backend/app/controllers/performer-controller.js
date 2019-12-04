@@ -1,21 +1,21 @@
-const { Material, Product, Nomenclature } = require('../models');
+const { Performer, Product, User } = require('../models');
 
 const create = (req, res) => {
-    Material.create(req.body, {
-        include: [ Product, Nomenclature ]
+    Performer.create(req.body, {
+        include: [ Product, User ]
     })
-        .then(material => res.json(material))
+        .then(performer => res.json(performer))
         .catch(error => res.status(500).json(error));
 };
 
 const update = (req, res) => {
-    Material.update(req.body, { where: { id: req.params.id } })
-        .then(material => res.json(material))
+    Performer.update(req.body, { where: { id: req.params.id } })
+        .then(performer => res.json(performer))
         .catch(error => res.status(500).json(error));
 };
 
 const remove = (req, res) => {
-    Material.destroy({ where: { id: req.params.id } })
+    Performer.destroy({ where: { id: req.params.id } })
         .then(() => res.json({ success: true }))
         .catch(error => res.status(500).json(error));
 };
