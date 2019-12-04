@@ -2,30 +2,24 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+    return queryInterface.createTable('Wages', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
-        type: Sequelize.STRING
-      },
-      lastName: {
-        type: Sequelize.STRING
-      },
-      email: {
-        type: Sequelize.STRING
-      },
-      password: {
-        type: Sequelize.STRING
-      },
-      role: {
-        type: Sequelize.STRING
-      },
-      interest: {
+      price: {
         type: Sequelize.INTEGER
+      },
+      PerformerId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Performers',
+          key: 'id'
+        },
+        onDelete: 'cascade',
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -34,13 +28,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      deletedAt: {
-        type: Sequelize.DATE
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
+    return queryInterface.dropTable('Wages');
   }
 };

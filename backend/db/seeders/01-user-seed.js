@@ -9,6 +9,7 @@ module.exports = {
                 email: 'ivanov@email.com',
                 password: '$2b$10$OiWgExvmgEVvHudgMtmBJOcvyX/NzO2EP3g7Co4ZG.mKkb7BlQs32',
                 role: 'admin',
+                interest: 5,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -18,6 +19,7 @@ module.exports = {
                 email: 'petrov@email.com',
                 password: '$2b$10$OiWgExvmgEVvHudgMtmBJOcvyX/NzO2EP3g7Co4ZG.mKkb7BlQs32',
                 role: 'admin',
+                interest: 10,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -36,6 +38,7 @@ module.exports = {
                 email: 'info@imperialist.pro',
                 password: '$2b$10$OiWgExvmgEVvHudgMtmBJOcvyX/NzO2EP3g7Co4ZG.mKkb7BlQs32',
                 role: 'admin',
+                interest: 5,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },

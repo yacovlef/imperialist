@@ -2,7 +2,6 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Material = sequelize.define('Material', {
-    NomenclatureId: DataTypes.INTEGER,
     quantity: DataTypes.INTEGER,
     price: DataTypes.INTEGER
   }, {});
