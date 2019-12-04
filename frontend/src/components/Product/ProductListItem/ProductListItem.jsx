@@ -9,6 +9,8 @@ import ProductMaterialAdd from '../ProductMaterialAdd';
 import ProductMaterialItem from '../ProductMaterialItem'
 import ProductMaterialCalc from '../ProductMaterialCalc'
 
+import ProductPerformerAdd from '../ProductPerformerAdd';
+
 import { productStatusList, productTabList } from '../../../config/data.json'
 
 import './product-list-item.css';
@@ -62,7 +64,9 @@ class ProductListItem extends Component {
         );
 
         const renderPerformer = (
-            <p>Зарплаты</p>
+            <>
+                <ProductPerformerAdd ProductId={id} />
+            </>
         );
 
         return (

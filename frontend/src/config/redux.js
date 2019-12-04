@@ -16,8 +16,9 @@ import productList from '../components/Product/ProductList/product-list-reducer'
 import productForm from '../components/Product/ProductForm/product-form-reducer';
 import productDelete from '../components/Product/ProductDelete/product-delete-reducer';
 import productFilter from '../components/Product/ProductFilter/product-filter-reducer';
-import productMaterialDelete from '../components/Product/ProductMaterialDelete/product-material-delete-reducer';
 import productMaterialAdd from '../components/Product/ProductMaterialAdd/product-material-add-reducer';
+import productMaterialDelete from '../components/Product/ProductMaterialDelete/product-material-delete-reducer';
+import productPerformerAdd from '../components/Product/ProductPerformerAdd/product-performer-add-reducer';
 
 const reducer = combineReducers({
     auth,
@@ -35,8 +36,9 @@ const reducer = combineReducers({
     productForm,
     productDelete,
     productFilter,
+    productMaterialAdd,
     productMaterialDelete,
-    productMaterialAdd
+    productPerformerAdd
 });
 
 export default createStore(reducer, applyMiddleware(thunkMiddleware));
