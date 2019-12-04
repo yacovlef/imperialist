@@ -6,10 +6,11 @@ import ProductEdit from '../ProductEdit';
 import ProductDelete from '../ProductDelete';
 
 import ProductMaterialAdd from '../ProductMaterialAdd';
-import ProductMaterialItem from '../ProductMaterialItem'
-import ProductMaterialCalc from '../ProductMaterialCalc'
+import ProductMaterialItem from '../ProductMaterialItem';
+import ProductMaterialCalc from '../ProductMaterialCalc';
 
 import ProductPerformerAdd from '../ProductPerformerAdd';
+import ProductPerformerItem from '../ProductPerformerItem';
 
 import { productStatusList, productTabList } from '../../../config/data.json'
 
@@ -24,13 +25,14 @@ class ProductListItem extends Component {
 
     render() {
         const { productItem } = this.props;
-
+        
         const {
             id,
             name,
             status,
             createdAt,
-            Materials
+            Materials,
+            Performers
         } = productItem;
 
         const { tab } = this.state;
@@ -66,6 +68,25 @@ class ProductListItem extends Component {
         const renderPerformer = (
             <>
                 <ProductPerformerAdd ProductId={id} />
+
+                {!!Performers.length
+                    ?
+                        <>
+                            <div className="product-performer-item">
+                                <div className="show">#</div>
+                                <div className="show">Фамилия Имя</div>
+                                <div className="show">Роль</div>
+                                <div className="show">Ставка</div>
+                                <div className="show">Доля</div>
+                                <div className="show"></div>
+
+
+                                { Performers.map((performer, index) => <ProductPerformerItem performer={performer} materialList={Materials} index={index} key={index} />) }
+
+                            </div>
+                        </>
+                    :
+                        <div className="product-list-item__not-nomenclature">Нет исполнителей.</div>}
             </>
         );
 

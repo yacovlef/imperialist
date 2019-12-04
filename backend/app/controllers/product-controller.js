@@ -1,4 +1,4 @@
-const { Project, Product, Material, Nomenclature } = require('../models');
+const { Project, Product, Material, Nomenclature, Performer, User } = require('../models');
 
 const getList = (req, res) => {
     const find = {};
@@ -18,6 +18,13 @@ const getList = (req, res) => {
             model: Material,
             include: [{
                 model: Nomenclature,
+                paranoid: false
+            }]
+        },
+        {
+            model: Performer,
+            include: [{
+                model: User,
                 paranoid: false
             }]
         }]

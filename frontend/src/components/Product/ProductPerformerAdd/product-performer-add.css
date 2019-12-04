@@ -1,17 +1,17 @@
 .product-performer-add {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 0.5rem;
 }
 
 @media (min-width: 768px) {
     .product-performer-add__user {
-        grid-column: 1 / 7;
+        grid-column: 1 / 6;
         align-self: end;
     }
 
     .product-performer-add__button {
-        grid-column: 7 / 8;
+        grid-column: 6 / 7;
     }
 }
 

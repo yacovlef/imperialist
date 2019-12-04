@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       interest: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       ProductId: {
         type: Sequelize.INTEGER,

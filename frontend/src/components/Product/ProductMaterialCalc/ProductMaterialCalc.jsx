@@ -16,30 +16,14 @@ const ProductMaterialCalc = ({ materialList }) => {
 
     const workCost = withNds - material - nds;
 
-    const carpenter = workCost * 0.2;
-
-    const painter = workCost * 0.1;
-
-    const product = workCost * 0.01;
-
-    const margin = workCost - carpenter - painter;
-
     return (
-        <>
-            <div className="product-material-calc__common">
-                <div>Товар: {formatPrice(material)}</div>
-                <div>x 3: {formatPrice(cost)}</div>
-                <div>C НДС: {formatPrice(withNds)}</div>
-                <div>НДС: {formatPrice(nds)}</div>
-                <div>Минус товар и НДС: {formatPrice(workCost)}</div>
-            </div>
-            <div className="product-material-calc__work">
-                <div>Столяр: {formatPrice(carpenter)}</div>
-                <div>Моляр: {formatPrice(painter)}</div>
-                <div>Расчёт: {formatPrice(product)}</div>
-                <div>Моржа: {formatPrice(margin)}</div>
-            </div>
-        </>
+        <div className="product-material-calc__common">
+            <div>Товар: {formatPrice(material)}</div>
+            <div>x 3: {formatPrice(cost)}</div>
+            <div>C НДС: {formatPrice(withNds)}</div>
+            <div>НДС: {formatPrice(nds)}</div>
+            <div>Минус товар и НДС: {formatPrice(workCost)}</div>
+        </div>
     );
 };
 

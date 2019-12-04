@@ -38,6 +38,12 @@
     grid-gap: 0.5rem;
 }
 
+.product-performer-item {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 2fr) repeat(3, 1fr);
+    grid-gap: 0.5rem;
+}
+
 @media (min-width: 768px) {
     .product-list-item__not-nomenclature {
         justify-self: center;
@@ -45,7 +51,7 @@
 }
 
 @media (max-width: 768px) {
-    .product-list-item__info, .product-list-item__action, .product-material-item {
+    .product-list-item__info, .product-list-item__action, .product-material-item, .product-performer-item {
         grid-template-columns: auto;
     }
 

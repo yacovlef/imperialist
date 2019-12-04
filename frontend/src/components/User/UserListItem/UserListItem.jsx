@@ -3,7 +3,7 @@ import React from 'react';
 import UserEdit from '../UserEdit';
 import UserDelete from '../UserDelete';
 
-import { roleList } from '../../../config/data.json'
+import { roleList } from '../../../config/data.json';
 
 import './user-list-item.css';
 
