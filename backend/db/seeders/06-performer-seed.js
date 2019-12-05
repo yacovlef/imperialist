@@ -5,6 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert('Performers', [
       {
         interest: 0.01,
+        role: 'estimator',
         ProductId: 1,
         UserId: 1,
         createdAt: new Date(),
@@ -12,6 +13,7 @@ module.exports = {
       },
       {
         interest: 0.01,
+        role: 'estimator',
         ProductId: 2,
         UserId: 1,
         createdAt: new Date(),
@@ -19,6 +21,7 @@ module.exports = {
       },
       {
         interest: 0.1,
+        role: 'molar',
         ProductId: 1,
         UserId: 2,
         createdAt: new Date(),

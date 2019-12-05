@@ -9,10 +9,10 @@ import { formatPrice } from '../../../utils/lib';
 const ProductPerformerItem = ({ performer, materialList, index }) => {
     const {
         interest,
+        role,
         User: {
             firstName,
-            lastName,
-            role
+            lastName
         }
     } = performer;
     

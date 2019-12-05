@@ -2,7 +2,8 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Performer = sequelize.define('Performer', {
-    interest: DataTypes.INTEGER
+    interest: DataTypes.INTEGER,
+    role: DataTypes.STRING
   }, {});
   Performer.associate = function({ Product, User, Wages }) {
     Performer.belongsTo(Product);

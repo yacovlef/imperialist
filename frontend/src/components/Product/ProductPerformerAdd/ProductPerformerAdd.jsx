@@ -33,9 +33,9 @@ class ProductPerformerAdd extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState.data.UserId !== this.state.data.UserId && this.state.data.UserId) {
-            const { interest } = this.props.userList.find((user) => user.id === +this.state.data.UserId);
+            const { interest, role } = this.props.userList.find((user) => user.id === +this.state.data.UserId);
 
-            this.setState(({ data }) => ({data: {...data, interest}}));
+            this.setState(({ data }) => ({data: {...data, interest, role}}));
         }
 
     }

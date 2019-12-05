@@ -12,6 +12,9 @@ module.exports = {
       interest: {
         type: Sequelize.FLOAT
       },
+      role: {
+        type: Sequelize.STRING
+      },
       ProductId: {
         type: Sequelize.INTEGER,
         references: {
