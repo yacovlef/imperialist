@@ -15,7 +15,8 @@ class UserForm extends Component {
             lastName: '',
             email: '',
             password: '',
-            role: ''
+            role: '',
+            interest: ''
         },
         errorList: []
     };
@@ -164,6 +165,17 @@ class UserForm extends Component {
                         name="role"
                         value={this.state.data.role}
                         optionList={roleList}
+                        handleChange={this.handleChange}
+                        errorList={this.state.errorList}
+                    />
+                </div>
+
+                <div>
+                    <Input
+                        label="Ставка"
+                        name="interest"
+                        type="text"
+                        value={this.state.data.interest}
                         handleChange={this.handleChange}
                         errorList={this.state.errorList}
                     />

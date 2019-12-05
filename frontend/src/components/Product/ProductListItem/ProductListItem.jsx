@@ -74,10 +74,11 @@ class ProductListItem extends Component {
                         <>
                             <div className="product-performer-item">
                                 <div className="show">#</div>
-                                <div className="show">Фамилия Имя</div>
+                                <div className="show">Исполнитель</div>
                                 <div className="show">Роль</div>
                                 <div className="show">Ставка</div>
-                                <div className="show">Доля</div>
+                                <div className="show">Выдано</div>
+                                <div className="show">Сумма</div>
                                 <div className="show"></div>
 
 

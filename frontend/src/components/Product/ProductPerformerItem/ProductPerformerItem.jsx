@@ -38,7 +38,8 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
             <div><span className="hide">Фамилия Имя: </span>{`${lastName} ${firstName}`}</div>
             <div><span className="hide">Роль: </span>{renderRole.label}</div>
             <div><span className="hide">Ставка: </span>{interest} %</div>
-            <div><span className="hide">Доля: </span>{formatPrice(price)}</div>
+            <div><span className="hide">Выдано: </span>{formatPrice(0)}</div>
+            <div><span className="hide">Сумма: </span>{formatPrice(price)}</div>
             <div></div>
             {/* <div><ProductMaterialDelete performer={performer} /></div> */}
         </>
