@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import ProductPerformerDelete from '../ProductPerformerDelete';
+import ProductPerformerDelete from '../ProductPerformerDelete';
 
 import { roleList } from '../../../config/data.json';
 
@@ -35,13 +35,12 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
     return (
         <>
             <div><span className="hide">#: </span>{index}</div>
-            <div><span className="hide">Фамилия Имя: </span>{`${lastName} ${firstName}`}</div>
+            <div><span className="hide">Исполнитель: </span>{`${lastName} ${firstName}`}</div>
             <div><span className="hide">Роль: </span>{renderRole.label}</div>
             <div><span className="hide">Ставка: </span>{interest} %</div>
             <div><span className="hide">Выдано: </span>{formatPrice(0)}</div>
             <div><span className="hide">Сумма: </span>{formatPrice(price)}</div>
-            <div></div>
-            {/* <div><ProductMaterialDelete performer={performer} /></div> */}
+            <div><ProductPerformerDelete performer={performer} /></div>
         </>
     );
 };

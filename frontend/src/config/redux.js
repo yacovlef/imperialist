@@ -19,6 +19,7 @@ import productFilter from '../components/Product/ProductFilter/product-filter-re
 import productMaterialAdd from '../components/Product/ProductMaterialAdd/product-material-add-reducer';
 import productMaterialDelete from '../components/Product/ProductMaterialDelete/product-material-delete-reducer';
 import productPerformerAdd from '../components/Product/ProductPerformerAdd/product-performer-add-reducer';
+import productPerformerDelete from '../components/Product/ProductPerformerDelete/product-performer-delete-reducer';
 
 const reducer = combineReducers({
     auth,
@@ -38,7 +39,8 @@ const reducer = combineReducers({
     productFilter,
     productMaterialAdd,
     productMaterialDelete,
-    productPerformerAdd
+    productPerformerAdd,
+    productPerformerDelete
 });
 
 export default createStore(reducer, applyMiddleware(thunkMiddleware));
