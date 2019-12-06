@@ -4,10 +4,10 @@ import moment from 'moment';
 
 import ProductEdit from '../ProductEdit';
 import ProductDelete from '../ProductDelete';
+import ProductCalc from '../ProductCalc';
 
 import ProductMaterialAdd from '../ProductMaterialAdd';
 import ProductMaterialItem from '../ProductMaterialItem';
-import ProductMaterialCalc from '../ProductMaterialCalc';
 
 import ProductPerformerAdd from '../ProductPerformerAdd';
 import ProductPerformerItem from '../ProductPerformerItem';
@@ -45,21 +45,18 @@ class ProductListItem extends Component {
 
                 {!!Materials.length
                     ?
-                        <>
-                            <div className="product-material-item">
-                                <div className="show">#</div>
-                                <div className="show">Наименование</div>
-                                <div className="show">Кол-во</div>
-                                <div className="show">Ед. изм.</div>
-                                <div className="show">Цена за ед.</div>
-                                <div className="show">Цена итог.</div>
-                                <div className="show"></div>
+                        <div className="product-material-item">
+                            <div className="show">#</div>
+                            <div className="show">Наименование</div>
+                            <div className="show">Кол-во</div>
+                            <div className="show">Ед. изм.</div>
+                            <div className="show">Цена за ед.</div>
+                            <div className="show">Цена итог.</div>
+                            <div className="show"></div>
 
-                                { Materials.map((material, index) => <ProductMaterialItem material={material} index={index} key={index} />) }
+                            { Materials.map((material, index) => <ProductMaterialItem material={material} index={index} key={index} />) }
 
-                            </div>
-                            <ProductMaterialCalc materialList={Materials} />
-                        </>
+                        </div>
                     :
                         <div className="product-list-item__not-nomenclature">Нет номенклатуры.</div>}
             </>
@@ -108,6 +105,8 @@ class ProductListItem extends Component {
 
                 {(tab === 'material') && renderMaterial}
                 {(tab === 'performer') && renderPerformer}
+
+                {!!Materials.length && <ProductCalc materialList={Materials} performerList={Performers} />}
 
                 <div className="product-list-item__action">
                     <div><ProductEdit product={productItem} /></div>

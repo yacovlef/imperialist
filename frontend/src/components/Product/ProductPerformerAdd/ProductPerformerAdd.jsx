@@ -80,14 +80,16 @@ class ProductPerformerAdd extends Component {
     };
 
     selectOptionUserList = () => {
-        return this.props.userList.map(({ id, firstName, lastName, role }) => {
-            const renderRole = roleList.find(({ value }) => value === role);
+        return this.props.userList
+            .filter(({ interest }) => interest !== null)
+            .map(({ id, firstName, lastName, role }) => {
+                const renderRole = roleList.find(({ value }) => value === role);
 
-            return {
-                label: `${lastName} ${firstName} (${renderRole.label})`,
-                value: id
-            };
-        });
+                return {
+                    label: `${lastName} ${firstName} (${renderRole.label})`,
+                    value: id
+                };
+            });
     };
 
     render() {
