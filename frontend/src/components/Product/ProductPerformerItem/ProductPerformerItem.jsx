@@ -34,7 +34,7 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
 
     return (
         <>
-            <div><span className="hide">#: </span>{index}</div>
+            <div><span className="hide">#: </span>{++index}</div>
             <div><span className="hide">Исполнитель: </span>{`${lastName} ${firstName}`}</div>
             <div><span className="hide">Роль: </span>{renderRole.label}</div>
             <div><span className="hide">Ставка: </span>{interest} %</div>

@@ -22,7 +22,7 @@ const ProductMaterialItem = ({ material, index }) => {
 
     return (
         <>
-            <div><span className="hide">#: </span>{index}</div>
+            <div><span className="hide">#: </span>{++index}</div>
             <div><span className="hide">Наименование: </span>{name}</div>
             <div><span className="hide">Кол-во: </span>{quantity}</div>
             <div><span className="hide">Ед. изм.: </span>{renderUnit.label}</div>
