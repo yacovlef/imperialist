@@ -47,10 +47,12 @@ class UserForm extends Component {
             lastName,
             email,
             password,
-            role
+            role,
+            interest
         } = this.state.data;
 
         const messageRequired = 'Обязательно';
+        const messageNumber = 'Только цифры';
 
         let errorList = [];
 
@@ -89,6 +91,13 @@ class UserForm extends Component {
             });
         }
 
+        if (!(interest === null) && /\D/.test(interest)) {
+            errorList.push({
+                field: 'interest',
+                message: messageNumber
+            });
+        }
+
         this.setState({errorList});
 
         const result = !errorList.length
@@ -102,8 +111,12 @@ class UserForm extends Component {
         if (this.handleValidateSubmit()) {
             const data = Object.assign({}, this.state.data);
 
-            if (!this.state.data.password) {
+            if (!data.password) {
                 delete data.password;
+            }
+
+            if (data.interest === '') {
+                data.interest = null;
             }
 
             this.props.onSubmit(data);
@@ -175,7 +188,7 @@ class UserForm extends Component {
                         label="Ставка"
                         name="interest"
                         type="text"
-                        value={this.state.data.interest}
+                        value={(this.state.data.interest !== null) ? this.state.data.interest : ''}
                         handleChange={this.handleChange}
                         errorList={this.state.errorList}
                     />

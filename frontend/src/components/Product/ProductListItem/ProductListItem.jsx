@@ -71,21 +71,19 @@ class ProductListItem extends Component {
 
                 {!!Performers.length
                     ?
-                        <>
-                            <div className="product-performer-item">
-                                <div className="show">#</div>
-                                <div className="show">Исполнитель</div>
-                                <div className="show">Роль</div>
-                                <div className="show">Ставка</div>
-                                <div className="show">Выдано</div>
-                                <div className="show">К выдаче</div>
-                                <div className="show">Сумма</div>
-                                <div className="show"></div>
-                                
-                                { Performers.map((performer, index) => <ProductPerformerItem performer={performer} materialList={Materials} index={index} key={index} />) }
+                        <div className="product-performer-item">
+                            <div className="show">#</div>
+                            <div className="show">Исполнитель</div>
+                            <div className="show">Роль</div>
+                            <div className="show">Ставка</div>
+                            <div className="show">Выдано</div>
+                            <div className="show">К выдаче</div>
+                            <div className="show">Сумма</div>
+                            <div className="show"></div>
+                            
+                            { Performers.map((performer, index) => <ProductPerformerItem performer={performer} materialList={Materials} index={index} key={index} />) }
 
-                            </div>
-                        </>
+                        </div>
                     :
                         <div className="product-list-item__not-nomenclature">Нет исполнителей.</div>}
             </>
