@@ -1,0 +1,11 @@
+.wages-filter {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .wages-filter {
+        grid-template-columns: auto;
+    } 
+}

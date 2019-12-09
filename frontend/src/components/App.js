@@ -10,8 +10,9 @@ import Info from './@common/Info';
 import Auth from './Auth';
 import User from './User';
 import Project from './Project';
-import Nomenclature from './Nomenclature';
 import Product from './Product';
+import Wages from './Wages';
+import Nomenclature from './Nomenclature';
 
 import './app.css';
 
@@ -34,6 +35,11 @@ function App() {
                     <PrivateRoute
                         path="/"
                         component={Project}
+                        exact
+                    />
+                    <PrivateRoute
+                        path="/wages"
+                        component={Wages}
                         exact
                     />
                     <PrivateRoute

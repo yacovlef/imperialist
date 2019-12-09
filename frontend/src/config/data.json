@@ -11,6 +11,11 @@
             "exact": false
         },
         {
+            "label": "Зарплата",
+            "to": "/wages",
+            "exact": false
+        },
+        {
             "label": "Номенклатура",
             "to": "/nomenclature",
             "exact": true

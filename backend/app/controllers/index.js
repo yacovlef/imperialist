@@ -5,6 +5,7 @@ const nomenclatureController = require('./nomenclature-controller');
 const productController = require('./product-controller');
 const materialController = require('./material-controller');
 const performerController = require('./performer-controller');
+const wagesController = require('./wages-controller');
 
 module.exports = {
     userController,
@@ -13,5 +14,6 @@ module.exports = {
     nomenclatureController,
     productController,
     materialController,
-    performerController
+    performerController,
+    wagesController
 };

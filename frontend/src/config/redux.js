@@ -20,6 +20,8 @@ import productMaterialAdd from '../components/Product/ProductMaterialAdd/product
 import productMaterialDelete from '../components/Product/ProductMaterialDelete/product-material-delete-reducer';
 import productPerformerAdd from '../components/Product/ProductPerformerAdd/product-performer-add-reducer';
 import productPerformerDelete from '../components/Product/ProductPerformerDelete/product-performer-delete-reducer';
+import wagesList from '../components/Wages/WagesList/wages-list-reducer';
+import wagesFilter from '../components/Wages/WagesFilter/wages-filter-reducer';
 
 const reducer = combineReducers({
     auth,
@@ -40,7 +42,9 @@ const reducer = combineReducers({
     productMaterialAdd,
     productMaterialDelete,
     productPerformerAdd,
-    productPerformerDelete
+    productPerformerDelete,
+    wagesList,
+    wagesFilter
 });
 
 export default createStore(reducer, applyMiddleware(thunkMiddleware));

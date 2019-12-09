@@ -5,7 +5,8 @@ const {
     nomenclatureController,
     productController,
     materialController,
-    performerController
+    performerController,
+    wagesController
 } = require('../app/controllers');
 
 const { authMiddleware } = require('../app/middlewares');
@@ -47,4 +48,10 @@ module.exports = (app) => {
     app.post('/api/performers', authMiddleware, performerController.create);
     app.put('/api/performers/:id', authMiddleware, performerController.update);
     app.delete('/api/performers/:id', authMiddleware, performerController.remove);
+
+    // wagesList
+    app.get('/api/wages', authMiddleware, wagesController.getList);
+    app.post('/api/wages', authMiddleware, wagesController.create);
+    app.put('/api/wages/:id', authMiddleware, wagesController.update);
+    app.delete('/api/wages/:id', authMiddleware, wagesController.remove);
 }

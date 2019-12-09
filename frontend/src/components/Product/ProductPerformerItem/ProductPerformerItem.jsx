@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import ProductPerformerDelete from '../ProductPerformerDelete';
 
@@ -8,6 +9,7 @@ import { formatPrice } from '../../../utils/lib';
 
 const ProductPerformerItem = ({ performer, materialList, index }) => {
     const {
+        id,
         interest,
         role,
         User: {
@@ -35,11 +37,11 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
     return (
         <>
             <div><span className="hide">#: </span>{++index}</div>
-            <div><span className="hide">Исполнитель: </span>{`${lastName} ${firstName}`}</div>
+            <div><span className="hide">Исполнитель: </span><Link to={`/wages/?performer=${id}`}>{`${lastName} ${firstName}`}</Link></div>
             <div><span className="hide">Роль: </span>{renderRole.label}</div>
             <div><span className="hide">Ставка: </span>{interest} %</div>
-            <div><span className="hide">Выдано: </span>{formatPrice(0)}</div>
-            <div><span className="hide">К выдаче: </span>{formatPrice(price)}</div>
+            <div><span className="hide">Выплачено: </span>{formatPrice(0)}</div>
+            <div><span className="hide">К выплате: </span>{formatPrice(price)}</div>
             <div><span className="hide">Сумма: </span>{formatPrice(price)}</div>
             <div><ProductPerformerDelete performer={performer} /></div>
         </>

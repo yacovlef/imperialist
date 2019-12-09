@@ -73,8 +73,8 @@ class ProductListItem extends Component {
                             <div className="show">Исполнитель</div>
                             <div className="show">Роль</div>
                             <div className="show">Ставка</div>
-                            <div className="show">Выдано</div>
-                            <div className="show">К выдаче</div>
+                            <div className="show">Выплачено</div>
+                            <div className="show">К выплате</div>
                             <div className="show">Сумма</div>
                             <div className="show"></div>
                             
