@@ -21,6 +21,8 @@ import productMaterialDelete from '../components/Product/ProductMaterialDelete/p
 import productPerformerAdd from '../components/Product/ProductPerformerAdd/product-performer-add-reducer';
 import productPerformerDelete from '../components/Product/ProductPerformerDelete/product-performer-delete-reducer';
 import wagesList from '../components/Wages/WagesList/wages-list-reducer';
+import wagesForm from '../components/Wages/WagesForm/wages-form-reducer';
+import wagesDelete from '../components/Wages/WagesDelete/wages-delete-reducer';
 import wagesFilter from '../components/Wages/WagesFilter/wages-filter-reducer';
 
 const reducer = combineReducers({
@@ -44,6 +46,8 @@ const reducer = combineReducers({
     productPerformerAdd,
     productPerformerDelete,
     wagesList,
+    wagesForm,
+    wagesDelete,
     wagesFilter
 });
 

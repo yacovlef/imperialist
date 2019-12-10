@@ -1,8 +1,10 @@
 import React from 'react';
 import moment from 'moment';
 
-// import WagesEdit from '../WagesEdit';
-// import WagesDelete from '../WagesDelete';
+import WagesEdit from '../WagesEdit';
+import WagesDelete from '../WagesDelete';
+
+import { formatPrice } from '../../../utils/lib';
 
 import './wages-list-item.css';
 
@@ -32,12 +34,14 @@ const WagesListItem = ({ wagesItem }) => {console.log(wagesItem);
             </div>
             <div className="wages-list-item__col">
                 <div>Исполнитель: {`${lastName} ${firstName}`}</div>
-                <div>Выплачено: {price}</div>
                 <div>Дата: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
             </div>
             <div className="wages-list-item__col">
-                {/* <div><WagesEdit wages={wagesItem} /></div> */}
-                {/* <div><WagesDelete wages={wagesItem} /></div> */}
+                <div>Выплачено: {formatPrice(price)}</div>
+            </div>
+            <div className="wages-list-item__col">
+                <div><WagesEdit wages={wagesItem} /></div>
+                <div><WagesDelete wages={wagesItem} /></div>
             </div>
         </div>
     );

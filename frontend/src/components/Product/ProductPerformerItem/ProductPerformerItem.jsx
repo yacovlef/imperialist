@@ -15,8 +15,11 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
         User: {
             firstName,
             lastName
-        }
+        },
+        Wages
     } = performer;
+
+    console.log(performer);
     
     const renderRole = roleList.find(({ value }) => value === role);
 
@@ -31,7 +34,12 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
 
     const workCost = withNds - material - nds;
 
+    const paidOut = Wages.reduce((value, item) => value + item.price, 0);
+
     const price = workCost * interest;
+
+    const payOff = price - paidOut;
+
     //-------------------------------------------------------------------------------------------
 
     return (
@@ -40,8 +48,8 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
             <div><span className="hide">Исполнитель: </span><Link to={`/wages/?performer=${id}`}>{`${lastName} ${firstName}`}</Link></div>
             <div><span className="hide">Роль: </span>{renderRole.label}</div>
             <div><span className="hide">Ставка: </span>{interest} %</div>
-            <div><span className="hide">Выплачено: </span>{formatPrice(0)}</div>
-            <div><span className="hide">К выплате: </span>{formatPrice(price)}</div>
+            <div><span className="hide">Выплачено: </span>{formatPrice(paidOut)}</div>
+            <div><span className="hide">К выплате: </span>{formatPrice(payOff)}</div>
             <div><span className="hide">Сумма: </span>{formatPrice(price)}</div>
             <div><ProductPerformerDelete performer={performer} /></div>
         </>

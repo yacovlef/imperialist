@@ -1,4 +1,4 @@
-const { Project, Product, Material, Nomenclature, Performer, User } = require('../models');
+const { Project, Product, Material, Nomenclature, Performer, User, Wages } = require('../models');
 
 const getList = (req, res) => {
     const find = {};
@@ -26,7 +26,8 @@ const getList = (req, res) => {
             include: [{
                 model: User,
                 paranoid: false
-            }]
+            },
+            { model: Wages }]
         }]
     })
         .then(productList => res.json(productList))

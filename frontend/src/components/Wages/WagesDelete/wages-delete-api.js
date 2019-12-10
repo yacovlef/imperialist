@@ -1,7 +1,7 @@
 import axios from '../../../config/axios';
 
 const deleteWagesApi = async (id) => {
-    return await axios.delete(`/wagess/${id}`);
+    return await axios.delete(`/wages/${id}`);
 };
 
 export {

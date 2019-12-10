@@ -43,7 +43,7 @@ class WagesFilter extends Component {
             <div className="wages-filter">
                 <div>
                     <Input
-                        label="# Исполнителя"
+                        label="# Исполнителя в изделии"
                         name="PerformerId"
                         type="text"
                         value={this.state.PerformerId}

@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import Modal from '../../@common/Modal';
 import Button from '../../@common/Button';
 
+import { formatPrice } from '../../../utils/lib';
+
 import './wages-delete.css';
 
 class WagesDelete extends Component {
@@ -33,7 +35,20 @@ class WagesDelete extends Component {
     };
 
     render() {
-        const { wages: { id, name }, loading, error } = this.props;
+        const {
+            wages: {
+                price,
+                Performer: {
+                    User: {
+                        lastName,
+                        firstName
+                    }
+                }
+            },
+            loading,
+            error } = this.props;
+
+        console.log(this.props);
 
         return (
             <>
@@ -46,9 +61,9 @@ class WagesDelete extends Component {
                 
                 {
                     this.state.modal &&
-                        <Modal title="Удаление изделия" size="small" onClose={this.handleButtonClose}>
+                        <Modal title="Удаление зарплаты" size="small" onClose={this.handleButtonClose}>
                             <div className="wages_delete__label form-row">
-                                <b>{`${name} (#${id})`}</b>
+                                <b>{`${formatPrice(price)} (${lastName} ${firstName})`}</b>
                             </div>
                             <div className="form-row">
                                 <form onSubmit={this.handleSubmit}>

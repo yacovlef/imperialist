@@ -24,7 +24,7 @@ const getList = (req, res) => {
 
 const create = (req, res) => {
     Wages.create(req.body, {
-        include: [ Project ]
+        include: [Performer]
     })
         .then(Wages => res.json(Wages))
         .catch(error => res.status(500).json(error));

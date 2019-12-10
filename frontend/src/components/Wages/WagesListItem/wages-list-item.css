@@ -1,6 +1,6 @@
 .wages-list-item {
     display: grid;
-    grid-template-columns: repeat(2, 1fr) auto;
+    grid-template-columns: repeat(3, 1fr) auto;
     grid-gap: 0.5rem;
 }
 

@@ -41,7 +41,7 @@ class WagesAdd extends Component {
                             <WagesForm
                                 onSubmit={submitWagesFormCreate}
                                 onClose={this.handleButtonClose}
-                                ProjectId={PerformerId}
+                                PerformerId={PerformerId}
                             />
                         </Modal>
                 }
