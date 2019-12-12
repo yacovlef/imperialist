@@ -5,7 +5,9 @@ import {
 
 const initialState = {
     ProjectId: null,
-    status: ''
+    UserId: null,
+    startDate: null,
+    endDate: null
 };
 
 const wagesFilterReducer = (state = initialState, action) => {

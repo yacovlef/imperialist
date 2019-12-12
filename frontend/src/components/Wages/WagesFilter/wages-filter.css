@@ -1,6 +1,6 @@
 .wages-filter {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: repeat(3, auto);
     grid-gap: 0.5rem;
 }
 

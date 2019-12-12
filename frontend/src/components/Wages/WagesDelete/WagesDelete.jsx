@@ -46,9 +46,8 @@ class WagesDelete extends Component {
                 }
             },
             loading,
-            error } = this.props;
-
-        console.log(this.props);
+            error
+        } = this.props;
 
         return (
             <>

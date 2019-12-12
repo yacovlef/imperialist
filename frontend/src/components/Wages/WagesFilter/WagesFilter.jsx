@@ -3,16 +3,23 @@ import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 
 import Input from '../../@common/Input';
+import Select from '../../@common/Select';
+import DatePicker from '../../@common/DatePicker';
 
 import './wages-filter.css';
 
 class WagesFilter extends Component {
     state = {
-        PerformerId: ''
+        PerformerId: '',
+        UserId: '',
+        startDate: null,
+        endDate: null
     }
 
     componentDidMount() {
         const { performer: PerformerId } = queryString.parse(this.props.location.search);
+
+        this.props.fetchUserList();
 
         if (PerformerId) {
             this.setState({PerformerId});
@@ -23,7 +30,19 @@ class WagesFilter extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState !== this.state) {
-            this.props.setWagesFilter(this.state);
+            const { startDate, endDate } = this.state;
+
+            const data = Object.assign({}, this.state);
+
+            if (startDate) {
+                data.startDate = startDate.format();
+            }
+
+            if (endDate) {
+                data.endDate = endDate.format();
+            }
+
+            this.props.setWagesFilter(data);
         }
     }
 
@@ -38,6 +57,20 @@ class WagesFilter extends Component {
         this.setState({[name]: value});
     };
 
+    handleChangeDatePicker = ({ startDate, endDate }) => this.setState({ startDate, endDate });
+
+    selectOptionUserList = () => {
+        return this.props.userList
+            .filter(({ interest }) => interest !== null)
+            .map(({ id, firstName, lastName }) => {
+
+                return {
+                    label: `${lastName} ${firstName}`,
+                    value: id
+                };
+            });
+    };
+
     render() {
         return (
             <div className="wages-filter">
@@ -50,9 +83,24 @@ class WagesFilter extends Component {
                         handleChange={this.handleChange}
                     />
                 </div>
+                <div>
+                    <DatePicker
+                        startDate={this.state.startDate}
+                        endDate={this.state.endDate}
+                        onDatesChange={this.handleChangeDatePicker}
+                    />
+                </div>
+                <div>
+                    <Select
+                        label="Исполнитель"
+                        name="UserId"
+                        value={this.state.UserId}
+                        optionList={this.selectOptionUserList()}
+                        handleChange={this.handleChange}
+                    />
+                </div>
             </div>
         );
-
     }
 }
 

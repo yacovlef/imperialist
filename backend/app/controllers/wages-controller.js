@@ -1,17 +1,42 @@
 const {  Wages, Performer, Product, User, Project } = require('../models');
 
-const getList = (req, res) => {
-    const find = {};
+const { Op } = require('sequelize');
 
-    if (req.query.PerformerId) {
-        find.PerformerId = req.query.PerformerId
+const getList = (req, res) => {
+    const {
+        PerformerId,
+        startDate,
+        endDate,
+        UserId
+    } = req.query;
+
+    const find = {};
+    const findUser = {};
+
+    if (PerformerId) {
+        find.PerformerId = PerformerId;
     }
 
+    if (startDate) {
+        find.createdAt = {...find.createdAt};
+        find.createdAt[Op.gte] = startDate;
+    }
+
+    if (endDate) {
+        find.createdAt = {...find.createdAt};
+        find.createdAt[Op.lte] = endDate;
+    }
+
+    if (UserId) {
+        findUser.UserId = UserId;
+    }
+    
     Wages.findAll({
         where: find,
         project: ['id'],
         include: [{
             model: Performer,
+            where: findUser,
             include: [{
                 model: Product,
                 include: [Project]

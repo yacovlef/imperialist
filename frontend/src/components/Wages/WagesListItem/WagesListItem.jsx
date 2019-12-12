@@ -8,7 +8,7 @@ import { formatPrice } from '../../../utils/lib';
 
 import './wages-list-item.css';
 
-const WagesListItem = ({ wagesItem }) => {console.log(wagesItem);
+const WagesListItem = ({ wagesItem }) => {
     const {
         price,
         createdAt,

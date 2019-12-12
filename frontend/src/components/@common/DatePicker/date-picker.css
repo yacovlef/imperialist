@@ -1,0 +1,13 @@
+.DateRangePickerInput {
+    border: 0;
+}
+
+.DateInput_input {
+    border: 1px solid #555555;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 0.05rem 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+}

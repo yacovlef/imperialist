@@ -18,8 +18,6 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
         },
         Wages
     } = performer;
-
-    console.log(performer);
     
     const renderRole = roleList.find(({ value }) => value === role);
 

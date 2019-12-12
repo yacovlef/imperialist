@@ -37,7 +37,7 @@ const fetchWagesList = () => (dispatch) => {
     dispatch(wagesListRequested());
 
     const { wagesFilter } = store.getState();
-
+    
     fetchWagesListApi(wagesFilter)
         .then(({ data }) => dispatch(wagesListLoaded(data)))
         .catch((error) => dispatch(wagesListError(error)));
