@@ -35,6 +35,7 @@ class DatePicker extends Component {
                     focusedInput={this.state.focusedInput}
                     onFocusChange={this.handleFocusChange}
                     isOutsideRange={() => false}
+                    numberOfMonths={1}
                 />
             </>
         );
