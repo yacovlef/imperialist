@@ -111,6 +111,14 @@ class ProductForm extends Component {
                 </div>
 
                 <div>
+                    <Input
+                        label="Изображение"
+                        name="image"
+                        type="file"
+                    />
+                </div>
+
+                <div>
                     <Button
                         label="Сохранить"
                         type="submit"

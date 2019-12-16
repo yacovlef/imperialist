@@ -12,6 +12,8 @@
     align-items: start;
 
     padding-top: 5rem;
+
+    z-index: 1;
 }
 
 .modal {
