@@ -35,11 +35,11 @@ class WagesFilter extends Component {
             const data = Object.assign({}, this.state);
 
             if (startDate) {
-                data.startDate = startDate.format();
+                data.startDate = startDate.startOf('day').format();
             }
 
             if (endDate) {
-                data.endDate = endDate.format();
+                data.endDate = endDate.endOf('day').format();
             }
 
             this.props.setWagesFilter(data);
