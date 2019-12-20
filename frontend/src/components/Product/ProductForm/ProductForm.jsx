@@ -15,11 +15,12 @@ class ProductForm extends Component {
             status: '',
             ProjectId: ''
         },
+        fileList: [],
         errorList: []
     };
 
     componentDidMount() {
-        const {ProjectId, product} = this.props;
+        const { ProjectId, product } = this.props;
 
         if (ProjectId) {
             this.setState(({ data }) => ({data: {...data, ProjectId}}));
@@ -39,10 +40,14 @@ class ProductForm extends Component {
     }
 
     handleChange = (event) => {
-        const { name, value } = event.target
+        let { name, value } = event.target;
 
         this.setState(({ data }) => ({data: {...data, [name]: value}}));
     };
+
+    handleChangeFileList = (event) => {
+        this.setState({ fileList: event.target.files });
+    }
 
     handleValidateSubmit = () => {
         const {
@@ -79,7 +84,17 @@ class ProductForm extends Component {
         event.preventDefault();
 
         if (this.handleValidateSubmit()) {
-            this.props.onSubmit(this.state.data);
+            const { data: { name, status, ProjectId }, fileList } = this.state;
+
+            const data = new FormData();
+
+            data.append('name', name);
+            data.append('status', status);
+            data.append('ProjectId', ProjectId);
+
+            data.append('file', fileList[0]);
+
+            this.props.onSubmit(data);
         }
     };
 
@@ -115,6 +130,7 @@ class ProductForm extends Component {
                         label="Изображение"
                         name="image"
                         type="file"
+                        handleChange={this.handleChangeFileList}
                     />
                 </div>
 
