@@ -84,9 +84,13 @@ class ProductForm extends Component {
         event.preventDefault();
 
         if (this.handleValidateSubmit()) {
-            const { data: { name, status, ProjectId }, fileList } = this.state;
+            const { data: { id, name, status, ProjectId }, fileList } = this.state;
 
             const data = new FormData();
+
+            if (id) {
+                data.append('id', id);
+            }
 
             data.append('name', name);
             data.append('status', status);

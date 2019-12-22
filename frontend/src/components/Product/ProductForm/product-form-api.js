@@ -5,7 +5,9 @@ const createProductApi = async (product) => {
 };
 
 const updateProductApi = async (product) => {
-    return await axios.put(`/products/${product.id}`, product);
+    const id = product.get('id');
+    
+    return await axios.put(`/products/${id}`, product);
 };
 
 export {
