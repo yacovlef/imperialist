@@ -1,3 +1,4 @@
+const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -10,6 +11,7 @@ const accessLogStream = rfs('access.log', {
 });
 
 module.exports = (app) => {
+    app.use(express.static(path.join(__dirname, '..', 'upload')));
     app.use(bodyParser.json());
     app.use(cors());
     app.use(morgan('combined', { stream: accessLogStream }));

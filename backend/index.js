@@ -1,3 +1,5 @@
+const path = require('path');
+
 const express = require('express');
 
 const config = require('./config');
@@ -6,7 +8,7 @@ const app = express();
 
 config.express(app);
 config.routes(app);
-config.production(app, express);
+config.production(app);
 
 const { port } = config.env;
 

@@ -1,5 +1,3 @@
-const multer = require('multer');
-const uploadMiddleware = multer({ dest: 'uploads/' }).single('file');
 
 const {
     userController,
@@ -12,7 +10,10 @@ const {
     wagesController
 } = require('../app/controllers');
 
-const { authMiddleware } = require('../app/middlewares');
+const {
+    authMiddleware,
+    uploadMiddleware
+} = require('../app/middlewares');
 
 module.exports = (app) => {
     // userList
@@ -38,8 +39,8 @@ module.exports = (app) => {
 
     // productList
     app.get('/api/products', authMiddleware, productController.getList);
-    app.post('/api/products', [authMiddleware, uploadMiddleware], productController.create);
-    app.put('/api/products/:id', [authMiddleware, uploadMiddleware], productController.update);
+    app.post('/api/products', [authMiddleware, uploadMiddleware.single('image')], productController.create);
+    app.put('/api/products/:id', [authMiddleware, uploadMiddleware.single('image')], productController.update);
     app.delete('/api/products/:id', authMiddleware, productController.remove);
 
     // materialList

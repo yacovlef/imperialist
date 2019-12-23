@@ -35,7 +35,15 @@ const getList = (req, res) => {
 };
 
 const create = (req, res) => {
-    Product.create(req.body, {
+    let {body, file} = req;
+
+    const data = Object.assign({}, body);
+
+    if (file) {
+        data.image = file.filename;
+    }
+
+    Product.create(data, {
         include: [ Project ]
     })
         .then(product => res.json(product))
@@ -43,7 +51,15 @@ const create = (req, res) => {
 };
 
 const update = (req, res) => {
-    Product.update(req.body, { where: { id: req.params.id } })
+    let {body, file} = req;
+
+    const data = Object.assign({}, body);
+
+    if (file) {
+        data.image = file.filename;
+    }
+
+    Product.update(data, { where: { id: req.params.id } })
         .then(project => res.json(project))
         .catch(error => res.status(500).json(error));
 };

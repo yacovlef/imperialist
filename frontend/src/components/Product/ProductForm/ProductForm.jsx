@@ -96,7 +96,7 @@ class ProductForm extends Component {
             data.append('status', status);
             data.append('ProjectId', ProjectId);
 
-            data.append('file', fileList[0]);
+            data.append('image', fileList[0]);
 
             this.props.onSubmit(data);
         }
