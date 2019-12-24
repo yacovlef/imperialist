@@ -8,7 +8,7 @@ import { roleList } from '../../../config/data.json';
 
 import { formatPrice } from '../../../utils/lib';
 
-const ProductPerformerItem = ({ performer, materialList, index }) => {
+const ProductPerformerItem = ({ performer, materialList, product, index }) => {
     const {
         id,
         interest,
@@ -51,7 +51,7 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
             <div><span className="hide">К выплате: </span>{formatPrice(payOff)}</div>
             <div><span className="hide">Сумма: </span>{formatPrice(price)}</div>
             <div><ProductPerformerDelete performer={performer} /></div>
-            <div><ProductPerformerPrint performer={performer} /></div>
+            <div><ProductPerformerPrint product={product} performer={performer} paidOut={paidOut} /></div>
         </>
     );
 };

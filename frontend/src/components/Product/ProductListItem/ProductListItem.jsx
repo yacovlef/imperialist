@@ -79,7 +79,7 @@ class ProductListItem extends Component {
                             <div className="show"></div>
                             <div className="show"></div>
                             
-                            { Performers.map((performer, index) => <ProductPerformerItem performer={performer} materialList={Materials} index={index} key={index} />) }
+                            { Performers.map((performer, index) => <ProductPerformerItem performer={performer} materialList={Materials} product={productItem} index={index} key={index} />) }
 
                         </div>
                     :
