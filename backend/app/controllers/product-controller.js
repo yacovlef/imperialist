@@ -38,7 +38,7 @@ const create = (req, res) => {
     let {body, file} = req;
 
     const data = Object.assign({}, body);
-
+    
     if (file) {
         data.image = file.filename;
     }

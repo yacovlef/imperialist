@@ -40,7 +40,7 @@
 
 .product-performer-item {
     display: grid;
-    grid-template-columns: 1fr repeat(2, 2fr) repeat(5, 1fr);
+    grid-template-columns: 1fr repeat(2, 2fr) repeat(6, 1fr);
     grid-gap: 0.5rem;
 }
 

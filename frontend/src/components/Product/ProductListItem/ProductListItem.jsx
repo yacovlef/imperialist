@@ -77,6 +77,7 @@ class ProductListItem extends Component {
                             <div className="show">К выплате</div>
                             <div className="show">Сумма</div>
                             <div className="show"></div>
+                            <div className="show"></div>
                             
                             { Performers.map((performer, index) => <ProductPerformerItem performer={performer} materialList={Materials} index={index} key={index} />) }
 

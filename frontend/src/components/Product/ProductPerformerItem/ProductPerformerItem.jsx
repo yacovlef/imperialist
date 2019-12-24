@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import ProductPerformerDelete from '../ProductPerformerDelete';
+import ProductPerformerPrint from '../ProductPerformerPrint';
 
 import { roleList } from '../../../config/data.json';
 
@@ -50,6 +51,7 @@ const ProductPerformerItem = ({ performer, materialList, index }) => {
             <div><span className="hide">К выплате: </span>{formatPrice(payOff)}</div>
             <div><span className="hide">Сумма: </span>{formatPrice(price)}</div>
             <div><ProductPerformerDelete performer={performer} /></div>
+            <div><ProductPerformerPrint performer={performer} /></div>
         </>
     );
 };

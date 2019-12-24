@@ -39,8 +39,8 @@ module.exports = (app) => {
 
     // productList
     app.get('/api/products', authMiddleware, productController.getList);
-    app.post('/api/products', [authMiddleware, uploadMiddleware.single('image')], productController.create);
-    app.put('/api/products/:id', [authMiddleware, uploadMiddleware.single('image')], productController.update);
+    app.post('/api/products', [authMiddleware, uploadMiddleware.single('file')], productController.create);
+    app.put('/api/products/:id', [authMiddleware, uploadMiddleware.single('file')], productController.update);
     app.delete('/api/products/:id', authMiddleware, productController.remove);
 
     // materialList
