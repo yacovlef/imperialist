@@ -17,7 +17,9 @@ const ProjectListItem = ({ projectItem }) => {
         createdAt
     } = projectItem;
 
-    const renderStatus = projectStatusList.find(({ value }) => value === status);
+    const {label: statusLabel, color: statusColor} = projectStatusList.find(({ value }) => value === status);
+
+    const statusStyle = { backgroundColor: statusColor };
 
     return (
         <div className="project-list-item card">
@@ -27,7 +29,7 @@ const ProjectListItem = ({ projectItem }) => {
             </div>
 
             <div className="project-list-item__col">
-                <div>Статус: {renderStatus.label}</div>
+                <div>Статус: <span style={statusStyle} className="status">{statusLabel}</span></div>
                 <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
             </div>
 

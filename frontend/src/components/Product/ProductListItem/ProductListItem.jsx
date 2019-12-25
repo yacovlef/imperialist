@@ -37,7 +37,9 @@ class ProductListItem extends Component {
 
         const { tab } = this.state;
         
-        const renderStatus = productStatusList.find(({ value }) => value === status);
+        const {label: statusLabel, color: statusColor} = productStatusList.find(({ value }) => value === status);
+
+        const statusStyle = { backgroundColor: statusColor };
 
         const renderMaterial = (
             <>
@@ -100,7 +102,7 @@ class ProductListItem extends Component {
 
                 <div className="product-list-item__info">
                     <div>Наименование: {name}</div>
-                    <div>Статус: {renderStatus.label}</div>
+                    <div>Статус: <span style={statusStyle} className="status">{statusLabel}</span></div>
                     <div>Создан: {moment(createdAt).format('DD-MM-YYYY HH:mm')}</div>
                 </div>
 

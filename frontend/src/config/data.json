@@ -47,37 +47,45 @@
     "projectStatusList": [
         {
             "label": "В работе",
-            "value": "inWork"
+            "value": "inWork",
+            "color": "#d6eaf8"
         },
         {
             "label": "Завершён",
-            "value": "finished"
+            "value": "finished",
+            "color": "#d5f5e3"
         },
         {
             "label": "Отказ",
-            "value": "refused"
+            "value": "refused",
+            "color": "#f6ddcc"
         }
     ],
     "productStatusList": [
         {
             "label": "Разработка п. док.",
-            "value": "devDoc"
+            "value": "devDoc",
+            "color": "#e8daef"
         },
         {
             "label": "Изготовление",
-            "value": "manufacturing"
+            "value": "manufacturing",
+            "color": "#d4e6f1"
         },
         {
             "label": "Покраска",
-            "value": "painting"
+            "value": "painting",
+            "color": "#fcf3cf"
         },
         {
             "label": "Готов к отгрузке",
-            "value": "ready"
+            "value": "ready",
+            "color": "#d1f2eb"
         },
         {
             "label": "Отгружен",
-            "value": "loaded"
+            "value": "loaded",
+            "color": "#fadbd8"
         }
     ],
     "productTabList": [

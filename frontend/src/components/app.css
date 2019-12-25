@@ -36,6 +36,11 @@ a {
     display: inline;
 }
 
+.status {
+    padding: 0.05rem 0.25rem;
+    border-radius: 0.25rem;
+}
+
 @media (max-width: 768px) {
     .hide {
         display: inline;
