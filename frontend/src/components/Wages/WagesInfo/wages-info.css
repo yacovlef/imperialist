@@ -1,0 +1,12 @@
+.wages-info {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: end;
+    grid-gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .wages-info {
+        grid-template-columns: auto;
+    } 
+}
