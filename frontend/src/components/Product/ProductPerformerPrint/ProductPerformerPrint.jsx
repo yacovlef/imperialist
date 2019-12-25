@@ -31,14 +31,12 @@ class Print extends Component {
 
         const { protocol, hostname } = window.location;
 
-        const renderImgSrc = `${protocol}//${hostname}:${env.axios.port}/product/${image}`;
-
         const renderRole = roleList.find(({ value }) => value === role);
 
         return (
             <div className="product-performer-print">
             <h1>{name}</h1>
-                <img className="product-performer-print__img" src={renderImgSrc} alt=""/>   
+                {image && <img className="product-performer-print__img" src={`${protocol}//${hostname}:${env.axios.port}/product/${image}`} alt=""/>}
                 <p>{`${lastName} ${firstName} (${renderRole.label}) - ${formatPrice(paidOut)}`}</p>
             </div>
         );
