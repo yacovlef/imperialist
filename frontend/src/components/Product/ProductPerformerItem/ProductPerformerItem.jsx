@@ -41,6 +41,10 @@ const ProductPerformerItem = ({ performer, materialList, product, index }) => {
 
     //-------------------------------------------------------------------------------------------
 
+    const stylePayOff = {
+        color: (payOff) ? 'red' : 'green'
+    };
+
     return (
         <>
             <div><span className="hide">#: </span>{++index}</div>
@@ -48,7 +52,7 @@ const ProductPerformerItem = ({ performer, materialList, product, index }) => {
             <div><span className="hide">Роль: </span>{renderRole.label}</div>
             <div><span className="hide">Ставка: </span>{interest} %</div>
             <div><span className="hide">Выплачено: </span>{formatPrice(paidOut)}</div>
-            <div><span className="hide">К выплате: </span>{formatPrice(payOff)}</div>
+            <div><span className="hide">К выплате: </span><span style={stylePayOff}>{formatPrice(payOff)}</span></div>
             <div><span className="hide">Сумма: </span>{formatPrice(price)}</div>
             <div><ProductPerformerDelete performer={performer} /></div>
             <div><ProductPerformerPrint product={product} performer={performer} paidOut={paidOut} /></div>
