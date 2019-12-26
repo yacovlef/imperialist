@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { formatPrice } from '../../../utils/lib';
+
 import './wages-info.css';
 
 const WagesInfo = ({ wagesList }) => {
@@ -10,7 +12,7 @@ const WagesInfo = ({ wagesList }) => {
     return (
         <div className="wages-info">
             <div>
-                Сумма: {total}
+                Сумма: {formatPrice(total)}
             </div>
         </div>
     );
