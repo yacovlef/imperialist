@@ -51,14 +51,19 @@
             "color": "#d6eaf8"
         },
         {
-            "label": "Завершён",
-            "value": "finished",
+            "label": "Готов к отгрузке",
+            "value": "ready",
             "color": "#d5f5e3"
+        },
+        {
+            "label": "Отгружен",
+            "value": "loaded",
+            "color": "#d5d8dc"
         },
         {
             "label": "Отказ",
             "value": "refused",
-            "color": "#f6ddcc"
+            "color": "#fadbd8"
         }
     ],
     "productStatusList": [
@@ -75,16 +80,21 @@
         {
             "label": "Покраска",
             "value": "painting",
-            "color": "#fcf3cf"
+            "color": "#fdebd0"
         },
         {
             "label": "Готов к отгрузке",
             "value": "ready",
-            "color": "#d1f2eb"
+            "color": "#d5f5e3"
         },
         {
             "label": "Отгружен",
             "value": "loaded",
+            "color": "#d5d8dc"
+        },
+        {
+            "label": "Отказ",
+            "value": "refused",
             "color": "#fadbd8"
         }
     ],

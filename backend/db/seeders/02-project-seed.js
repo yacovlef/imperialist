@@ -11,12 +11,18 @@ module.exports = {
             },
             {
                 title: 'Буря',
-                status: 'finished',
+                status: 'ready',
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
                 title: 'Шторм',
+                status: 'loaded',
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                title: 'Снег',
                 status: 'refused',
                 createdAt: new Date(),
                 updatedAt: new Date()
