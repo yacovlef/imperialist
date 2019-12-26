@@ -1,5 +1,7 @@
 const { Project, Product, Material, Nomenclature, Performer, User, Wages } = require('../models');
 
+const { projectStatusUpdate } = require('../../utils/lib');
+
 const getList = (req, res) => {
     const find = {};
 
@@ -46,7 +48,11 @@ const create = (req, res) => {
     Product.create(data, {
         include: [ Project ]
     })
-        .then(product => res.json(product))
+        .then(product => {
+            projectStatusUpdate();
+
+            res.json(product)
+        })
         .catch(error => res.status(500).json(error));
 };
 
@@ -60,7 +66,11 @@ const update = (req, res) => {
     }
 
     Product.update(data, { where: { id: req.params.id } })
-        .then(project => res.json(project))
+        .then(project => {
+            projectStatusUpdate();
+
+            res.json(project)
+        })
         .catch(error => res.status(500).json(error));
 };
 
