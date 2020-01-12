@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import queryString from 'query-string';
 
 import Input from '../../@common/Input';
 import Select from '../../@common/Select';
@@ -15,7 +16,7 @@ class ProductFilter extends Component {
     }
 
     componentDidMount() {
-        const { ProjectId } = this.props.match.params
+        const { project: ProjectId } = queryString.parse(this.props.location.search);
 
         if (ProjectId) {
             this.setState({ProjectId});

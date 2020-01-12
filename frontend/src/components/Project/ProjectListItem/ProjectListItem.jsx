@@ -25,7 +25,7 @@ const ProjectListItem = ({ projectItem }) => {
         <div className="project-list-item card">
             <div className="project-list-item__col">
                 <div>#: {id}</div>
-                <div>Название: <Link to={`/products/${id}`}>{title}</Link></div>
+                <div>Название: <Link to={`/products/?project=${id}`}>{title}</Link></div>
             </div>
 
             <div className="project-list-item__col">
