@@ -11,15 +11,27 @@ import './product-filter.css';
 
 class ProductFilter extends Component {
     state = {
+        id: '',
         ProjectId: '',
         status: ''
     }
 
     componentDidMount() {
-        const { project: ProjectId } = queryString.parse(this.props.location.search);
+
+        const { id, project: ProjectId } = queryString.parse(this.props.location.search);
+
+        const find = {};
+
+        if (id) {
+            find.id = id;
+        }
 
         if (ProjectId) {
-            this.setState({ProjectId});
+            find.ProjectId = ProjectId;
+        }
+
+        if (Object.keys(find).length) {
+            this.setState(find);
         } else {
             this.props.fetchProductList();
         }
@@ -45,6 +57,16 @@ class ProductFilter extends Component {
     render() {
         return (
             <div className="product-filter">
+                <div>
+                    <Input
+                        label="#"
+                        name="id"
+                        type="text"
+                        value={this.state.id}
+                        handleChange={this.handleChange}
+                    />
+                </div>
+
                 <div>
                     <Input
                         label="# Проекта"

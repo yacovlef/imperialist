@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import WagesEdit from '../WagesEdit';
@@ -14,6 +15,7 @@ const WagesListItem = ({ wagesItem }) => {
         createdAt,
         Performer: {
             Product: {
+                id: productId,
                 name: productName,
                 Project: {
                     title: projectTitle
@@ -30,7 +32,7 @@ const WagesListItem = ({ wagesItem }) => {
         <div className="wages-list-item card">
             <div className="wages-list-item__col">
                 <div>Проект: {projectTitle}</div>
-                <div>Изделие: {productName}</div>
+                <div>Изделие: <Link to={`/products/?id=${productId}`}>{productName}</Link></div>
             </div>
             <div className="wages-list-item__col">
                 <div>Исполнитель: {`${lastName} ${firstName}`}</div>

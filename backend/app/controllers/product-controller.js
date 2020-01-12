@@ -5,12 +5,16 @@ const { projectStatusUpdate } = require('../../utils/lib');
 const getList = (req, res) => {
     const find = {};
 
+    if (req.query.id) {
+        find.id = req.query.id;
+    }
+
     if (req.query.ProjectId) {
-        find.ProjectId = req.query.ProjectId
+        find.ProjectId = req.query.ProjectId;
     }
 
     if (req.query.status) {
-        find.status = req.query.status
+        find.status = req.query.status;
     }
 
     Product.findAll({
