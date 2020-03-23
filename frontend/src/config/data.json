@@ -124,6 +124,14 @@
         {
             "label": "м.п.",
             "value": "mp"
+        },
+        {
+            "label": "к.г.",
+            "value": "kg"
+        },
+        {
+            "label": "куб. м.",
+            "value": "kubm"
         }
     ]
 }
